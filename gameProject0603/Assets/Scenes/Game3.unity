@@ -3872,6 +3872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: picProduct
       objectReference: {fileID: 0}
+    - target: {fileID: 8401098668792082291, guid: 26a8234624ae41249944ff7a42eaebde, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8401098668792082292, guid: 26a8234624ae41249944ff7a42eaebde, type: 3}
       propertyPath: m_RootOrder
       value: 0
