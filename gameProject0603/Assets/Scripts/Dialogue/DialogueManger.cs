@@ -17,12 +17,13 @@ public class DialogueManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>();
-        nextDialoge.enableBtn();
+
     }
 
     public void startDialogue(Dialogue dialogue)
     {
+        sentences = new Queue<string>();
+        nextDialoge.enableBtn();
         nameText.text = dialogue.name;
 
         sentences.Clear();
