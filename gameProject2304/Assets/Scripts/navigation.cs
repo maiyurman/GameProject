@@ -14,7 +14,7 @@ public class navigation : MonoBehaviour
     public void Awake()
     {
         mybutton = GetComponent<Button>();
-        disableBtn();
+        //disableBtn();
     }
 
     public void enableBtn()
