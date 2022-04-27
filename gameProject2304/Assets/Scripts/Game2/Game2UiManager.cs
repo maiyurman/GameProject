@@ -8,6 +8,8 @@ using TMPro;
 
 public class Game2UiManager : MonoBehaviour
 {
+    private loadStoryBtn loadStoryBtn;
+
     //------> תפריט עליון
     public navigation messageBtn;
     public navigation musicBtn;
@@ -28,11 +30,6 @@ public class Game2UiManager : MonoBehaviour
     public navigation nextQuestionBtn4;
     public navigation nextQuestionBtn5;
     public navigation finishgame;
-
-
-    //------>חלון משפיען עם הוראות
-    public GameObject influenceInstractionWindow;
-    public TextMeshProUGUI influenceInstractionTxt;
 
     //------>סטורי כניסה למשחק
     public navigation storyOpenGame2;
@@ -96,8 +93,7 @@ public class Game2UiManager : MonoBehaviour
             nextQuestionBtn4.transform.gameObject.SetActive(true);
             nextQuestionBtn5.transform.gameObject.SetActive(true);
             finishgame.transform.gameObject.SetActive(true);
-            truefeedback.text = "כל הכבוד! פיענחתם את החוקיות!";
-            
+            truefeedback.text = "כל הכבוד! פיענחתם את החוקיות!"; 
         }
     }
 }

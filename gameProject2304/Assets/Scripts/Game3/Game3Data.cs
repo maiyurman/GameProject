@@ -13,20 +13,13 @@ public class Game3Data : MonoBehaviour
     public List<DropArea> dropAreas;
     public Text[] influenceDate;
     public int pageNumber = 0;
-    private int openGameMax;
 
     public void Start()
     {
-        PlayerPrefs.SetInt("gameNumIn",3);
         uiManager = transform.gameObject.GetComponent<Game3UiManager>();
-        loadStoryBtn = GameObject.Find("levels").GetComponent<loadStoryBtn>();
 
         initInfluencers();
         uiManager.UpdateUi(pageNumber);
-        PlayerPrefs.SetInt("openGameMax",3);
-        openGameMax = PlayerPrefs.GetInt("openGameMax");
-        Debug.Log(openGameMax);
-        loadStoryBtn.EnableStoryBtnsForLevel(openGameMax);
     }
 
     public Influencer getCurrentInfluencer()

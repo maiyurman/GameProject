@@ -21,8 +21,8 @@ public class openGameUi : MonoBehaviour
 
     public void pressOpenGameBtn()
     {
-        PlayerPrefs.SetInt("gameNumIn", 1);
-        PlayerPrefs.SetInt("openGameMax", 1);
+        PlayerPrefs.SetInt("gameNumIn", 0);
+        PlayerPrefs.SetInt("GameMax", 0);
         SceneManager.LoadScene("Game1");
     }
 }

@@ -31,10 +31,27 @@ public class Game4Logic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        loadStoryBtn = transform.gameObject.GetComponent<loadStoryBtn>();
+        //כיבוי כל הסטורי
+        loadStoryBtn.disableStoryBtnAll();
+        Debug.Log(PlayerPrefs.GetInt("GameMax"));
+        //להדליק את הסטורי שרלוונטיים לשלב המקסימלי
+        int myMaxLevel = PlayerPrefs.GetInt("GameMax");
+        Debug.Log("Max Level start" + myMaxLevel);
+
+        if (PlayerPrefs.GetInt("GameMax") != 0)
+        {
+            int MaxStage = PlayerPrefs.GetInt("GameMax");
+            Debug.Log(MaxStage);
+            loadStoryBtn.EnableStoryBtnsForLevel(MaxStage);
+            Debug.Log(MaxStage);
+        }
+
+
+
         finishgame1.SetActive(false);
         Game1Try = 0;
         Game2Try = 0;
-        loadStoryBtn = GameObject.Find("levels").GetComponent<loadStoryBtn>();
         Game4UiManager = transform.gameObject.GetComponent<Game4UiManager>();
 
         //משחק 1
@@ -169,4 +186,19 @@ public class Game4Logic : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
     }
+
+    //בלחיצה על כפתור סיום משחק
+    public void finishAllGamestory()
+    {
+        //הפעלת כפתור סטורי
+        if (PlayerPrefs.GetInt("GameMax") < 4)
+        {
+            PlayerPrefs.SetInt("GameMax", 4);
+        }
+
+        int myMaxLevel = PlayerPrefs.GetInt("GameMax");
+        Debug.Log("Max Level" + myMaxLevel);
+        loadStoryBtn.enableStoryBtn(myMaxLevel);
+    }
+
 }

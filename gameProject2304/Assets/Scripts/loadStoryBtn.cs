@@ -38,7 +38,7 @@ public class loadStoryBtn : MonoBehaviour
     //הפעלת כפתורי סטורי
     public void EnableStoryBtnsForLevel(int numOfLevel)
     {
-        for (int i = 1; i < numOfLevel; i++)
+        for (int i = 1; i <= numOfLevel; i++)
         {
                 enableStoryBtn(i);
         }
@@ -47,7 +47,16 @@ public class loadStoryBtn : MonoBehaviour
     //הפעלת כפתור סטורי
     public void enableStoryBtn(int buttonNum)
     {
-        PlayerPrefs.SetInt("openGameMax", buttonNum);
+        PlayerPrefs.SetInt("GameMax", buttonNum);
         storyBtns[buttonNum - 1].enableBtn();
+    }
+
+    //כיבוי כל הסטורי
+    public void disableStoryBtnAll()
+    {
+        for (int i = 0;i< 5; i++)
+        {
+            storyBtns[i].disableBtn();
+        }
     }
 }

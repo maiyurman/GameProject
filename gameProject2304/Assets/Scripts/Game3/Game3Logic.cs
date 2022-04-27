@@ -1,16 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using System.Text.RegularExpressions;
-using TMPro;
 
-
-public class Game2Logic : MonoBehaviour
+public class Game3Logic : MonoBehaviour
 {
     private loadStoryBtn loadStoryBtn;
-
+    
     void Start()
     {
         loadStoryBtn = transform.gameObject.GetComponent<loadStoryBtn>();
@@ -19,7 +14,7 @@ public class Game2Logic : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt("GameMax"));
         //להדליק את הסטורי שרלוונטיים לשלב המקסימלי
         int myMaxLevel = PlayerPrefs.GetInt("GameMax");
-        Debug.Log("Max Level" + myMaxLevel);
+        Debug.Log("Max Level start" + myMaxLevel);
 
         if (PlayerPrefs.GetInt("GameMax") != 0)
         {
@@ -34,11 +29,11 @@ public class Game2Logic : MonoBehaviour
     public void finishGame()
     {
         //הפעלת כפתור סטורי
-        if (PlayerPrefs.GetInt("GameMax") < 2)
+        if (PlayerPrefs.GetInt("GameMax") < 3)
         {
-            PlayerPrefs.SetInt("GameMax", 2);
+            PlayerPrefs.SetInt("GameMax", 3);
         }
-     
+
         int myMaxLevel = PlayerPrefs.GetInt("GameMax");
         Debug.Log("Max Level" + myMaxLevel);
         loadStoryBtn.enableStoryBtn(myMaxLevel);

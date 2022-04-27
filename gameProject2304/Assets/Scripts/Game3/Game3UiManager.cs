@@ -9,7 +9,7 @@ using TMPro;
 public class Game3UiManager : MonoBehaviour
 {
     private Game3Data gameData;
-    private loadStoryBtn loadStoryBtn;
+    private Game3Logic Game3Logic;
 
     //משתנים לייצוג הערכים של המשפיען
     public TextMeshProUGUI influencerName;
@@ -61,15 +61,17 @@ public class Game3UiManager : MonoBehaviour
     public GameObject feedbackWindow;
     public TextMeshProUGUI feedbackTxt;
 
-    //------>חלון משפיען עם הוראות
-    public GameObject influenceInstractionWindow;
-    public TextMeshProUGUI influenceInstractionTxt;
+    //------>חלון סיום משחק
+    public GameObject finishGameBk; 
+
 
     public void Start()
     {
         gameData = transform.gameObject.GetComponent<Game3Data>();
-        loadStoryBtn = GameObject.Find("levels").GetComponent<loadStoryBtn>();
+        Game3Logic = transform.gameObject.GetComponent<Game3Logic>();
 
+        //כיבוי חלון סיום משחק
+        finishGameBk.SetActive(false);
         //העלמת מאגר התמונות - בלחיצה על כפתור ניתן לראות
         imagesLibraryview.SetActive(false);
         //העלמת חלונית האינפורמציה - בלחיצה על כפתור ניתן לראות
@@ -297,11 +299,6 @@ public class Game3UiManager : MonoBehaviour
         feedbackWindow.SetActive(true);
     }
 
-    public void influenceInstraction(string message)
-    {
-        influenceInstractionTxt.text = message;
-        influenceInstractionWindow.SetActive(true);
-    }
 
     //5 שניות אחרי שנגמר המשחק
     public IEnumerator displayFinishGame(int secs, int numbersec)
@@ -320,11 +317,10 @@ public class Game3UiManager : MonoBehaviour
 
         yield return new WaitForSeconds(secs/2);
 
-        //הפעלת כפתור סטורי
-        PlayerPrefs.SetInt("openGameMax", 3);
-        int myMaxLevel = PlayerPrefs.GetInt("openGameMax");
-        loadStoryBtn.enableStoryBtn(myMaxLevel);
-        influenceInstraction("הצלחתם לבנות לאור פרופיל מושלם ובזכותכם גדלו לו מספר העוקבים! לחצו על הסטורי כדי לגלות מהו השלב שעברתם");
+        //הפעלת סטורי
+        Game3Logic.finishGame();
+        //הדלקת מסך סיום המשחק
+        finishGameBk.SetActive(true);
     }
 
 

@@ -26,7 +26,7 @@ public class Game1Logic : MonoBehaviour
 
     void Start()
     {
-        loadStoryBtn = GameObject.Find("levels").GetComponent<loadStoryBtn>();
+        loadStoryBtn = transform.gameObject.GetComponent<loadStoryBtn>();
         Game1UIScript = transform.gameObject.GetComponent<Game1UIScript>();
 
         //משחק 1
@@ -43,22 +43,18 @@ public class Game1Logic : MonoBehaviour
         chatGame3.setChatTitle("'אמה דוידוביץ");
         chatGame3.addVideo(Chat.Direction.RECEIVE, "6");
         tryGame3 = 2;
+
+        //כיבוי כל הסטורי
+        loadStoryBtn.disableStoryBtnAll();
+
+        //להדליק את הסטורי שרלוונטיים לשלב המקסימלי
+        if (PlayerPrefs.GetInt("GameMax") != 0)
+        {
+            int MaxStage = PlayerPrefs.GetInt("GameMax");
+            Debug.Log(MaxStage);
+            loadStoryBtn.EnableStoryBtnsForLevel(MaxStage);        
+        }
     }
-
-
-    //public void B1()
-    //{
-    //    chat.addVideo(Chat.Direction.RECEIVE, "6");
-    //    chat.addPhoto(Chat.Direction.RECEIVE, "6");
-    //    chat.addTextMessage(Chat.Direction.RECEIVE, "sdfsdfs\ndsfsfsfs");
-    //    chat.addTextMessage(Chat.Direction.RECEIVE, "טקסט בלה בלה בלה גכדגלכחד דןגכדוג כדוגככ בלה בלה בלה 'יכוגדטכוןדג דגוכטוד9", 3);
-    //}
-    //public void B2()
-    //{
-    //    chat.addVideo(Chat.Direction.SEND, "2");
-    //    chat.addPhoto(Chat.Direction.SEND, "2");
-    //    chat.addTextMessage(Chat.Direction.SEND, "טקסט בלה בלה בלה גכדגלכחד דןגכדוג כדוגככ בלה בלה בלה 'יכוגדטכוןדג דגוכטוד9", 3);
-    //}
 
 
 
@@ -262,10 +258,12 @@ public class Game1Logic : MonoBehaviour
     public void finishGame()
     {
         //הפעלת כפתור סטורי
-        PlayerPrefs.SetInt("openGameMax", 1);
-        int myMaxLevel = PlayerPrefs.GetInt("openGameMax");
+        if (PlayerPrefs.GetInt("GameMax") < 1)
+        {
+            PlayerPrefs.SetInt("GameMax", 1);
+        }
+        int myMaxLevel = PlayerPrefs.GetInt("GameMax");
         loadStoryBtn.enableStoryBtn(myMaxLevel);
 
-        //להוסיף החשכה של המסך עם הודעה שאפשר להיכנס לסטורי עם המשפיען
     }
 }

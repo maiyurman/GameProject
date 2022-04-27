@@ -17,6 +17,7 @@ public class Game1UIScript : MonoBehaviour
 
     private void Start()
     {
+
         Game1LogicScript = transform.gameObject.GetComponent<Game1Logic>();
         messageBtn.disableBtn();
         openScreen.SetActive(true);
