@@ -167,7 +167,6 @@ public class Game5UIManager : MonoBehaviour
         {
             influenceFeedBack.SetActive(true);
             feedbackwindow.SetActive(false);
-
         }
 
     }
