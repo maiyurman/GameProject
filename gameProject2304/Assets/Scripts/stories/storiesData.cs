@@ -22,9 +22,11 @@ public class storiesData : MonoBehaviour
         loadStoryBtn = GameObject.Find("levels").GetComponent<loadStoryBtn>();
 
         pageNumber = PlayerPrefs.GetInt("gameNumIn");
+        Debug.Log(pageNumber);
         UIMangerstory.updateArrows();
         UIMangerstory.updateUi();
-        openGameMax = PlayerPrefs.GetInt("openGameMax");
+        openGameMax = PlayerPrefs.GetInt("GameMax");
+        loadStoryBtn.disableStoryBtnAll();
         loadStoryBtn.EnableStoryBtnsForLevel(openGameMax);
     }
 
