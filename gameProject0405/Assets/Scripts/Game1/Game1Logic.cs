@@ -30,18 +30,24 @@ public class Game1Logic : MonoBehaviour
         Game1UIScript = transform.gameObject.GetComponent<Game1UIScript>();
 
         //משחק 1
+        chatGame1.initChat();
         chatGame1.setChatTitle("תמר לוי");
-        chatGame1.addVideo(Chat.Direction.RECEIVE, "6");
+        chatGame1.setProfilePhoto("");
+        chatGame1.addVideo(Chat.Direction.RECEIVE, "6", playVideo1);
         tryGame1 = 2;
 
         //משחק 2
+        chatGame2.initChat();
         chatGame2.setChatTitle("אור בן ישי");
-        chatGame2.addVideo(Chat.Direction.RECEIVE, "6");
+        chatGame2.setProfilePhoto("");
+        chatGame2.addVideo(Chat.Direction.RECEIVE, "6", playVideo2);
         tryGame2 = 2;
 
         //משחק 3
+        chatGame3.initChat();
         chatGame3.setChatTitle("'אמה דוידוביץ");
-        chatGame3.addVideo(Chat.Direction.RECEIVE, "6");
+        chatGame3.setProfilePhoto("");
+        chatGame3.addVideo(Chat.Direction.RECEIVE, "6", playVideo3);
         tryGame3 = 2;
 
         //כיבוי כל הסטורי
@@ -56,7 +62,20 @@ public class Game1Logic : MonoBehaviour
         }
     }
 
+    private void playVideo1()
+    {
+        Debug.Log("video 1");
+    }
 
+    private void playVideo2()
+    {
+        Debug.Log("video 2");
+    }
+
+    private void playVideo3()
+    {
+        Debug.Log("video 3");
+    }
 
 
     //------------------------------------------------משחק 1 פידבקים

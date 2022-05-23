@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class Chat : MonoBehaviour
 {
     public GameObject content;
     public TextMeshProUGUI titleTxt;
+    public Image largeProfilePhoto;
     public ScrollRect scrollRect;
 
     public GameObject messageContainer;
@@ -16,41 +18,70 @@ public class Chat : MonoBehaviour
     public GameObject textMessageTemplate;
 
     private float initialContentHeight;
-    private float currentHeight;
+    private float currentHeight = 0;
+    private bool isInit = false;
+    private string profilePhoto = "chatUser";
 
-    // Start is called before the first frame update
-    void Start()
+    public void initChat()
     {
-        initialContentHeight = getHeight(content);
-        currentHeight = 0;
+        if (!isInit)
+        {
+            initialContentHeight = getHeight(content);
+            Debug.Log("Chat initialContentHeight: " + initialContentHeight);
+            isInit = true;
+        }
     }
 
     public void setChatTitle(string title)
     {
+        if (!isInit)
+        {
+            initChat();
+        }
         titleTxt.text = title;
+    }
+
+    public void setProfilePhoto(string profilPhoto)
+    {
+        this.profilePhoto = profilPhoto;
+
+        // set large profile photo
+        largeProfilePhoto.sprite = Resources.Load<Sprite>("Chat/Images/" + profilePhoto);
+
     }
 
     //public void B1()
     //{
-    //    addVideo(Direction.RECEIVE, "6");
+    //    addVideo(Direction.RECEIVE, "6", playVideo2);
     //    addPhoto(Direction.RECEIVE, "6");
     //    addTextMessage(Direction.RECEIVE, "sdfsdfs\ndsfsfsfs");
     //    addTextMessage(Direction.RECEIVE, "טקסט בלה בלה בלה גכדגלכחד דןגכדוג כדוגככ בלה בלה בלה 'יכוגדטכוןדג דגוכטוד9", 3);
-
     //}
+
     //public void B2()
     //{
-    //    addVideo(Direction.SEND, "2");
+    //    addVideo(Direction.SEND, "2", playVideo3);
     //    addPhoto(Direction.SEND, "2");
     //    addTextMessage(Direction.SEND, "טקסט בלה בלה בלה גכדגלכחד דןגכדוג כדוגככ בלה בלה בלה 'יכוגדטכוןדג דגוכטוד9", 3);
-
     //}
 
-    public void addVideo(Direction direction, string imageName)
+    //public void playVideo2()
+    //{
+    //    Debug.Log("play video 2");
+    //}
+
+    //public void playVideo3()
+    //{
+    //    Debug.Log("play video 3");
+    //}
+
+    public void addVideo(Direction direction, string imageName, UnityAction action)
     {
         GameObject video = Instantiate(videoTemplate, new Vector3(0, 0, 0), Quaternion.identity);
         video.GetComponent<Image>().sprite = Resources.Load<Sprite>("Chat/Images/" + imageName);
-        // todo: set button function
+        
+        // set button function
+        video.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(action);
 
         addMessageItem(direction, video.transform);
     }
@@ -104,6 +135,9 @@ public class Chat : MonoBehaviour
         float totalWidth = g.GetComponent<RectTransform>().rect.width;
         g.GetComponent<RectTransform>().sizeDelta = new Vector2(totalWidth, requesterHeight);
 
+        // set profile photo
+        container.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Chat/Images/" + profilePhoto);
+
         RectTransform containerRectTransform = container.GetComponent<RectTransform>();
         if (isSend)
         {
@@ -116,7 +150,6 @@ public class Chat : MonoBehaviour
             containerRectTransform.offsetMin = new Vector2(left, 0);
         } else
         {
-
             float right = totalWidth;
             right -= container.GetChild(0).GetComponent<RectTransform>().rect.width;
             right -= messageContent.GetComponent<RectTransform>().rect.width;

@@ -2447,7 +2447,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game4Logic, Assembly-CSharp
-        m_MethodName: Game2SendMessage
+        m_MethodName: sendMessageToGame2Chat
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7313,7 +7313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &724873779
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9714,7 +9714,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game4Logic, Assembly-CSharp
-        m_MethodName: Game2Input
+        m_MethodName: updateGame2Message
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9911,6 +9911,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1955780339}
         m_TargetAssemblyTypeName: navigation, Assembly-CSharp
         m_MethodName: enableBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game4Logic, Assembly-CSharp
+        m_MethodName: initGame1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11307,7 +11319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6631343987993048184, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.9997437
+      value: 0.9999972
       objectReference: {fileID: 0}
     - target: {fileID: 6631343988528398082, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11335,7 +11347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6631343988937570285, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.22504
+      value: 205.22566
       objectReference: {fileID: 0}
     - target: {fileID: 6631343989238251264, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
       propertyPath: m_Name
@@ -18957,6 +18969,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game4Logic, Assembly-CSharp
+        m_MethodName: initGame2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1923393937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19086,7 +19110,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game4Logic, Assembly-CSharp
-        m_MethodName: Game1SendMessage
+        m_MethodName: sendMessageToGame1Chat
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19493,7 +19517,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game4Logic, Assembly-CSharp
-        m_MethodName: Game1Input
+        m_MethodName: updateGame1Message
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19531,7 +19555,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
-  m_RichText: 1
+  m_RichText: 0
   m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1

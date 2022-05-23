@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &969822840469195418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2983840647736425017}
+  - component: {fileID: 3702654557318400671}
+  - component: {fileID: 2463410346971631206}
+  m_Layer: 5
+  m_Name: LargeProfileImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2983840647736425017
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969822840469195418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6631343989238251267}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1.8, y: 267.8}
+  m_SizeDelta: {x: 41.7396, y: 41.7396}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3702654557318400671
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969822840469195418}
+  m_CullTransparentMesh: 1
+--- !u!114 &2463410346971631206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969822840469195418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 77b6af42cf49c6a42aa54c70501e4847, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6631343987993048185
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +627,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 205.22507}
+  m_AnchoredPosition: {x: 0, y: 205.22502}
   m_SizeDelta: {x: 946.99994, y: 410.45}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &6631343988937570284
@@ -647,6 +722,7 @@ RectTransform:
   m_Children:
   - {fileID: 6631343988486980433}
   - {fileID: 6631343988269201921}
+  - {fileID: 2983840647736425017}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -669,6 +745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: {fileID: 6631343988937570282}
   titleTxt: {fileID: 6631343988269201920}
+  largeProfilePhoto: {fileID: 2463410346971631206}
   scrollRect: {fileID: 6631343988486980432}
   messageContainer: {fileID: 6322039260468666441, guid: 34cc70e0624a7d847bb2d43e96936abf, type: 3}
   videoTemplate: {fileID: 1004576503267460023, guid: 0c5515bb7e8421d40a2996f65807f80f, type: 3}
@@ -795,7 +872,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6631343987993048184}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99989414
+  m_Size: 0.999406
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

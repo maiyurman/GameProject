@@ -12,16 +12,13 @@ public class Game4Logic : MonoBehaviour
     public navigation sendBtnGame1;
     public navigation sendBtnGame2;
 
-
     //משתנים משחק 1
     public Chat chatGame1;
-    private int tryGame1;
     string MessageinputGame1;
     public GameObject finishgame1;
 
     //משתנים משחק 2
     public Chat chatGame2;
-    private int tryGame2;
     string MessageinputGame2;
     public GameObject finishgame2;
 
@@ -46,92 +43,58 @@ public class Game4Logic : MonoBehaviour
             loadStoryBtn.EnableStoryBtnsForLevel(MaxStage);
             Debug.Log(MaxStage);
         }
-
-
-
-        finishgame1.SetActive(false);
-        Game1Try = 0;
-        Game2Try = 0;
+        
         Game4UiManager = transform.gameObject.GetComponent<Game4UiManager>();
-
-        //משחק 1
-        chatGame1.setChatTitle("EasyStep");
-        //chatGame1.addTextMessage(Chat.Direction.RECEIVE, " שלום, מדבר מתן מחברת petSyzaE, חברה העוסקת במכירת מוצרי ספורטמהשיחה הקודמת איתך אנחנו יודעים שתתקשה להתחייב לשתף איתנו פעולה במשך שנה שלמה.אנחנו מוכנים לשנות את החוזה לתקופה של חצי שנה אך נשמח שבתמורה תחשוב על מספר שירותים נוספים שתוכל לספק עבורנו בפלטפורמה זו", 11);
-
-        //chatGame1.addTextMessage(Chat.Direction.SEND, "sdfsdf", 3);
-
-        //chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על תשובתך, נשמח לשמוע על פתרונות נוספים", 5);
-
-        //chatGame1.addTextMessage(Chat.Direction.SEND, "jytkjtku", 3);
-
-        //chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על השתתפותך, אנחנו חשבנו על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד, פרסום סרטון המלצה", 5);
-        //chatGame1.addTextMessage(Chat.Direction.RECEIVE, "petSyzaE חברת .במידה ויהיו לך פתרונות נוספים נדון עליהם בהמשך", 5);
-
-
-        //משחק 2
-        chatGame2.setChatTitle("BetterLife");
-        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "שלום, מדברת ענת מחברת efiLretteB, חברת מוצרי טכנולוגיה לשיפור אורח חיים בריא. רציתי לעדכן אותך לגבי שינויי החוזה שלנו. לצערי, אין לנו יכולת לשלם לך יותר מ-3,000 שקלים על כל העלאת פוסט של מוצרי החברה שלנו בפרופיל האישי שלך.מאחר ומאוד התרשמנו מהפרופיל שלך ומהאופן שבו אתה משווק את המוצרים שלנו, אנחנו נשמח לשמוע ממך איך אתה רוצה שנתגמל אותך במקום ? ", 12);
-
     }
 
     //------------------------------------------------משחק 1 פידבקים
 
+    public void initGame1()
+    {
+        finishgame1.SetActive(false);
+        Game1Try = 0;
+        MessageinputGame1 = "";
+        chatGame1.setChatTitle("EasyStep");
+        chatGame1.setProfilePhoto("EasyStep");
+        chatGame1.initChat();
+        chatGame1.addTextMessage(Chat.Direction.RECEIVE, " שלום, מדבר מתן מחברת petSyzaE, חברה העוסקת במכירת מוצרי ספורטמהשיחה הקודמת איתך אנחנו יודעים שתתקשה להתחייב לשתף איתנו פעולה במשך שנה שלמה.אנחנו מוכנים לשנות את החוזה לתקופה של חצי שנה אך נשמח שבתמורה תחשוב על מספר שירותים נוספים שתוכל לספק עבורנו בפלטפורמה זו", 11);
+    }
 
-    public void Game1Input(string Message)
+    public void updateGame1Message(string Message)
     {
         MessageinputGame1 = Message;
     }
 
-    public void Game1SendMessage()
+    public void sendMessageToGame1Chat()
     {
+        Debug.Log(MessageinputGame1);
         chatGame1.addTextMessage(Chat.Direction.SEND, MessageinputGame1, 3);
-        findWordGame1();
+        handleGame1Answer(MessageinputGame1);
     }
 
-    public void findWordGame1()
+    public void handleGame1Answer(string answer)
     {
-        string s = MessageinputGame1;
-        if (s.Contains("תיוג") == true || s.Contains("פרסום מוצרים") || s.Contains("פרסום סרטון המלצה"))
+        bool isCorrectAnswer = answer.Contains("תיוג") || answer.Contains("פרסום מוצרים") || answer.Contains("פרסום סרטון המלצה");
+        if (isCorrectAnswer)
         {
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "נשמע פתרון מעולה! חשבנו גם על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד ופרסום סרטון המלצה", 8);
-        //אנימציה כל הכבוד
-
-        //הגדרת שליחה אחרי 2 שניות
-        //yield return new WaitForSeconds(2);
-        seconds();
-        chatGame1.addTextMessage(Chat.Direction.RECEIVE, " חוזה מעודכן ישלח בהמשך, תודה רבה על שיתוף petSyzaE הפעולה חברת", 5);
-        //סיום משחק 1
-        Finishgame1();
-        }
-        else if(Game1Try == 0)
+            //אנימציה כל הכבוד
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, " חוזה מעודכן ישלח בהמשך, תודה רבה על שיתוף petSyzaE הפעולה חברת", 5);
+            displayFinishGame1Screen();
+        } 
+        else if (Game1Try == 0)
         {
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על תשובתך, נשמח לשמוע על פתרונות נוספים", 5);
             Game1Try = 1;
-        }
+        } 
         else
         {
-        chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על השתתפותך, אנחנו חשבנו על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד, פרסום סרטון המלצה", 5);
-        //הגדרת שליחה אחרי 2 שניות
-        //yield return new WaitForSeconds(2);
-        seconds();
-        chatGame1.addTextMessage(Chat.Direction.RECEIVE, "petSyzaE חברת .במידה ויהיו לך פתרונות נוספים נדון עליהם בהמשך", 5);
-        Finishgame1();
-
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על השתתפותך, אנחנו חשבנו על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד, פרסום סרטון המלצה", 5);
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "petSyzaE חברת .במידה ויהיו לך פתרונות נוספים נדון עליהם בהמשך", 5);
+            displayFinishGame1Screen();
         }
-
-        //chatGame1.addTextMessage(Chat.Direction.RECEIVE, " שלום, מדבר מתן מחברת petSyzaE, חברה העוסקת במכירת מוצרי ספורטמהשיחה הקודמת איתך אנחנו יודעים שתתקשה להתחייב לשתף איתנו פעולה במשך שנה שלמה.אנחנו מוכנים לשנות את החוזה לתקופה של חצי שנה אך נשמח שבתמורה תחשוב על מספר שירותים נוספים שתוכל לספק עבורנו בפלטפורמה זו", 11);
-
-        //chatGame1.addTextMessage(Chat.Direction.SEND, MessageinputGame1, 3);
-
-        //chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על תשובתך, נשמח לשמוע על פתרונות נוספים", 5);
-
-        //chatGame1.addTextMessage(Chat.Direction.SEND, MessageinputGame1, 3);
-
-        //chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על השתתפותך, אנחנו חשבנו על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד, פרסום סרטון המלצה", 5);
-        //chatGame1.addTextMessage(Chat.Direction.RECEIVE, "petSyzaE חברת .במידה ויהיו לך פתרונות נוספים נדון עליהם בהמשך", 5);
     }
-
-    public void Finishgame1()
+    public void displayFinishGame1Screen()
     {
         //ביטול כפתור שלח
         sendBtnGame1.disableBtn();
@@ -141,39 +104,39 @@ public class Game4Logic : MonoBehaviour
         finishgame1.SetActive(true);
     }
 
-
-
-
-
-
     //------------------------------------------------משחק 2 פידבקים
 
+    public void initGame2()
+    {
+        finishgame2.SetActive(false);
+        Game2Try = 0;
+        MessageinputGame2 = "";
+        chatGame2.setChatTitle("BetterLife");
+        chatGame2.setProfilePhoto("BetterLife");
+        chatGame2.initChat();
+        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "שלום, מדברת ענת מחברת efiLretteB, חברת מוצרי טכנולוגיה לשיפור אורח חיים בריא. רציתי לעדכן אותך לגבי שינויי החוזה שלנו. לצערי, אין לנו יכולת לשלם לך יותר מ-3,000 שקלים על כל העלאת פוסט של מוצרי החברה שלנו בפרופיל האישי שלך.מאחר ומאוד התרשמנו מהפרופיל שלך ומהאופן שבו אתה משווק את המוצרים שלנו, אנחנו נשמח לשמוע ממך איך אתה רוצה שנתגמל אותך במקום ? ", 13);
+    }
 
-    public void Game2Input(string Message)
+    public void updateGame2Message(string Message)
     {
         MessageinputGame2 = Message;
     }
 
-    public void Game2SendMessage()
+    public void sendMessageToGame2Chat()
     {
         chatGame2.addTextMessage(Chat.Direction.SEND, MessageinputGame2, 3);
-        findWordGame2();
+        handleGame2Answer(MessageinputGame2);
     }
 
-    public void findWordGame2()
+    public void handleGame2Answer(string answer)
     {
-        string s = MessageinputGame2;
-        if (s.Contains("מוצרים") == true || s.Contains("הנחות") || s.Contains("קופונים") || s.Contains("פרזנטור") || s.Contains("פרסום") || s.Contains("אירוע"))
+        bool isCorrectAnswer = answer.Contains("מוצרים") || answer.Contains("הנחות") || answer.Contains("קופונים") || answer.Contains("פרזנטור") || answer.Contains("פרסום") || answer.Contains("אירוע");
+        if (isCorrectAnswer)
         {
-            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "נשמע פתרון מעולה! חשבנו גם על התגמולים הבאים: יותר מוצרים מחברה שלנו בחינם, קופונים והנחות לעוקבים, הארכת חוזה לשנה כפרזנטור, פרסום התמונה שלך עם המוצר באתר שלנו וכניסה חינם לאירועים שלנו.", 8);
+            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "נשמע פתרון מעולה! חשבנו גם על התגמולים הבאים: יותר מוצרים מחברה שלנו בחינם, קופונים והנחות לעוקבים, הארכת חוזה לשנה כפרזנטור, פרסום התמונה שלך עם המוצר באתר שלנו וכניסה חינם לאירועים שלנו.", 9);
             //אנימציה כל הכבוד
-
-            //הגדרת שליחה אחרי 2 שניות
-            //yield return new WaitForSeconds(2);
-            seconds();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, " חוזה מעודכן ישלח בהמשך, תודה רבה על שיתוף efiLretteB הפעולה חברת", 5);
-            //סיום משחק 2
-            Finishgame2();
+            displayFinishGame2Screen();
         }
         else if (Game2Try == 0)
         {
@@ -182,16 +145,13 @@ public class Game4Logic : MonoBehaviour
         }
         else
         {
-            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "תודה על השתתפותך, חשבנו גם על התגמולים הבאים: יותר מוצרים מחברה שלנו בחינם, קופונים והנחות לעוקבים, הארכת חוזה לשנה כפרזנטור, פרסום התמונה שלך עם המוצר באתר שלנו וכניסה חינם לאירועים שלנו. ", 5);
-            //הגדרת שליחה אחרי 2 שניות
-            //yield return new WaitForSeconds(2);
-            seconds();
-            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "efiLretteB חברת .במידה ויהיו לך רעיונות נוספים נדון עליהם בהמשך", 5);
-            Finishgame2();
+            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "תודה על השתתפותך, חשבנו גם על התגמולים הבאים: יותר מוצרים מחברה שלנו בחינם, קופונים והנחות לעוקבים, הארכת חוזה לשנה כפרזנטור, פרסום התמונה שלך עם המוצר באתר שלנו וכניסה חינם לאירועים שלנו. ", 8);
+            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "efiLretteB חברת .במידה ויהיו לך רעיונות נוספים נדון עליהם בהמשך", 4);
+            displayFinishGame2Screen();
         }
     }
 
-    public void Finishgame2()
+    public void displayFinishGame2Screen()
     {
         //ביטול כפתור שלח
         sendBtnGame2.disableBtn();
@@ -220,5 +180,4 @@ public class Game4Logic : MonoBehaviour
         Debug.Log("Max Level" + myMaxLevel);
         loadStoryBtn.enableStoryBtn(myMaxLevel);
     }
-
 }
