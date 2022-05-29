@@ -167,6 +167,77 @@ public class Game4Logic : MonoBehaviour
         yield return new WaitForSeconds(2);
     }
 
+
+    /// <summary>
+    /// לחיצה על כפתורי התמונות בצ'אט ושליחה של תמונה אל הצ'אט
+    /// </summary>
+
+    public void tamirHappyPhoto(int mumber)
+    {
+        if (mumber == 1)
+        {
+            chatGame1.addPhoto(Chat.Direction.SEND, "tamirHappy");
+
+        }
+        else
+        {
+            chatGame2.addPhoto(Chat.Direction.SEND, "tamirHappy");
+        }
+    }
+
+    public void tamirSadPhoto(int mumber)
+    {
+        if (mumber == 1)
+        {
+            chatGame1.addPhoto(Chat.Direction.SEND, "tamirSad.png");
+
+        }
+        else
+        {
+            chatGame2.addPhoto(Chat.Direction.SEND, "tamirSad");
+        }
+    }
+
+    public void tamirDisgustPhoto(int mumber)
+    {
+        if (mumber == 1)
+        {
+            chatGame1.addPhoto(Chat.Direction.SEND, "tamirDisgust");
+
+        }
+        else
+        {
+            chatGame2.addPhoto(Chat.Direction.SEND, "tamirDisgust");
+        }
+    }
+
+    public void tamirAngryPhoto(int mumber)
+    {
+        if (mumber == 1)
+        {
+            chatGame1.addPhoto(Chat.Direction.SEND, "tamirAngry");
+
+        }
+        else
+        {
+            chatGame2.addPhoto(Chat.Direction.SEND, "tamirAngry");
+        }
+    }
+
+    public void tamirAmazedPhoto(int mumber)
+    {
+        if (mumber == 1)
+        {
+            chatGame1.addPhoto(Chat.Direction.SEND, "tamirAmazed");
+
+        }
+        else
+        {
+            chatGame2.addPhoto(Chat.Direction.SEND, "tamirAmazed");
+        }
+    }
+
+
     //בלחיצה על כפתור סיום משחק
     public void finishAllGamestory()
     {
@@ -180,4 +251,5 @@ public class Game4Logic : MonoBehaviour
         Debug.Log("Max Level" + myMaxLevel);
         loadStoryBtn.enableStoryBtn(myMaxLevel);
     }
+
 }
