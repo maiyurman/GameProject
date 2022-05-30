@@ -25,6 +25,9 @@ public class Game4Logic : MonoBehaviour
     //סטורי
     private loadStoryBtn loadStoryBtn;
 
+    //אנימציית הצלחה
+    public GameObject game4Animation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +54,7 @@ public class Game4Logic : MonoBehaviour
 
     public void initGame1()
     {
+        game4Animation.SetActive(false);
         finishgame1.SetActive(false);
         Game1Try = 0;
         MessageinputGame1 = "";
@@ -79,6 +83,7 @@ public class Game4Logic : MonoBehaviour
         {
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "נשמע פתרון מעולה! חשבנו גם על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד ופרסום סרטון המלצה", 8);
             //אנימציה כל הכבוד
+            game4Animation.SetActive(true);
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, " חוזה מעודכן ישלח בהמשך, תודה רבה על שיתוף petSyzaE הפעולה חברת", 5);
             displayFinishGame1Screen();
         } 
@@ -108,6 +113,7 @@ public class Game4Logic : MonoBehaviour
 
     public void initGame2()
     {
+        game4Animation.SetActive(false);
         finishgame2.SetActive(false);
         Game2Try = 0;
         MessageinputGame2 = "";
@@ -135,6 +141,8 @@ public class Game4Logic : MonoBehaviour
         {
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "נשמע פתרון מעולה! חשבנו גם על התגמולים הבאים: יותר מוצרים מחברה שלנו בחינם, קופונים והנחות לעוקבים, הארכת חוזה לשנה כפרזנטור, פרסום התמונה שלך עם המוצר באתר שלנו וכניסה חינם לאירועים שלנו.", 9);
             //אנימציה כל הכבוד
+            game4Animation.SetActive(true);
+
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, " חוזה מעודכן ישלח בהמשך, תודה רבה על שיתוף efiLretteB הפעולה חברת", 5);
             displayFinishGame2Screen();
         }
@@ -189,7 +197,7 @@ public class Game4Logic : MonoBehaviour
     {
         if (mumber == 1)
         {
-            chatGame1.addPhoto(Chat.Direction.SEND, "tamirSad.png");
+            chatGame1.addPhoto(Chat.Direction.SEND, "tamirSad");
 
         }
         else
