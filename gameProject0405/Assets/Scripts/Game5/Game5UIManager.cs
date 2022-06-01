@@ -19,6 +19,10 @@ public class Game5UIManager : MonoBehaviour
     public int tryNum;
     public int numRound;
     private string message;
+    public GameObject round1Animation;
+    public GameObject round2Animation;
+    public GameObject round3Animation;
+
 
     void Start()
     {
@@ -28,6 +32,10 @@ public class Game5UIManager : MonoBehaviour
         Game5DragLogic = transform.gameObject.GetComponent<Game5DragLogic>();
         feedbackwindow.SetActive(false);
         numRound = 1;
+        round1Animation.SetActive(false);
+        round2Animation.SetActive(false);
+        round3Animation.SetActive(false);
+
     }
 
     public void initround()
@@ -68,10 +76,19 @@ public class Game5UIManager : MonoBehaviour
     {
         //מעלימים את כפתור הבדיקה
         checkBtn.gameObject.transform.gameObject.SetActive(false);
-        //אנימציית נסיעה
-        message = "תשובה נכונה כל הכבוד!";
-        //פונקציה שמקפיצה חלון
-        feedbackwindowopen(message);
+        if (numRound == 1)
+        {
+            //אנימציית נסיעה
+            round1Animation.SetActive(true);
+        }
+        else if(numRound == 2)
+        {
+            round2Animation.SetActive(true);        }
+        else
+        {
+            round3Animation.SetActive(true);
+        }
+        StartCoroutine(MySeconds());
     }
 
     public void feedbackfalse()
@@ -169,7 +186,18 @@ public class Game5UIManager : MonoBehaviour
         }
 
     }
+
+    IEnumerator MySeconds()
+    {
+        Debug.Log("start time" + Time.time);
+        yield return new WaitForSeconds(3f);
+        Debug.Log("after time" + Time.time);
+        message = "תשובה נכונה כל הכבוד!";
+        //פונקציה שמקפיצה חלון
+        feedbackwindowopen(message);
+    }
+
 }
 
-   
+
 
