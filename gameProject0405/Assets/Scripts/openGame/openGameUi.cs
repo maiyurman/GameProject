@@ -8,28 +8,21 @@ using UnityEngine.UI;
 
 public class openGameUi : MonoBehaviour
 {
-    public GameObject menu;
-    public GameObject opening;
-    public GameObject about;
     public TextMeshProUGUI startTxt;
     public Image storyPic;
+    public navigation startGameBtn;
+    public Animation tamir;
 
     void Start()
     {
-        menu.SetActive(true);
-        opening.SetActive(false);
-        about.SetActive(false);
-    }
-
-    public void openGameBtn()
-    {
+        startGameBtn.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("gameNumIn", 0);
+        PlayerPrefs.SetInt("GameMax", 0);
         StartCoroutine(sentenceVideo1());
     }
 
     public void pressOpenGameBtn()
     {
-        PlayerPrefs.SetInt("gameNumIn", 0);
-        PlayerPrefs.SetInt("GameMax", 0);
         SceneManager.LoadScene("Game1");
     }
 
@@ -73,5 +66,6 @@ public class openGameUi : MonoBehaviour
         startTxt.text = "שנתחיל?";
         yield return new WaitForSeconds(4);
         startTxt.text = "";
+        startGameBtn.gameObject.SetActive(true);
     }
 }

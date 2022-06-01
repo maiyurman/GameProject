@@ -19,4 +19,9 @@ public class CloseGameLogic : MonoBehaviour
     {
         SceneManager.LoadScene("openGame");
     }
+
+    public void closeGame()
+    {
+        SceneManager.LoadScene("menu");
+    }
 }
