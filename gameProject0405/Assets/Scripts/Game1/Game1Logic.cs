@@ -12,6 +12,7 @@ public class Game1Logic : MonoBehaviour
     public GameObject finishGame1;
     public GameObject video1;
     public TextMeshProUGUI textVideo1;
+    public GameObject trueAnimation1;
 
     //משתנים משחק 2
     public Chat chatGame2;
@@ -19,6 +20,7 @@ public class Game1Logic : MonoBehaviour
     public GameObject finishGame2;
     public GameObject video2;
     public TextMeshProUGUI textVideo2;
+    public GameObject trueAnimation2;
 
 
     //משתנים משחק 3
@@ -27,6 +29,7 @@ public class Game1Logic : MonoBehaviour
     public GameObject finishGame3;
     public GameObject video3;
     public TextMeshProUGUI textVideo3;
+    public GameObject trueAnimation3;
 
 
     //סטורי
@@ -46,6 +49,7 @@ public class Game1Logic : MonoBehaviour
         tryGame1 = 2;
         video1.SetActive(false);
         textVideo1.text = "";
+        trueAnimation1.SetActive(false);
 
         //משחק 2
         chatGame2.initChat();
@@ -55,6 +59,8 @@ public class Game1Logic : MonoBehaviour
         tryGame2 = 2;
         video2.SetActive(false);
         textVideo2.text = "";
+        trueAnimation2.SetActive(false);
+
 
         //משחק 3
         chatGame3.initChat();
@@ -64,6 +70,8 @@ public class Game1Logic : MonoBehaviour
         tryGame3 = 2;
         video3.SetActive(false);
         textVideo3.text = "";
+        trueAnimation3.SetActive(false);
+
 
         //כיבוי כל הסטורי
         loadStoryBtn.disableStoryBtnAll();
@@ -213,6 +221,7 @@ public class Game1Logic : MonoBehaviour
         {
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "ניהול זמן בהחלט יכול לעזור לי להתנהל טוב יותר", 2);
             finishGame1.SetActive(true);
+            trueAnimation1.SetActive(true);
             isAnswerTrue = false;
         }
         else
@@ -270,6 +279,7 @@ public class Game1Logic : MonoBehaviour
         {
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "!נכון, לחשוב לפני שאני פועל יכול לעזור לי, תודה על העזרה", 2);
             finishGame2.SetActive(true);
+            trueAnimation2.SetActive(true);
             isAnswerTrue = false;
         }
         else
@@ -327,6 +337,7 @@ public class Game1Logic : MonoBehaviour
         {
             chatGame3.addTextMessage(Chat.Direction.RECEIVE, "נכון, יש לי נטייה כזו אני צריכה לעבוד על זה! תודה על העזרה", 2);
             finishGame3.SetActive(true);
+            trueAnimation3.SetActive(true);
             isAnswerTrue = false;
         }
         else

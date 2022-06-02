@@ -34,12 +34,16 @@ public class Game2UiManager : MonoBehaviour
     //------>סטורי כניסה למשחק
     public navigation storyOpenGame2;
 
+    //------>אנימצית סיום   
+    public GameObject finishAnimation;
+
 
     public void Start()
     {
         PlayerPrefs.SetString("Active", "false");
         PlayerPrefs.SetString("Numbers", "false");
         storyOpenGame2.transform.gameObject.SetActive(false);
+
         //פידבק
         feedbackWindow.SetActive(false);
         feedbackTxt.transform.gameObject.SetActive(false);
@@ -52,6 +56,7 @@ public class Game2UiManager : MonoBehaviour
         nextQuestionBtn4.transform.gameObject.SetActive(false);
         nextQuestionBtn5.transform.gameObject.SetActive(false);
         finishgame.transform.gameObject.SetActive(false);
+        finishAnimation.SetActive(false);
     }
 
     public void openTamarStory()
@@ -70,6 +75,7 @@ public class Game2UiManager : MonoBehaviour
     //בלחיצה על כפתור בדוק
     public void clickCheckBtn()
     {
+        finishAnimation.SetActive(false);
         feedbackTxt.transform.gameObject.SetActive(true);
         string Active = PlayerPrefs.GetString("Active");
         string Numbers = PlayerPrefs.GetString("Numbers");
@@ -93,6 +99,7 @@ public class Game2UiManager : MonoBehaviour
             nextQuestionBtn4.transform.gameObject.SetActive(true);
             nextQuestionBtn5.transform.gameObject.SetActive(true);
             finishgame.transform.gameObject.SetActive(true);
+            finishAnimation.SetActive(true);
             truefeedback.text = "כל הכבוד! פיענחתם את החוקיות!"; 
         }
     }
