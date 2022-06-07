@@ -73,7 +73,7 @@ public class Game1Logic : MonoBehaviour
 
         //משחק 3
         chatGame3.initChat();
-        chatGame3.setChatTitle("'אמה דוידוביץ");
+        chatGame3.setChatTitle("אמה דוידוביץ'");
         chatGame3.setProfilePhoto("ema");
         chatGame3.addVideo(Chat.Direction.RECEIVE, "6", playVideo3);
         tryGame3 = 2;
