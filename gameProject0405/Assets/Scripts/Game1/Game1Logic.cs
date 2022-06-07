@@ -13,6 +13,8 @@ public class Game1Logic : MonoBehaviour
     public GameObject video1;
     public TextMeshProUGUI textVideo1;
     public GameObject trueAnimation1;
+    public GameObject questions1;
+    public GameObject finishgame1;
 
     //משתנים משחק 2
     public Chat chatGame2;
@@ -21,6 +23,8 @@ public class Game1Logic : MonoBehaviour
     public GameObject video2;
     public TextMeshProUGUI textVideo2;
     public GameObject trueAnimation2;
+    public GameObject questions2;
+    public GameObject finishgame2;
 
 
     //משתנים משחק 3
@@ -30,7 +34,8 @@ public class Game1Logic : MonoBehaviour
     public GameObject video3;
     public TextMeshProUGUI textVideo3;
     public GameObject trueAnimation3;
-
+    public GameObject questions3;
+    public GameObject finishgame3;
 
     //סטורי
     private loadStoryBtn loadStoryBtn;
@@ -44,33 +49,39 @@ public class Game1Logic : MonoBehaviour
         //משחק 1
         chatGame1.initChat();
         chatGame1.setChatTitle("תמר לוי");
-        chatGame1.setProfilePhoto("");
+        chatGame1.setProfilePhoto("tamar");
         chatGame1.addVideo(Chat.Direction.RECEIVE, "6", playVideo1);
         tryGame1 = 2;
         video1.SetActive(false);
         textVideo1.text = "";
         trueAnimation1.SetActive(false);
+        questions1.SetActive(true);
+        finishgame1.SetActive(false);
 
-        //משחק 2
+    //משחק 2
         chatGame2.initChat();
         chatGame2.setChatTitle("אור בן ישי");
-        chatGame2.setProfilePhoto("");
+        chatGame2.setProfilePhoto("or");
         chatGame2.addVideo(Chat.Direction.RECEIVE, "6", playVideo2);
         tryGame2 = 2;
         video2.SetActive(false);
         textVideo2.text = "";
         trueAnimation2.SetActive(false);
+        questions2.SetActive(true);
+        finishgame2.SetActive(false);
 
 
         //משחק 3
         chatGame3.initChat();
         chatGame3.setChatTitle("'אמה דוידוביץ");
-        chatGame3.setProfilePhoto("");
+        chatGame3.setProfilePhoto("ema");
         chatGame3.addVideo(Chat.Direction.RECEIVE, "6", playVideo3);
         tryGame3 = 2;
         video3.SetActive(false);
         textVideo3.text = "";
         trueAnimation3.SetActive(false);
+        questions3.SetActive(true);
+        finishgame3.SetActive(false);
 
 
         //כיבוי כל הסטורי
@@ -191,38 +202,37 @@ public class Game1Logic : MonoBehaviour
     {
         isAnswerTrue = true;
         chatGame1.addTextMessage(Chat.Direction.SEND,"את לא מצליחה לנהל את הזמן שלך נכון", 3);
-        Game1feedbackforanswers();
+        StartCoroutine(Game1feedbackforanswers());
     }
 
     public void Game1FalseAnswer1()
     {
         chatGame1.addTextMessage(Chat.Direction.SEND, "החברים שלך לא מרוצים מההתנהגות שלך", 3);
-        Game1feedbackforanswers();
-        tryGame1Down();
+        StartCoroutine(Game1feedbackforanswers());
     }
 
     public void Game1FalseAnswer2()
     {
         chatGame1.addTextMessage(Chat.Direction.SEND, "הבוס שלך לא מתחשב בך", 3);
-        Game1feedbackforanswers();
-        tryGame1Down();
+        StartCoroutine(Game1feedbackforanswers());
     }
 
     public void Game1FalseAnswer3()
     {
         chatGame1.addTextMessage(Chat.Direction.SEND, "את לומדת בזמן העבודה", 3);
-        Game1feedbackforanswers();
-        tryGame1Down();
+        StartCoroutine(Game1feedbackforanswers());
     }
 
-    public void Game1feedbackforanswers()
+    IEnumerator Game1feedbackforanswers()
     {
+        yield return new WaitForSeconds(1);
         if (isAnswerTrue)
         {
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "ניהול זמן בהחלט יכול לעזור לי להתנהל טוב יותר", 2);
             finishGame1.SetActive(true);
             trueAnimation1.SetActive(true);
             isAnswerTrue = false;
+            finishGame1Open();
         }
         else
         {
@@ -239,7 +249,9 @@ public class Game1Logic : MonoBehaviour
                 chatGame1.addTextMessage(Chat.Direction.RECEIVE, ".אחרי שחשבתי על זה, הגעתי למסקנה שהבעיה שלי היא בכלל ניהול זמן לא נכון !צפיתי בסרטון שוב ומצאתי את המכנה המשותף אבל תודה על הרצון לעזור", 5);
                 finishGame1.SetActive(true);
                 isAnswerTrue = false;
+                finishGame1Open();
             }
+            tryGame1Down();
         }
     }
 
@@ -249,38 +261,37 @@ public class Game1Logic : MonoBehaviour
     {
         isAnswerTrue = true;
         chatGame2.addTextMessage(Chat.Direction.SEND, "אתה מתנהג בפזיזות ולא שוקל מילים", 3);
-        Game2feedbackforanswers();
+        StartCoroutine(Game2feedbackforanswers());
     }
 
     public void Game2FalseAnswer1()
     {
         chatGame2.addTextMessage(Chat.Direction.SEND, "קבעת שיעור נהיגה ארוך מידי", 3);
-        Game2feedbackforanswers();
-        tryGame2Down();
+        StartCoroutine(Game2feedbackforanswers());
     }
 
     public void Game2FalseAnswer2()
     {
         chatGame2.addTextMessage(Chat.Direction.SEND, "ההורים שלך מתנהגים בחוסר סבלנות", 3);
-        Game2feedbackforanswers();
-        tryGame2Down();
+        StartCoroutine(Game2feedbackforanswers());
     }
 
     public void Game2FalseAnswer3()
     {
         chatGame2.addTextMessage(Chat.Direction.SEND, "המורה לנהיגה לא סומך עליך", 3);
-        Game2feedbackforanswers();
-        tryGame2Down();
+        StartCoroutine(Game2feedbackforanswers());
     }
 
-    public void Game2feedbackforanswers()
+    IEnumerator Game2feedbackforanswers()
     {
+        yield return new WaitForSeconds(1);
         if (isAnswerTrue)
         {
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "!נכון, לחשוב לפני שאני פועל יכול לעזור לי, תודה על העזרה", 2);
             finishGame2.SetActive(true);
             trueAnimation2.SetActive(true);
             isAnswerTrue = false;
+            finishGame2Open();
         }
         else
         {
@@ -297,6 +308,7 @@ public class Game1Logic : MonoBehaviour
                 chatGame2.addTextMessage(Chat.Direction.RECEIVE, ".אחרי שחשבתי על זה, הגעתי למסקנה שהבעיה שלי היא שאני פזיז ולא חושב לפני שאני פועל !צפיתי בסרטון שוב ומצאתי את המכנה המשותף אבל תודה על הרצון לעזור", 5);
                 finishGame2.SetActive(true);
                 isAnswerTrue = false;
+                finishGame2Open();
             }
         }
     }
@@ -307,38 +319,37 @@ public class Game1Logic : MonoBehaviour
     {
         isAnswerTrue = true;
         chatGame3.addTextMessage(Chat.Direction.SEND, "את נהגת ביהירות בנוגע לקבלה ליחידה", 3);
-        Game3feedbackforanswers();
+        StartCoroutine(Game3feedbackforanswers());
     }
 
     public void Game3FalseAnswer1()
     {
         chatGame3.addTextMessage(Chat.Direction.SEND, "את לא מוכנה להתפשר על התפקיד", 3);
-        Game3feedbackforanswers();
-        tryGame3Down();
+        StartCoroutine(Game3feedbackforanswers());
     }
 
     public void Game3FalseAnswer2()
     {
         chatGame3.addTextMessage(Chat.Direction.SEND, "המבחנים היו קשים מידי", 3);
-        Game3feedbackforanswers();
-        tryGame3Down();
+        StartCoroutine(Game3feedbackforanswers());
     }
 
     public void Game3FalseAnswer3()
     {
         chatGame3.addTextMessage(Chat.Direction.SEND, "שכחת להתכונן למבחנים", 3);
-        Game3feedbackforanswers();
-        tryGame3Down();
+       StartCoroutine(Game3feedbackforanswers());
     }
 
-    public void Game3feedbackforanswers()
+    IEnumerator Game3feedbackforanswers()
     {
+        yield return new WaitForSeconds(1);
         if (isAnswerTrue)
         {
             chatGame3.addTextMessage(Chat.Direction.RECEIVE, "נכון, יש לי נטייה כזו אני צריכה לעבוד על זה! תודה על העזרה", 2);
             finishGame3.SetActive(true);
             trueAnimation3.SetActive(true);
             isAnswerTrue = false;
+            finishGame3Open();
         }
         else
         {
@@ -355,7 +366,10 @@ public class Game1Logic : MonoBehaviour
                 chatGame3.addTextMessage(Chat.Direction.RECEIVE, ".אחרי שחשבתי על זה, הגעתי למסקנה שהבעיה שלי היא שהייתי יהירה מידי בנוגע לקבלה ליחידה. צפיתי בסרטון שוב ומצאתי את המכנה המשותף אבל תודה על הרצון לעזור", 5);
                 finishGame3.SetActive(true);
                 isAnswerTrue = false;
+                finishGame3Open();
+
             }
+            tryGame3Down();
         }
     }
 
@@ -393,6 +407,25 @@ public class Game1Logic : MonoBehaviour
         }
         int myMaxLevel = PlayerPrefs.GetInt("GameMax");
         loadStoryBtn.enableStoryBtn(myMaxLevel);
-
     }
+
+    public void finishGame1Open()
+    {
+        questions1.SetActive(false);
+        finishgame1.SetActive(true);
+    }
+
+    public void finishGame2Open()
+    {
+        questions2.SetActive(false);
+        finishgame2.SetActive(true);
+    }
+
+    public void finishGame3Open()
+    {
+        questions3.SetActive(false);
+        finishgame3.SetActive(true);
+    }
+
+
 }
