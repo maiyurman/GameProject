@@ -28,7 +28,7 @@ public class Game5UIManager : MonoBehaviour
     {
         initround();
         tryNum = 0;
-        checkBtn.gameObject.transform.gameObject.SetActive(true);
+        checkBtn.gameObject.transform.gameObject.SetActive(false);
         Game5DragLogic = transform.gameObject.GetComponent<Game5DragLogic>();
         feedbackwindow.SetActive(false);
         numRound = 1;

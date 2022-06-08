@@ -12,7 +12,6 @@ public class Game2UiManager : MonoBehaviour
 
     //------> תפריט עליון
     public navigation messageBtn;
-    public navigation musicBtn;
     public navigation userBtn;
     public navigation placeBtn;
 
