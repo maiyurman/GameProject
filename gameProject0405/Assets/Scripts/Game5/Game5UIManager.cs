@@ -22,6 +22,7 @@ public class Game5UIManager : MonoBehaviour
     public GameObject round1Animation;
     public GameObject round2Animation;
     public GameObject round3Animation;
+    public navigation level5Btn;
 
 
     void Start()
@@ -183,6 +184,7 @@ public class Game5UIManager : MonoBehaviour
         {
             influenceFeedBack.SetActive(true);
             feedbackwindow.SetActive(false);
+            level5Btn.enableBtn();
         }
 
     }
