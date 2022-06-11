@@ -189,7 +189,8 @@ public class Game3UiManager : MonoBehaviour
         for (int i = 0; i < gameData.dropAreas.Count; i++)
         {
             Influencer currentInfluencer = gameData.getCurrentInfluencer();
-            gameData.dropAreas[i].setImage(currentInfluencer.photos[i]);
+            //gameData.dropAreas[i].setImage(currentInfluencer.photos[i]);
+            gameData.dropAreas[i].GetComponentInChildren<Image>().sprite = currentInfluencer.photos[i];
             gameData.influenceDate[i].text = currentInfluencer.dates[i];
         }
     }

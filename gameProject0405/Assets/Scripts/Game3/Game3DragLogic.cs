@@ -32,7 +32,7 @@ public class Game3DragLogic : MonoBehaviour, i_DragAndDropLogic
 
         Queue<string> productAndFriendQueue = new Queue<string>();
         productAndFriendQueue.Enqueue("אתם בצעד הראשון להבין את החוקיות");
-        productAndFriendQueue.Enqueue("!אלופים הצלחתם להבין את החוקיות תמונה של מוצר לפני חברים הכרחית ליצירת פיד מנצח");
+        productAndFriendQueue.Enqueue("!אלופים הצלחתם להבין את החוקיות תמונה של מוצר לפני ציטוט הכרחית ליצירת פיד מנצח");
         Queue<string> foodAndNatureQueue = new Queue<string>();
         foodAndNatureQueue.Enqueue("אתם בצעד הראשון להבין את החוקיות");
         foodAndNatureQueue.Enqueue("!אלופים הצלחתם להבין את החוקיות תמונה של טבע אחרי אוכל הכרחית ליצירת פיד מנצח");
