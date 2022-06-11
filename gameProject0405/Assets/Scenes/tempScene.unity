@@ -186,7 +186,6 @@ MonoBehaviour:
   helpTxt: {fileID: 1819838554}
   helpPress: 0
   messageBtn: {fileID: 0}
-  musicBtn: {fileID: 0}
   userBtn: {fileID: 0}
   placeBtn: {fileID: 0}
   feedbackWindow: {fileID: 1831823260}
