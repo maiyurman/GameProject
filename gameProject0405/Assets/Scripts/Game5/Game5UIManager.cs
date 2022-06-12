@@ -24,7 +24,11 @@ public class Game5UIManager : MonoBehaviour
     public GameObject round3Animation;
     public navigation level5Btn;
 
+    //דמות תמיר
+    public GameObject tamir;
 
+    //------>אנימציה תמיר 
+    public Animator tamirAnimator;
     void Start()
     {
         initround();
@@ -37,6 +41,18 @@ public class Game5UIManager : MonoBehaviour
         round2Animation.SetActive(false);
         round3Animation.SetActive(false);
 
+    }
+
+    public void stopTamirTalk()
+    {
+        StartCoroutine(stopTamirStartTalk());
+
+    }
+
+    IEnumerator stopTamirStartTalk()
+    {
+        yield return new WaitForSeconds(2);
+        tamirAnimator.SetBool("isTalk", false);
     }
 
     public void initround()
@@ -182,7 +198,9 @@ public class Game5UIManager : MonoBehaviour
         }
         else
         {
+            stopTamirTalk();
             influenceFeedBack.SetActive(true);
+            tamir.SetActive(true);
             feedbackwindow.SetActive(false);
             level5Btn.enableBtn();
         }

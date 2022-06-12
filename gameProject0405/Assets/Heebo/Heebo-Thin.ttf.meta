@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 114f5213db283a94fb259f9b458e2063
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Heebo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 11d8473de25c2844ba2dbb3ac3caa04d, type: 3}
+  - {fileID: 12800000, guid: d08d0316a24027142a8dfaac8f4e5e7c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

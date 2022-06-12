@@ -10,6 +10,8 @@ public class Game2UiManager : MonoBehaviour
 {
     private loadStoryBtn loadStoryBtn;
 
+    public GameObject tamir;
+
     //------> תפריט עליון
     public navigation messageBtn;
     public navigation userBtn;
@@ -36,6 +38,8 @@ public class Game2UiManager : MonoBehaviour
     //------>אנימצית סיום   
     public GameObject finishAnimation;
 
+    //------>אנימציה תמיר
+    public Animator tamirAnimator;
 
     public void Start()
     {
@@ -56,6 +60,8 @@ public class Game2UiManager : MonoBehaviour
         nextQuestionBtn5.transform.gameObject.SetActive(false);
         finishgame.transform.gameObject.SetActive(false);
         finishAnimation.SetActive(false);
+
+        tamir.SetActive(true);
     }
 
     public void openTamarStory()
@@ -101,5 +107,16 @@ public class Game2UiManager : MonoBehaviour
             finishAnimation.SetActive(true);
             truefeedback.text = "כל הכבוד! פיענחתם את החוקיות!"; 
         }
+    }
+
+    public void StopTamir()
+    {
+        StartCoroutine(stopTamirStartTalk());
+    }
+
+    IEnumerator stopTamirStartTalk()
+    {
+        yield return new WaitForSeconds(2);
+        tamirAnimator.SetBool("isTalk", false);
     }
 }

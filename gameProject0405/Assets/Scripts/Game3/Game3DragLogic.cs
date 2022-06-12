@@ -101,7 +101,7 @@ public class Game3DragLogic : MonoBehaviour, i_DragAndDropLogic
 
         if(correctAnswers == 6)
         {
-            StartCoroutine(gameData.uiManager.displayFinishGame(5,1));
+            StartCoroutine(gameData.uiManager.displayFinishGame(3,1));
         }
     }
 

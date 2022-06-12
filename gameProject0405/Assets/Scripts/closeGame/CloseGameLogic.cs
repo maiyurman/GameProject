@@ -9,6 +9,10 @@ public class CloseGameLogic : MonoBehaviour
     public navigation chat;
     public navigation user;
 
+
+    //------>אנימציה תמיר 
+    public Animator tamirAnimator;
+
     private void Start()
     {
         place.disableBtn();
@@ -23,5 +27,17 @@ public class CloseGameLogic : MonoBehaviour
     public void closeGame()
     {
         SceneManager.LoadScene("menu");
+    }
+
+    public void stopTamirTalk()
+    {
+        StartCoroutine(stopTamirStartTalk());
+
+    }
+
+    IEnumerator stopTamirStartTalk()
+    {
+        yield return new WaitForSeconds(2);
+        tamirAnimator.SetBool("isTalk", false);
     }
 }

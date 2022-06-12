@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7e9413df46cde4d46ae433700ec6efa5
+guid: 11d8473de25c2844ba2dbb3ac3caa04d
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,13 +9,9 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Assistant
+  - Heebo
   fallbackFontReferences:
-  - {fileID: 12800000, guid: dbb02a21ebe118f499b13108f22eb7ff, type: 3}
-  - {fileID: 12800000, guid: a956a8d7710eac4469a7f4b35ea5bf40, type: 3}
-  - {fileID: 12800000, guid: ac2ac188388cc674481de3be8d062cf2, type: 3}
-  - {fileID: 12800000, guid: 9a9ce8044359ddb4fa35e54c9b099a28, type: 3}
-  - {fileID: 12800000, guid: c68ad4f0c04128441852b566b12d6869, type: 3}
+  - {fileID: 12800000, guid: d08d0316a24027142a8dfaac8f4e5e7c, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

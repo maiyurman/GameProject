@@ -13,6 +13,7 @@ public class openGameUi : MonoBehaviour
     public navigation startGameBtn;
     public GameObject tamir1;
     public GameObject tamir2;
+    public Animator tamirAnimator;
 
 
     void Start()
@@ -22,6 +23,8 @@ public class openGameUi : MonoBehaviour
         PlayerPrefs.SetInt("GameMax", 0);
         StartCoroutine(sentenceVideo1());
         tamir1.SetActive(true);
+        tamir2.SetActive(true);
+        tamirAnimator.SetBool("isTalk", true);
         tamir2.SetActive(false);
     }
 
@@ -33,6 +36,7 @@ public class openGameUi : MonoBehaviour
 
     IEnumerator sentenceVideo1()
     {
+        Debug.Log("נכנסתי לפונקציה");
         storyPic.GetComponent<Image>().sprite = Resources.Load<Sprite>("openGame/opening1");
         //תמיר אליאנס
         startTxt.text = "היי חברים, שמח שהגעתם!";
@@ -73,5 +77,6 @@ public class openGameUi : MonoBehaviour
         yield return new WaitForSeconds(4);
         startTxt.text = "שנתחיל?";
         startGameBtn.gameObject.SetActive(true);
+        tamirAnimator.SetBool("isTalk", false);
     }
 }

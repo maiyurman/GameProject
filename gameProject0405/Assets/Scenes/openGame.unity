@@ -184,6 +184,7 @@ MonoBehaviour:
   startGameBtn: {fileID: 894665043}
   tamir1: {fileID: 630122242}
   tamir2: {fileID: 831671656}
+  tamirAnimator: {fileID: 831671657}
 --- !u!1 &217712935
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6298331155138974538, guid: 60b6bf847c2b56349a35ccde5f40d48d, type: 3}
       propertyPath: m_Name
-      value: tamir (1)
+      value: tamir2
       objectReference: {fileID: 0}
     - target: {fileID: 6298331155138974538, guid: 60b6bf847c2b56349a35ccde5f40d48d, type: 3}
       propertyPath: m_IsActive
@@ -631,6 +632,10 @@ PrefabInstance:
       propertyPath: pose
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6299495379733587718, guid: 60b6bf847c2b56349a35ccde5f40d48d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3c9a8d20bb872f7468d2a1469870e7a9, type: 2}
     m_RemovedComponents:
     - {fileID: 6299495379733587713, guid: 60b6bf847c2b56349a35ccde5f40d48d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 60b6bf847c2b56349a35ccde5f40d48d, type: 3}
@@ -642,6 +647,11 @@ Transform:
 --- !u!1 &831671656 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6298331155138974538, guid: 60b6bf847c2b56349a35ccde5f40d48d, type: 3}
+  m_PrefabInstance: {fileID: 699220994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &831671657 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6299495379733587718, guid: 60b6bf847c2b56349a35ccde5f40d48d, type: 3}
   m_PrefabInstance: {fileID: 699220994}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &894665038
@@ -1240,7 +1250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6298331155138974538, guid: 60b6bf847c2b56349a35ccde5f40d48d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6299495379733587713, guid: 60b6bf847c2b56349a35ccde5f40d48d, type: 3}
       propertyPath: pose
@@ -1331,7 +1341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.3, y: 26.6}
+  m_AnchoredPosition: {x: 6.300003, y: 26.6}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032585292
@@ -1356,8 +1366,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u05DC\u05DB\u05E0\u05D9\u05E1\u05D4"
   m_isRightToLeft: 1
-  m_fontAsset: {fileID: 11400000, guid: 6bbdf4b2b16f25549b987966323279b8, type: 2}
-  m_sharedMaterial: {fileID: 703383041833523855, guid: 6bbdf4b2b16f25549b987966323279b8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

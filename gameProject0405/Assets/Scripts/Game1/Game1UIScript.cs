@@ -17,6 +17,9 @@ public class Game1UIScript : MonoBehaviour
 
     public navigation nextBtn;
 
+    public Animator tamirAnimator;
+
+
     private void Start()
     {
 
@@ -35,7 +38,16 @@ public class Game1UIScript : MonoBehaviour
     public void openMessageBtn()
     {
         messageBtn.enableBtn();
+        StartCoroutine(stopTamirStartTalk());
     }
+
+
+    IEnumerator stopTamirStartTalk()
+    {
+        yield return new WaitForSeconds(2);
+        tamirAnimator.SetBool("isTalk", false);
+    }
+
 
     public void opengame1ChatBox()
     {
@@ -73,9 +85,11 @@ public class Game1UIScript : MonoBehaviour
         game3Chat.SetActive(true);
     }
 
-    public void test()
+
+    public void finishGameTamirTalk()
     {
-        Debug.Log("test");
+        StartCoroutine(stopTamirStartTalk());
     }
+
 
 }

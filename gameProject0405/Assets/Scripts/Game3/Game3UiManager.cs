@@ -61,7 +61,10 @@ public class Game3UiManager : MonoBehaviour
     public TextMeshProUGUI feedbackTxt;
 
     //------>חלון סיום משחק
-    public GameObject finishGameBk; 
+    public GameObject finishGameBk;
+
+    //------>אנימציה תמיר 
+    public Animator tamirAnimator;
 
 
     public void Start()
@@ -87,7 +90,19 @@ public class Game3UiManager : MonoBehaviour
         feedbackWindow.SetActive(false);
     }
 
-    public void UpdateUi(int NumOfPage)
+    public void stopTamirTalk(){
+    StartCoroutine(stopTamirStartTalk());
+
+    }
+
+    IEnumerator stopTamirStartTalk()
+    {
+    yield return new WaitForSeconds(3);
+    tamirAnimator.SetBool("isTalk", false);
+    }
+
+
+public void UpdateUi(int NumOfPage)
     {
         updateArrows(NumOfPage);
         updateInfluencerFeed(NumOfPage);
@@ -321,6 +336,7 @@ public class Game3UiManager : MonoBehaviour
         Game3Logic.finishGame();
         //הדלקת מסך סיום המשחק
         finishGameBk.SetActive(true);
+        StartCoroutine(stopTamirStartTalk());
     }
 
 

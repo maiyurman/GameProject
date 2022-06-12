@@ -41,6 +41,12 @@ public class Game1Logic : MonoBehaviour
     private loadStoryBtn loadStoryBtn;
     bool isAnswerTrue = false;
 
+    //אנימציות
+    public Animator orAnimator;
+    public Animator tamarAnimator;
+    public Animator emaAnimator;
+
+
     void Start()
     {
         loadStoryBtn = transform.gameObject.GetComponent<loadStoryBtn>();
@@ -50,7 +56,7 @@ public class Game1Logic : MonoBehaviour
         chatGame1.initChat();
         chatGame1.setChatTitle("תמר לוי");
         chatGame1.setProfilePhoto("tamar");
-        chatGame1.addVideo(Chat.Direction.RECEIVE, "6", playVideo1);
+        chatGame1.addVideo(Chat.Direction.RECEIVE, "tamarVideoPhotos", playVideo1);
         tryGame1 = 2;
         video1.SetActive(false);
         textVideo1.text = "";
@@ -62,7 +68,7 @@ public class Game1Logic : MonoBehaviour
         chatGame2.initChat();
         chatGame2.setChatTitle("אור בן ישי");
         chatGame2.setProfilePhoto("or");
-        chatGame2.addVideo(Chat.Direction.RECEIVE, "6", playVideo2);
+        chatGame2.addVideo(Chat.Direction.RECEIVE, "orVideoPhotos", playVideo2);
         tryGame2 = 2;
         video2.SetActive(false);
         textVideo2.text = "";
@@ -75,7 +81,7 @@ public class Game1Logic : MonoBehaviour
         chatGame3.initChat();
         chatGame3.setChatTitle("אמה דוידוביץ'");
         chatGame3.setProfilePhoto("ema");
-        chatGame3.addVideo(Chat.Direction.RECEIVE, "6", playVideo3);
+        chatGame3.addVideo(Chat.Direction.RECEIVE, "emaVideoPhotos", playVideo3);
         tryGame3 = 2;
         video3.SetActive(false);
         textVideo3.text = "";
@@ -121,77 +127,55 @@ public class Game1Logic : MonoBehaviour
 
     IEnumerator sentenceVideo1()
     {
-        yield return new WaitForSeconds(1);
+        tamarAnimator.SetBool("isTalk",true);
         textVideo1.text = "היי תמיר, שאלת בזמן האחרון למה נעלמתי והחלטתי פשוט לצלם לך סרטון ולתאר מה עבר עלי.";
         yield return new WaitForSeconds(4);
-        textVideo1.text = "";
-        yield return new WaitForSeconds(1);
         textVideo1.text = "הרגשתי בזמן האחרון שאין לי זמן לשום דבר.";
         yield return new WaitForSeconds(4);
-        textVideo1.text = "";
-        yield return new WaitForSeconds(1);
         textVideo1.text = "אני מנסה לשלב הכל חברים, עבודה, לימודים ותמיד אני מוצאת את עצמי מפספסת משהו. כולם תמיד נעלבים ממני.";
         yield return new WaitForSeconds(4);
-        textVideo1.text = "";
-        yield return new WaitForSeconds(1);
         textVideo1.text = "שום דבר לא יוצא כמו שאני רוצה.";
         yield return new WaitForSeconds(4);
-        textVideo1.text = "";
-        yield return new WaitForSeconds(1);
         textVideo1.text = "בשבוע שעבר, הבוס שלי ביקש ממני לעבוד כל השבוע והיה מבחן ביום רביעי אז מצאתי את עצמי לומדת בזמן המשמרת ואז לא התרכזתי לא בעבודה ולא בלימודים.";
         yield return new WaitForSeconds(4);
-        textVideo1.text = "";
-        yield return new WaitForSeconds(1);
         textVideo1.text = "אני לא יודעת מה לעשות.. מחכה לתגובה ממך.";
         yield return new WaitForSeconds(4);
+        tamarAnimator.SetBool("isTalk",false);
         textVideo1.text = "";
     }
 
     IEnumerator sentenceVideo2()
     {
+        orAnimator.SetBool("isTalk", true);
         yield return new WaitForSeconds(1);
         textVideo2.text = "היי אחי, השעה 11:30 ירדתי בדיוק מהאוטו של יוסי המורה שלי לנהיגה.";
         yield return new WaitForSeconds(4);
-        textVideo2.text = "";
-        yield return new WaitForSeconds(1);
         textVideo2.text = "נהגתי כמעט שעה ואפילו עליתי על הכביש המהיר! אתה לא מבין איזה גז דפקתי! ";
         yield return new WaitForSeconds(4);
-        textVideo2.text = "";
-        yield return new WaitForSeconds(1);
         textVideo2.text = "המורה לנהיגה ממש התעצבן עלי הוא אמר שאני לא יכול לעשות מה שאני רוצה.";
         yield return new WaitForSeconds(4);
-        textVideo2.text = "";
-        yield return new WaitForSeconds(1);
         textVideo2.text = "אני חייב לחשוב לפני שאני מגיב.";
         yield return new WaitForSeconds(4);
-        textVideo2.text = "";
-        yield return new WaitForSeconds(1);
         textVideo2.text = "אני לא מבין מה הוא רוצה ממני! גם כשאני רב עם ההורים שלי אני כל קודם מדבר ורק אז חושב, אני מרגיש שאני לא מצליח לעצור ולרוב זה פוגע בי ובהם.";
         yield return new WaitForSeconds(4);
-        textVideo2.text = "";
-        yield return new WaitForSeconds(1);
         textVideo2.text = "אני לא מבין מה הבעיה שלי.";
         yield return new WaitForSeconds(4);
+        orAnimator.SetBool("isTalk", false);
         textVideo2.text = "";
     }
 
     IEnumerator sentenceVideo3()
     {
-        yield return new WaitForSeconds(1);
+        emaAnimator.SetBool("isTalk", true);
         textVideo3.text = "היי תמיר, אתה לא מאמין מה קרה לי?";
         yield return new WaitForSeconds(4);
-        textVideo3.text = "";
-        yield return new WaitForSeconds(1);
         textVideo3.text = "אתה זוכר שסיפרתי לך שאני הולכת למיונים ליחידה של 8200 של חיל המודיעין ואני בדוק עוברת?";
         yield return new WaitForSeconds(4);
-        textVideo3.text = "";
-        yield return new WaitForSeconds(1);
         textVideo3.text = "מרוב שהייתי בטוחה בעצמי אפילו לא התכוננתי למבחנים וכבר סיפרתי לכולם שבטוח התקבלתי.";
         yield return new WaitForSeconds(4);
-        textVideo3.text = "";
-        yield return new WaitForSeconds(1);
         textVideo3.text = "שובצתי בכלל להיות תצפיתנית, אני לא מבינה איך זה קרה.";
         yield return new WaitForSeconds(4);
+        emaAnimator.SetBool("isTalk", false);
         textVideo3.text = "";
     }
 
@@ -407,6 +391,8 @@ public class Game1Logic : MonoBehaviour
         }
         int myMaxLevel = PlayerPrefs.GetInt("GameMax");
         loadStoryBtn.enableStoryBtn(myMaxLevel);
+
+
     }
 
     public void finishGame1Open()

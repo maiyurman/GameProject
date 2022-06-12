@@ -31,6 +31,11 @@ public class Game4Logic : MonoBehaviour
     //אנימציית הצלחה
     public GameObject game4Animation;
 
+
+    //------>אנימציה תמיר 
+    public Animator tamirAnimator;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +59,19 @@ public class Game4Logic : MonoBehaviour
         
         Game4UiManager = transform.gameObject.GetComponent<Game4UiManager>();
     }
+
+    public void stopTamirTalk()
+    {
+        StartCoroutine(stopTamirStartTalk());
+
+    }
+
+    IEnumerator stopTamirStartTalk()
+    {
+        yield return new WaitForSeconds(2);
+        tamirAnimator.SetBool("isTalk", false);
+    }
+
 
     //------------------------------------------------משחק 1 פידבקים
 
