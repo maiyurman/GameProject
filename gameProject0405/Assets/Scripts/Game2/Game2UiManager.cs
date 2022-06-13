@@ -104,10 +104,10 @@ public class Game2UiManager : MonoBehaviour
             nextQuestionBtn4.transform.gameObject.SetActive(true);
             nextQuestionBtn5.transform.gameObject.SetActive(true);
             finishgame.transform.gameObject.SetActive(true);
-            finishAnimation.SetActive(true);
             truefeedback.text = "כל הכבוד! פיענחתם את החוקיות!"; 
         }
     }
+
 
     public void StopTamir()
     {
