@@ -172,7 +172,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 20.2364, y: -40.0815}
-  m_SizeDelta: {x: 287.8491, y: 159.5163}
+  m_SizeDelta: {x: 526, y: 292.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5768015761086502351
 CanvasRenderer:
@@ -239,15 +239,15 @@ RectTransform:
   m_GameObject: {fileID: 5768015761894470984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 65.20703}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5768015761086502349}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9819, y: 21.6869}
-  m_SizeDelta: {x: 244.2802, y: 92.4591}
+  m_AnchoredPosition: {x: 6.0533957, y: 48.56282}
+  m_SizeDelta: {x: 477.9941, y: 145.6439}
   m_Pivot: {x: 0.5138592, y: 0.5608237}
 --- !u!222 &5768015761894470986
 CanvasRenderer:
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -1.500442, y: 1.4427752, z: 0, w: 2.1626854}
+  m_margin: {x: 2.8265076, y: -2.94669, z: 0, w: 11.442471}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -375,16 +375,16 @@ RectTransform:
   m_GameObject: {fileID: 5768015762085149513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.61146}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5768015761086502349}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -112.130005, y: -31.552017}
-  m_SizeDelta: {x: 18.344, y: 18.344}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -197.9, y: -53.118}
+  m_SizeDelta: {x: 40, y: 40}
+  m_Pivot: {x: 0.5000001, y: 0.5}
 --- !u!222 &5768015762085149509
 CanvasRenderer:
   m_ObjectHideFlags: 0

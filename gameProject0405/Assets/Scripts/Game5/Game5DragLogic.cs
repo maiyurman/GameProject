@@ -25,7 +25,6 @@ public class Game5DragLogic : MonoBehaviour, i_DragAndDropLogic
         string notcorrect1Name = notcorrect1.name;
         string notcorrect2Name = notcorrect2.name;
 
-
         string mydropArea = dropArea.name;
 
         //בדיקה אם יש תשובה נכונה או לא
@@ -42,15 +41,15 @@ public class Game5DragLogic : MonoBehaviour, i_DragAndDropLogic
         {
             Game5UIManager.movetoPlace(dragable, dropArea);
         }
-        else if(Game5UIManager.numRound == 3)
-        {
-            GameObject notcorrect3 = GameObject.FindWithTag("notcorrect3");
-            string notcorrect3Name = notcorrect3.name;
-            if (notcorrect3Name == mydropArea)
-            {
-                Game5UIManager.movetoPlace(dragable, dropArea);
-            }
-        }
+        //else if(Game5UIManager.numRound == 3)
+        //{
+        //    GameObject notcorrect3 = GameObject.FindWithTag("notcorrect3");
+        //    string notcorrect3Name = notcorrect3.name;
+        //    if (notcorrect3Name == mydropArea)
+        //    {
+        //        Game5UIManager.movetoPlace(dragable, dropArea);
+        //    }
+        //}
     }
 
 }

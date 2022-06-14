@@ -11,6 +11,7 @@ public class openGameUi : MonoBehaviour
     public TextMeshProUGUI startTxt;
     public Image storyPic;
     public navigation startGameBtn;
+    public GameObject bubble;
     public GameObject tamir1;
     public GameObject tamir2;
     public Animator tamirAnimator;
@@ -18,6 +19,7 @@ public class openGameUi : MonoBehaviour
 
     void Start()
     {
+        bubble.SetActive(false);
         startGameBtn.gameObject.SetActive(false);
         PlayerPrefs.SetInt("gameNumIn", 0);
         PlayerPrefs.SetInt("GameMax", 0);
@@ -76,6 +78,7 @@ public class openGameUi : MonoBehaviour
         startTxt.text = "אל תדאגו, אתם לא לבד אני איתכם לאורך כל הדרך.";
         yield return new WaitForSeconds(4);
         startTxt.text = "שנתחיל?";
+        bubble.SetActive(true);
         startGameBtn.gameObject.SetActive(true);
         tamirAnimator.SetBool("isTalk", false);
     }

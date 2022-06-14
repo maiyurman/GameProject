@@ -8,6 +8,12 @@ public class CloseGameLogic : MonoBehaviour
     public navigation place;
     public navigation chat;
     public navigation user;
+    public navigation level1;
+    public navigation level2;
+    public navigation level3;
+    public navigation level4;
+    public navigation level5;
+
 
 
     //------>אנימציה תמיר 
@@ -18,6 +24,12 @@ public class CloseGameLogic : MonoBehaviour
         place.disableBtn();
         chat.disableBtn();
         user.disableBtn();
+        level1.enableBtn();
+        level2.enableBtn();
+        level3.enableBtn();
+        level4.enableBtn();
+        level5.enableBtn();
+
     }
     public void startOverGame()
     {

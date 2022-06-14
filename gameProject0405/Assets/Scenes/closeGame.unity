@@ -221,7 +221,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 680250817}
         m_TargetAssemblyTypeName: loadStoryBtn, Assembly-CSharp
         m_MethodName: clickStory5
         m_Mode: 1
@@ -303,6 +303,11 @@ MonoBehaviour:
   place: {fileID: 1160040176}
   chat: {fileID: 2031946520}
   user: {fileID: 1789802298}
+  level1: {fileID: 294978699}
+  level2: {fileID: 1297724317}
+  level3: {fileID: 347854445}
+  level4: {fileID: 1553526496}
+  level5: {fileID: 147672}
   tamirAnimator: {fileID: 1051243158}
 --- !u!4 &56529851
 Transform:
@@ -905,7 +910,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 680250817}
         m_TargetAssemblyTypeName: loadStoryBtn, Assembly-CSharp
         m_MethodName: clickStory1
         m_Mode: 1
@@ -1238,7 +1243,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 680250817}
         m_TargetAssemblyTypeName: loadStoryBtn, Assembly-CSharp
         m_MethodName: clickStory3
         m_Mode: 1
@@ -1450,8 +1455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.960837, y: 4.9449434}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: 8.960837, y: 5.044841}
+  m_SizeDelta: {x: 26, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544174287
 MonoBehaviour:
@@ -2036,7 +2041,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -5.194687, y: 5.044841}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 26, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &969349622
 MonoBehaviour:
@@ -2253,7 +2258,8 @@ PrefabInstance:
       propertyPath: pose
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6299495379733587713, guid: 60b6bf847c2b56349a35ccde5f40d48d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 60b6bf847c2b56349a35ccde5f40d48d, type: 3}
 --- !u!95 &1051243158 stripped
 Animator:
@@ -2643,7 +2649,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 680250817}
         m_TargetAssemblyTypeName: loadStoryBtn, Assembly-CSharp
         m_MethodName: clickStory2
         m_Mode: 1
@@ -3305,8 +3311,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.333298, y: 4.815076}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: 16.333298, y: 5.044841}
+  m_SizeDelta: {x: 26, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1539858087
 MonoBehaviour:
@@ -3444,7 +3450,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 680250817}
         m_TargetAssemblyTypeName: loadStoryBtn, Assembly-CSharp
         m_MethodName: clickStory4
         m_Mode: 1
@@ -3603,8 +3609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7582026, y: 4.9049854}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: 1.7582026, y: 5.044841}
+  m_SizeDelta: {x: 26, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664944043
 MonoBehaviour:

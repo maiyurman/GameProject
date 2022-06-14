@@ -7,6 +7,8 @@ public class Game1UIScript : MonoBehaviour
 {
     private Game1Logic Game1LogicScript;
     public navigation messageBtn;
+    public navigation placeBtn;
+    public navigation userBtn;
     public GameObject openScreen;
     public GameObject game1ChatBox;
     public GameObject game1Chat;
@@ -22,7 +24,8 @@ public class Game1UIScript : MonoBehaviour
 
     private void Start()
     {
-
+        placeBtn.disableBtn();
+        userBtn.disableBtn();
         Game1LogicScript = transform.gameObject.GetComponent<Game1Logic>();
         messageBtn.disableBtn();
         openScreen.SetActive(true);
