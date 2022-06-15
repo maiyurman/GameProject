@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u05D8\u05E7\u05E1\u05D8"
   m_isRightToLeft: 1
-  m_fontAsset: {fileID: 11400000, guid: c703e6ab7031bd0428731ddb80ec8227, type: 2}
-  m_sharedMaterial: {fileID: -8734883573814025143, guid: c703e6ab7031bd0428731ddb80ec8227, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1645c3bb440406545a325034e25340ff, type: 2}
+  m_sharedMaterial: {fileID: 8257431407067992821, guid: 1645c3bb440406545a325034e25340ff, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

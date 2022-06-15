@@ -23,14 +23,24 @@ public class Game5UIManager : MonoBehaviour
     public GameObject round2Animation;
     public GameObject round3Animation;
     public navigation level5Btn;
+    public GameObject goodFeedback;
 
     //דמות תמיר
     public GameObject tamir;
 
     //------>אנימציה תמיר 
     public Animator tamirAnimator;
+    private loadStoryBtn loadStoryBtn;
+
+
     void Start()
     {
+        loadStoryBtn = transform.gameObject.GetComponent<loadStoryBtn>();
+        //כיבוי כל הסטורי
+        loadStoryBtn.disableStoryBtnAll();
+        Debug.Log(PlayerPrefs.GetInt("GameMax"));
+        //להדליק את הסטורי שרלוונטיים לשלב המקסימלי
+        int myMaxLevel = PlayerPrefs.GetInt("GameMax");
         initround();
         tryNum = 0;
         checkBtn.gameObject.transform.gameObject.SetActive(false);
@@ -40,6 +50,15 @@ public class Game5UIManager : MonoBehaviour
         round1Animation.SetActive(false);
         round2Animation.SetActive(false);
         round3Animation.SetActive(false);
+        goodFeedback.SetActive(false);
+
+        if (PlayerPrefs.GetInt("GameMax") != 0)
+        {
+            int MaxStage = PlayerPrefs.GetInt("GameMax");
+            Debug.Log(MaxStage);
+            loadStoryBtn.EnableStoryBtnsForLevel(MaxStage);
+            Debug.Log(MaxStage);
+        }
 
     }
 
@@ -134,7 +153,6 @@ public class Game5UIManager : MonoBehaviour
 
     public void feedbackfalseFinish()
     {
-        Debug.Log("תשובה לא נכונה - מתן הפידבק להמשך משחק");
         //מעלימים את כפתור הבדיקה
         checkBtn.gameObject.transform.gameObject.SetActive(false);
 
@@ -203,16 +221,30 @@ public class Game5UIManager : MonoBehaviour
             tamir.SetActive(true);
             feedbackwindow.SetActive(false);
             level5Btn.enableBtn();
+            if (PlayerPrefs.GetInt("GameMax") < 5)
+            {
+                PlayerPrefs.SetInt("GameMax", 5);
+            }
+
+            int myMaxLevel = PlayerPrefs.GetInt("GameMax");
+            Debug.Log("Max Level" + myMaxLevel);
+            loadStoryBtn.enableStoryBtn(myMaxLevel);
         }
 
     }
 
     IEnumerator MySeconds()
     {
-        Debug.Log("start time" + Time.time);
-        yield return new WaitForSeconds(3f);
-        Debug.Log("after time" + Time.time);
-        message = "תשובה נכונה כל הכבוד!";
+        if (numRound == 1)
+        {
+            yield return new WaitForSeconds(5f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(9f);
+        }
+        message = "תשובה נכונה אלופים! בחנתם את כל האפשרויות הרלוונטיות ומצאתם את האפשרות היעילה ביותר.";
+        goodFeedback.SetActive(true);
         //פונקציה שמקפיצה חלון
         feedbackwindowopen(message);
     }

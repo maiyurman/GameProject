@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Game4Logic : MonoBehaviour
 {
@@ -17,24 +19,25 @@ public class Game4Logic : MonoBehaviour
     string MessageinputGame1;
     public GameObject finishgame1;
     public GameObject questionGame1;
+    public TMP_InputField inputGame1;
 
     //משתנים משחק 2
     public Chat chatGame2;
     string MessageinputGame2;
     public GameObject finishgame2;
     public GameObject questionGame2;
-
+    public TMP_InputField inputGame2;
 
     //סטורי
     private loadStoryBtn loadStoryBtn;
 
     //אנימציית הצלחה
-    public GameObject game4Animation;
+    public GameObject game4Animation1;
+    public GameObject game4Animation2;
 
 
     //------>אנימציה תמיר 
     public Animator tamirAnimator;
-
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +59,7 @@ public class Game4Logic : MonoBehaviour
             loadStoryBtn.EnableStoryBtnsForLevel(MaxStage);
             Debug.Log(MaxStage);
         }
-        
+
         Game4UiManager = transform.gameObject.GetComponent<Game4UiManager>();
     }
 
@@ -77,14 +80,23 @@ public class Game4Logic : MonoBehaviour
 
     public void initGame1()
     {
-        game4Animation.SetActive(false);
+        game4Animation1.SetActive(false);
         finishgame1.SetActive(false);
         Game1Try = 0;
         MessageinputGame1 = "";
         chatGame1.setChatTitle("petSysaE");
         chatGame1.setProfilePhoto("EasyStep");
         chatGame1.initChat();
-        chatGame1.addTextMessage(Chat.Direction.RECEIVE, " שלום, מדבר מתן מחברת petSyzaE, חברה העוסקת במכירת מוצרי ספורטמהשיחה הקודמת איתך אנחנו יודעים שתתקשה להתחייב לשתף איתנו פעולה במשך שנה שלמה.אנחנו מוכנים לשנות את החוזה לתקופה של חצי שנה אך נשמח שבתמורה תחשוב על מספר שירותים נוספים שתוכל לספק עבורנו בפלטפורמה זו", 11);
+        chatGame1.addTextMessage(Chat.Direction.RECEIVE, " שלום, מדבר מתן מחברת petSyzaE, חברה העוסקת במכירת מוצרי ספורט.", 3);
+        StartCoroutine(sendMessageChat1());
+    }
+
+    IEnumerator sendMessageChat1()
+    {
+        yield return new WaitForSeconds(3);
+        chatGame1.addTextMessage(Chat.Direction.RECEIVE, "בהמשך לשיחתנו, אנחנו יודעים שתתקשה להתחייב לשתף איתנו פעולה במשך שנה שלמה ולכן אנחנו מוכנים לשנות את החוזה לתקופה של חצי שנה.", 5);
+        yield return new WaitForSeconds(5);
+        chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אבל נשמח שבתמורה תחשוב על מספר שירותים נוספים שתוכל לספק עבורנו בפלטפורמה זו.", 4);
     }
 
     public void updateGame1Message(string Message)
@@ -92,8 +104,21 @@ public class Game4Logic : MonoBehaviour
         MessageinputGame1 = Message;
     }
 
+    public void onvaluechaneGame1Message()
+    {
+        if (inputGame1.text == "")
+        {
+            sendBtnGame1.disableBtn();
+        }
+        else
+        {
+            sendBtnGame1.enableBtn();
+        }
+    }
+
     public void sendMessageToGame1Chat()
     {
+        inputGame1.text = "";
         Debug.Log(MessageinputGame1);
         chatGame1.addTextMessage(Chat.Direction.SEND, MessageinputGame1, 3);
         StartCoroutine(handleGame1Answer(MessageinputGame1));
@@ -106,34 +131,32 @@ public class Game4Logic : MonoBehaviour
         bool isCorrectAnswer = answer.Contains("תיוג") || answer.Contains("פרסום מוצרים") || answer.Contains("פרסום סרטון המלצה");
         if (isCorrectAnswer)
         {
-            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "נשמע פתרון מעולה! חשבנו גם על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד ופרסום סרטון המלצה", 8);
-            //אנימציה כל הכבוד
-            game4Animation.SetActive(true);
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "נשמע פתרון מעולה! חשבנו גם על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד ופרסום סרטון המלצה.", 7);
+            yield return new WaitForSeconds(2);
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "חוזה מעודכן ישלח בהמשך, תודה רבה על שיתוף הפעולה!", 4);
             yield return new WaitForSeconds(1);
+            //אנימציה כל הכבוד
+            game4Animation1.SetActive(true);
 
-            chatGame1.addTextMessage(Chat.Direction.RECEIVE, " חוזה מעודכן ישלח בהמשך, תודה רבה על שיתוף petSyzaE הפעולה חברת", 5);
             displayFinishGame1Screen();
         } 
         else if (Game1Try == 0)
         {
-            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על תשובתך, נשמח לשמוע על פתרונות נוספים", 5);
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על תשובתך, נשמח לשמוע על פתרונות נוספים.", 5);
             Game1Try = 1;
         } 
         else
         {
-            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על השתתפותך, אנחנו חשבנו על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד, פרסום סרטון המלצה", 5);
-            yield return new WaitForSeconds(1);
-            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "חברת petSyzaE.במידה ויהיו לך פתרונות נוספים נדון עליהם בהמשך", 5);
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על השתתפותך, אנחנו חשבנו על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד, פרסום סרטון המלצה.", 5);
+            yield return new WaitForSeconds(3);
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "במידה ויהיו לך פתרונות נוספים נדון עליהם בהמשך.", 5);
             displayFinishGame1Screen();
         }
     }
     public void displayFinishGame1Screen()
     {
+        sendBtnGame1.gameObject.SetActive(false);
         questionGame1.SetActive(false);
-        //ביטול כפתור שלח
-        sendBtnGame1.disableBtn();
-        //כיבוי תיבת שיחה
-
         //הפעלת כפתור לסיום הצ'אטים
         finishgame1.SetActive(true);
     }
@@ -142,23 +165,46 @@ public class Game4Logic : MonoBehaviour
 
     public void initGame2()
     {
-        game4Animation.SetActive(false);
+        game4Animation2.SetActive(false);
         finishgame2.SetActive(false);
         Game2Try = 0;
         MessageinputGame2 = "";
         chatGame2.setChatTitle("efiLretteB");
         chatGame2.setProfilePhoto("BetterLife");
         chatGame2.initChat();
-        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "שלום, מדברת ענת מחברת efiLretteB, חברת מוצרי טכנולוגיה לשיפור אורח חיים בריא. רציתי לעדכן אותך לגבי שינויי החוזה שלנו. לצערי, אין לנו יכולת לשלם לך יותר מ-3,000 שקלים על כל העלאת פוסט של מוצרי החברה שלנו בפרופיל האישי שלך.מאחר ומאוד התרשמנו מהפרופיל שלך ומהאופן שבו אתה משווק את המוצרים שלנו, אנחנו נשמח לשמוע ממך איך אתה רוצה שנתגמל אותך במקום ? ", 13);
+        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "שלום, מדברת ענת מחברת efiLretteB, חברת מוצרי טכנולוגיה לשיפור אורח חיים בריא. רציתי לעדכן אותך לגבי שינויי החוזה שלנו.", 5);
+        StartCoroutine(sendMessageChat2());
+    }
+
+    IEnumerator sendMessageChat2()
+    {
+        yield return new WaitForSeconds(3);
+        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "לצערי, אין לנו יכולת לשלם לך יותר מ-000,3 שקלים על כל העלאת פוסט של מוצרי החברה שלנו בפרופיל האישי שלך.", 5);
+        yield return new WaitForSeconds(5);
+        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "מאחר ומאוד התרשמנו מהפרופיל שלך ומהאופן שבו אתה משווק את המוצרים שלנו, אנחנו נשמח לשמוע ממך איך אתה רוצה שנתגמל אותך במקום?", 6);
     }
 
     public void updateGame2Message(string Message)
     {
         MessageinputGame2 = Message;
+
+    }
+
+    public void onvaluechaneGame2Message()
+    {
+        if (inputGame2.text == "")
+        {
+            sendBtnGame2.disableBtn();
+        }
+        else
+        {
+            sendBtnGame2.enableBtn();
+        }
     }
 
     public void sendMessageToGame2Chat()
     {
+        inputGame2.text = "";
         chatGame2.addTextMessage(Chat.Direction.SEND, MessageinputGame2, 3);
         StartCoroutine(handleGame2Answer(MessageinputGame2));
     }
@@ -171,33 +217,32 @@ public class Game4Logic : MonoBehaviour
         if (isCorrectAnswer)
         {
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "נשמע פתרון מעולה! חשבנו גם על התגמולים הבאים: יותר מוצרים מחברה שלנו בחינם, קופונים והנחות לעוקבים, הארכת חוזה לשנה כפרזנטור, פרסום התמונה שלך עם המוצר באתר שלנו וכניסה חינם לאירועים שלנו.", 9);
-            //אנימציה כל הכבוד
-            game4Animation.SetActive(true);
+            yield return new WaitForSeconds(2);
+            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "חוזה מעודכן ישלח בהמשך, תודה רבה על שיתוף הפעולה!", 5);
             yield return new WaitForSeconds(1);
-            chatGame2.addTextMessage(Chat.Direction.RECEIVE, " חוזה מעודכן ישלח בהמשך, תודה רבה על שיתוף הפעולה חברת efiLretteB", 5);
+            //אנימציה כל הכבוד
+            game4Animation2.SetActive(true);
             displayFinishGame2Screen();
         }
         else if (Game2Try == 0)
         {
-            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "תודה על תשובתך, נשמח לשמוע רעיונות נוספים לתגמולים", 5);
+            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "תודה על תשובתך, נשמח לשמוע רעיונות נוספים לתגמולים.", 5);
             Game2Try = 1;
         }
         else
         {
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "תודה על השתתפותך, חשבנו גם על התגמולים הבאים: יותר מוצרים מחברה שלנו בחינם, קופונים והנחות לעוקבים, הארכת חוזה לשנה כפרזנטור, פרסום התמונה שלך עם המוצר באתר שלנו וכניסה חינם לאירועים שלנו. ", 8);
-            yield return new WaitForSeconds(1);
-            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "efiLretteB חברת .במידה ויהיו לך רעיונות נוספים נדון עליהם בהמשך", 4);
+            yield return new WaitForSeconds(3);
+            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "במידה ויהיו לך רעיונות נוספים נדון עליהם בהמשך.", 4);
             displayFinishGame2Screen();
         }
     }
 
     public void displayFinishGame2Screen()
     {
+        sendBtnGame2.gameObject.SetActive(false);
         questionGame2.SetActive(false);
         //ביטול כפתור שלח
-        sendBtnGame2.disableBtn();
-        //כיבוי תיבת שיחה
-
         //הפעלת כפתור לסיום הצ'אטים
         finishgame2.SetActive(true);
     }
@@ -208,69 +253,93 @@ public class Game4Logic : MonoBehaviour
 
     public void tamirHappyPhoto(int mumber)
     {
-        if (mumber == 1)
-        {
-            chatGame1.addPhoto(Chat.Direction.SEND, "tamirHappy");
-
-        }
-        else
-        {
-            chatGame2.addPhoto(Chat.Direction.SEND, "tamirHappy");
-        }
+        StartCoroutine(tamirHappyPhotowaitSeconds(mumber));
     }
 
-    public void tamirSadPhoto(int mumber)
+    IEnumerator tamirHappyPhotowaitSeconds(int mumber)
     {
         if (mumber == 1)
         {
-            chatGame1.addPhoto(Chat.Direction.SEND, "tamirSad");
-
+            chatGame1.addPhoto(Chat.Direction.SEND, "Emoji happy 1");
+            yield return new WaitForSeconds(1);
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם ושאתם חלק ממשפחתנו!", 2);
         }
         else
         {
-            chatGame2.addPhoto(Chat.Direction.SEND, "tamirSad");
+            chatGame2.addPhoto(Chat.Direction.SEND, "Emoji happy 1");
+            yield return new WaitForSeconds(1);
+            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם ושאתם חלק ממשפחתנו!", 2);
         }
+
     }
 
-    public void tamirDisgustPhoto(int mumber)
+
+
+    public void tamirSadPhoto(int number)
     {
-        if (mumber == 1)
-        {
-            chatGame1.addPhoto(Chat.Direction.SEND, "tamirDisgust");
-
-        }
-        else
-        {
-            chatGame2.addPhoto(Chat.Direction.SEND, "tamirDisgust");
-        }
+        StartCoroutine(tamirSadPhotowaitSeconds(number));
     }
 
-    public void tamirAngryPhoto(int mumber)
+    IEnumerator tamirSadPhotowaitSeconds(int number)
     {
-        if (mumber == 1)
+        if (number == 1)
         {
-            chatGame1.addPhoto(Chat.Direction.SEND, "tamirAngry");
-
+            chatGame1.addPhoto(Chat.Direction.SEND, "Emoji cry 1");
+            yield return new WaitForSeconds(1);
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שככה אתם מרגישים, תמיד תוכלו ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);
         }
         else
         {
-            chatGame2.addPhoto(Chat.Direction.SEND, "tamirAngry");
+            chatGame2.addPhoto(Chat.Direction.SEND, "Emoji cry 1");
+            yield return new WaitForSeconds(1);
+            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שככה אתם מרגישים, תמיד תוכלו ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);
         }
     }
 
-    public void tamirAmazedPhoto(int mumber)
+    public void tamirDisgustPhoto(int number)
     {
-        if (mumber == 1)
-        {
-            chatGame1.addPhoto(Chat.Direction.SEND, "tamirAmazed");
 
+        StartCoroutine(tamirDisgustPhotowaitSeconds(number));
+
+    }
+
+    IEnumerator tamirDisgustPhotowaitSeconds(int number)
+    {
+        if (number == 1)
+        {
+            chatGame1.addPhoto(Chat.Direction.SEND, "Emoji like");
+            yield return new WaitForSeconds(1);
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם.", 2);
         }
         else
         {
-            chatGame2.addPhoto(Chat.Direction.SEND, "tamirAmazed");
+            chatGame2.addPhoto(Chat.Direction.SEND, "Emoji like");
+            yield return new WaitForSeconds(1);
+            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם.", 2);
         }
     }
 
+
+    public void tamirAngryPhoto(int number)
+    {
+        StartCoroutine(tamirAngryPhotowaitSeconds(number));
+    }
+
+    IEnumerator tamirAngryPhotowaitSeconds(int number)
+    {
+        if (number == 1)
+        {
+            chatGame1.addPhoto(Chat.Direction.SEND, "Emoji dislike");
+            yield return new WaitForSeconds(1);
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שזו התחושה שלכם. תוכלו להיכנס ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);
+        }
+        else
+        {
+            chatGame2.addPhoto(Chat.Direction.SEND, "Emoji dislike");
+            yield return new WaitForSeconds(1);
+            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שזו התחושה שלכם. תוכלו להיכנס ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);
+        }
+    }
 
     //בלחיצה על כפתור סיום משחק
     public void finishAllGamestory()
