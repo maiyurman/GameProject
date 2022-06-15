@@ -29,5 +29,11 @@ public class navigation : MonoBehaviour
         mybutton.enabled = false;
     }
 
+    public void notMusic()
+    {
+        mybutton.image.overrideSprite = imageOff;
+
+    }
+
 
 }

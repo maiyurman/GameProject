@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Game3Data : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Game3Data : MonoBehaviour
     private loadStoryBtn loadStoryBtn;
     public Influencer[] influencers; // [SerializeField]
     public List<DropArea> dropAreas;
-    public Text[] influenceDate;
+    public TextMeshProUGUI[] influenceDate;
     public int pageNumber = 0;
 
     public void Start()

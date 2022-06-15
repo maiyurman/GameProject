@@ -153,34 +153,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &195490034 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4520887426113145223, guid: 7b1994e25cd3fc048b266ed1d87440d4, type: 3}
-  m_PrefabInstance: {fileID: 1457833353943506901}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &195490035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7630540482006173033, guid: 7b1994e25cd3fc048b266ed1d87440d4, type: 3}
   m_PrefabInstance: {fileID: 1457833353943506901}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &195490036 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 587774082311008520, guid: 7b1994e25cd3fc048b266ed1d87440d4, type: 3}
-  m_PrefabInstance: {fileID: 1457833353943506901}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &195490038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195490034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d58a13c0eca34e4083868bd2fe6a30c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tamirAnimator: {fileID: 195490036}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,14 +514,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1034268238}
     m_Modifications:
-    - target: {fileID: 587774082311008520, guid: 7b1994e25cd3fc048b266ed1d87440d4, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6119a7852bd13c64ca9be9fa566a84ee, type: 2}
-    - target: {fileID: 587774082311008520, guid: 7b1994e25cd3fc048b266ed1d87440d4, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4520887426113145223, guid: 7b1994e25cd3fc048b266ed1d87440d4, type: 3}
       propertyPath: m_Name
       value: mai
@@ -650,14 +619,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: amit
       objectReference: {fileID: 0}
-    - target: {fileID: 8947646251615125969, guid: eb24e0777994512429c6150c0c30c4a4, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6119a7852bd13c64ca9be9fa566a84ee, type: 2}
-    - target: {fileID: 8947646251615125969, guid: eb24e0777994512429c6150c0c30c4a4, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb24e0777994512429c6150c0c30c4a4, type: 3}
 --- !u!1001 &6082768641586862663
@@ -717,29 +678,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b545454890f9914eb28e5204de89a45, type: 3}
---- !u!95 &6179092500596828579 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8947646251615125969, guid: eb24e0777994512429c6150c0c30c4a4, type: 3}
-  m_PrefabInstance: {fileID: 3021043711841314930}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6180547844712681910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8946770899883620804, guid: eb24e0777994512429c6150c0c30c4a4, type: 3}
-  m_PrefabInstance: {fileID: 3021043711841314930}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6180547844712681911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6180547844712681910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d58a13c0eca34e4083868bd2fe6a30c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tamirAnimator: {fileID: 6179092500596828579}
 --- !u!4 &6183169925462006710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8945256577090204612, guid: eb24e0777994512429c6150c0c30c4a4, type: 3}

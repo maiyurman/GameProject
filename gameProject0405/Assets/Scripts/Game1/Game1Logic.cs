@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
@@ -49,12 +50,13 @@ public class Game1Logic : MonoBehaviour
     public Animator tamarAnimator;
     public Animator emaAnimator;
 
+    public Image sound1;
 
     void Start()
     {
         loadStoryBtn = transform.gameObject.GetComponent<loadStoryBtn>();
         Game1UIScript = transform.gameObject.GetComponent<Game1UIScript>();
-
+        
         //משחק 1
         chatGame1.initChat();
         chatGame1.setChatTitle("תמר לוי");
@@ -110,12 +112,14 @@ public class Game1Logic : MonoBehaviour
 
     private void playVideo1()
     {
+        video1.SetActive(false);
         video1.SetActive(true);
         StartCoroutine(sentenceVideo1());
     }
 
     private void playVideo2()
     {
+        video2.SetActive(false);
         video2.SetActive(true);
         StartCoroutine(sentenceVideo2());
 
@@ -123,6 +127,7 @@ public class Game1Logic : MonoBehaviour
 
     private void playVideo3()
     {
+        video3.SetActive(false);
         video3.SetActive(true);
         StartCoroutine(sentenceVideo3());
 
@@ -133,27 +138,33 @@ public class Game1Logic : MonoBehaviour
 
     IEnumerator sentenceVideo1()
     {
+        stopMusic("tamarRecord");
+        FindObjectOfType<audioManger>().Play("tamarRecord");
         subtitleBK1.SetActive(true);
-        tamarAnimator.SetBool("isTalk",true);
+        tamarAnimator.SetBool("isTalk", true);
         textVideo1.text = "היי תמיר, שאלת בזמן האחרון למה נעלמתי והחלטתי פשוט לצלם לך סרטון ולתאר מה עבר עלי.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(8);
+        Debug.Log(Time.time);
         textVideo1.text = "הרגשתי בזמן האחרון שאין לי זמן לשום דבר.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(8);
+        Debug.Log(Time.time);
         textVideo1.text = "אני מנסה לשלב הכל חברים, עבודה, לימודים ותמיד אני מוצאת את עצמי מפספסת משהו. כולם תמיד נעלבים ממני.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(8);
         textVideo1.text = "שום דבר לא יוצא כמו שאני רוצה.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(8);
         textVideo1.text = "בשבוע שעבר, הבוס שלי ביקש ממני לעבוד כל השבוע והיה מבחן ביום רביעי אז מצאתי את עצמי לומדת בזמן המשמרת ואז לא התרכזתי לא בעבודה ולא בלימודים.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(8);
         textVideo1.text = "אני לא יודעת מה לעשות.. מחכה לתגובה ממך.";
-        yield return new WaitForSeconds(4);
-        tamarAnimator.SetBool("isTalk",false);
+        yield return new WaitForSeconds(8);
+        tamarAnimator.SetBool("isTalk", false);
         textVideo1.text = "";
         subtitleBK1.SetActive(false);
+        stopMusic("tamarRecord");
     }
 
     IEnumerator sentenceVideo2()
     {
+        FindObjectOfType<audioManger>().Play("orRecord");
         subtitleBK2.SetActive(true);
         orAnimator.SetBool("isTalk", true);
         yield return new WaitForSeconds(1);
@@ -172,10 +183,13 @@ public class Game1Logic : MonoBehaviour
         orAnimator.SetBool("isTalk", false);
         textVideo2.text = "";
         subtitleBK2.SetActive(false);
+        stopMusic("orRecord");
+
     }
 
     IEnumerator sentenceVideo3()
     {
+        FindObjectOfType<audioManger>().Play("emaRecord");
         subtitleBK3.SetActive(true);
         emaAnimator.SetBool("isTalk", true);
         textVideo3.text = "היי תמיר, אתה לא מאמין מה קרה לי?";
@@ -189,7 +203,41 @@ public class Game1Logic : MonoBehaviour
         emaAnimator.SetBool("isTalk", false);
         textVideo3.text = "";
         subtitleBK3.SetActive(false);
+        stopMusic("emaRecord");
+    }
 
+
+    //התחלה מחדש של סרטונים
+
+    public void startOverVideo1()
+    {
+        video1.SetActive(false);
+        video1.SetActive(true);
+        StartCoroutine(sentenceVideo1());
+    }
+
+    public void startOverVideo2()
+    {
+        video2.SetActive(false);
+        video2.SetActive(true);
+        StartCoroutine(sentenceVideo2());
+    }
+
+    public void startOverVideo3()
+    {
+        video3.SetActive(false);
+        video3.SetActive(true);
+        stopMusic("emaRecord");
+        StartCoroutine(sentenceVideo3());
+    }
+    public void ClickSoundBtn(string sound)
+    {
+        FindObjectOfType<audioManger>().click(sound, 1);
+    }
+
+    public void stopMusic(string musicName)
+    {
+        FindObjectOfType<audioManger>().StopPlaying(musicName);
     }
 
 
