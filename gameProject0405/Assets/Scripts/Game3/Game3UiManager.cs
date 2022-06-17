@@ -27,6 +27,7 @@ public class Game3UiManager : MonoBehaviour
 
     //כפתור + מאגר התמונות
     public GameObject imagesLibrary;
+    public navigation StockImagesBtn;
 
     //מאגר התמונות
     public GameObject imagesLibraryview;
@@ -41,6 +42,7 @@ public class Game3UiManager : MonoBehaviour
     //------------------------> כפתור עזרה והוראות
 
     public navigation InfluencerBtn;
+
     public GameObject windowInfo;
 
     public navigation intoBtn;
@@ -86,8 +88,12 @@ public class Game3UiManager : MonoBehaviour
         InfluencerBtn.enableBtn();
         intoBtn.enableBtn();
         helpBtn.enableBtn();
+        //כיבוי הכפתורים הלא רלוונטיים
+        messageBtn.disableBtn();
+        placeBtn.disableBtn();
         //חלון פידבק
         feedbackWindow.SetActive(false);
+        StockImages();
     }
 
     public void stopTamirTalk(){
@@ -149,11 +155,13 @@ public void UpdateUi(int NumOfPage)
         {
             imagesLibraryview.SetActive(false);
             ShowstockImages = false;
+            StockImagesBtn.disableBtn();
         }
         else
         {
             imagesLibraryview.SetActive(true);
             ShowstockImages = true;
+            StockImagesBtn.enableBtn();
         }
 
     }

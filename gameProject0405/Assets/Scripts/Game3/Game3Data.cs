@@ -37,11 +37,11 @@ public class Game3Data : MonoBehaviour
     {
         influencers = new Influencer[]
         {
-            new Influencer("אור בן ישי", 50, 700, 2500),
-            new Influencer("עדי ביטי", 3000 ,300 , 1500),
-            new Influencer("קים אור אזולאי", 1600, 500, 550),
-            new Influencer("ליאם גולן", 700, 100, 1250),
-            new Influencer("נועה בוג", 100, 250, 800),
+            new Influencer("אור בן ישי", 50, 700, 250),
+            new Influencer("עדי ביטי", 3000 ,300000, 150000),
+            new Influencer("קים אור אזולאי", 1600, 50000, 55000),
+            new Influencer("ליאם גולן", 1000, 100000, 125000),
+            new Influencer("נועה בוג", 1500, 250000, 80000),
         };
         initInfluencersPhotos();
     }

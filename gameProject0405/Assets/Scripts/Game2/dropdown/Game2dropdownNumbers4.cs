@@ -10,6 +10,10 @@ public class Game2dropdownNumbers4 : MonoBehaviour
         {
             PlayerPrefs.SetString("Numbers", "true");
         }
+        else if (valNumbers == -1)
+        {
+            PlayerPrefs.SetString("Numbers", "notValue");
+        }
         else
         {
             PlayerPrefs.SetString("Numbers", "false");

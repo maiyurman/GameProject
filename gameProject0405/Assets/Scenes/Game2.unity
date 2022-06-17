@@ -479,6 +479,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 390439925}
+        m_TargetAssemblyTypeName: Game2dropdownActive5, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1645381097}
+        m_TargetAssemblyTypeName: Game2dropdownNumbers5, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &32104320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1528,6 +1564,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Game2dropdownActive4, Assembly-CSharp
         m_MethodName: handleInputData
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2953,15 +3001,15 @@ RectTransform:
   m_GameObject: {fileID: 182587860}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2570.0757}
-  m_LocalScale: {x: 39.41409, y: 39.41409, z: 39.41409}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1535987727}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.059991, y: 47.799976}
-  m_SizeDelta: {x: 37.18, y: 23.37}
+  m_AnchoredPosition: {x: -2.79, y: 51.01}
+  m_SizeDelta: {x: 1474.3, y: 980.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &182587862
 MonoBehaviour:
@@ -5499,6 +5547,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1201964225}
+        m_TargetAssemblyTypeName: Game2dropdownActive4, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 726155802}
+        m_TargetAssemblyTypeName: Game2dropdownNumbers4, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &290961737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6714,9 +6798,9 @@ RectTransform:
   - {fileID: 581631482}
   - {fileID: 667392709}
   - {fileID: 1803685396}
+  - {fileID: 457730493}
   - {fileID: 405662604}
   - {fileID: 464982324}
-  - {fileID: 457730493}
   m_Father: {fileID: 1034268238}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7592,6 +7676,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 608113876}
+        m_TargetAssemblyTypeName: Game2dropdownActive6, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136580452}
+        m_TargetAssemblyTypeName: Game2dropdownNumbers6, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &375917176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8278,12 +8398,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 358334711}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 147.81003, y: 248.48}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchoredPosition: {x: 139.5, y: 101.4}
+  m_SizeDelta: {x: 65, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405662605
 MonoBehaviour:
@@ -8820,18 +8940,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437367064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2570.0757}
-  m_LocalScale: {x: 39.41409, y: 39.41409, z: 39.41409}
+  m_LocalPosition: {x: 0, y: 0, z: -2570.076}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1668691924}
   - {fileID: 881420561}
   m_Father: {fileID: 1535987727}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.87, y: 30.1}
-  m_SizeDelta: {x: 37.07, y: 23.83}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 526, y: 292.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &437367066
 CanvasRenderer:
@@ -9006,7 +9126,7 @@ RectTransform:
   m_Children:
   - {fileID: 1918859695}
   m_Father: {fileID: 358334711}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9398,12 +9518,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 358334711}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 148.00002, y: 248.57}
-  m_SizeDelta: {x: 80, y: 80.19}
+  m_AnchoredPosition: {x: 139.68997, y: 101.49001}
+  m_SizeDelta: {x: 65, y: 65}
   m_Pivot: {x: 0.50000006, y: 0.49999964}
 --- !u!1 &466619740
 GameObject:
@@ -11714,28 +11834,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1487277060}
+      objectReference: {fileID: 405662603}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 358334710}
+      objectReference: {fileID: 464982319}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1531261803}
+      objectReference: {fileID: 2022145753}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1295755442}
+      objectReference: {fileID: 1424187503}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -11758,11 +11878,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
+      value: displayNextSentence
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: enableBtn
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -11774,14 +11894,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: DialogueManger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: navigation, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
@@ -11790,7 +11914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -13756,6 +13880,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &744056461
 MonoBehaviour:
@@ -14345,11 +14481,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8740590599663280380, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
       propertyPath: m_fontSize
-      value: 20
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740590599663280380, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
+      propertyPath: m_margin.x
+      value: -5.451256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740590599663280380, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
+      propertyPath: m_margin.z
+      value: -4.495201
       objectReference: {fileID: 0}
     - target: {fileID: 8740590599663280380, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
       propertyPath: m_fontSizeBase
-      value: 20
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8740590599663280381, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -14369,7 +14513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8740590599772190449, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8740590599772190449, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -14483,11 +14627,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8740590600753826324, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
       propertyPath: m_fontSize
-      value: 20
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740590600753826324, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
+      propertyPath: m_margin.w
+      value: -2.6540108
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740590600753826324, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
+      propertyPath: m_margin.x
+      value: -5.2072678
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740590600753826324, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
+      propertyPath: m_margin.y
+      value: 21.427792
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740590600753826324, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
+      propertyPath: m_margin.z
+      value: -4.4951553
       objectReference: {fileID: 0}
     - target: {fileID: 8740590600753826324, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
       propertyPath: m_fontSizeBase
-      value: 20
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8740590600753826325, guid: a9e8eceb164a9024bbf0319942f74ac1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -15610,15 +15770,15 @@ RectTransform:
   m_GameObject: {fileID: 881420560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 65.20703}
-  m_LocalScale: {x: 0.025371639, y: 0.025371639, z: 0.025371639}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 437367065}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.62, y: 4}
-  m_SizeDelta: {x: 307, y: 135.53}
+  m_AnchoredPosition: {x: 150, y: 141}
+  m_SizeDelta: {x: 450.59, y: 140.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &881420562
 MonoBehaviour:
@@ -15640,11 +15800,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u05D0\u05DC\u05D5\u05E4\u05D9\u05DD! \u05EA\u05D5\u05D3\u05D4 \u05E2\u05DC
+  m_text: "\u05D0\u05DC\u05D5\u05E4\u05D9\u05DD! \n\u05EA\u05D5\u05D3\u05D4 \u05E2\u05DC
     \u05D4\u05E2\u05D6\u05E8\u05D4, \u05D0\u05E0\u05D9 \u05D1\u05D8\u05D5\u05D7 \u05E9\u05EA\u05DE\u05E8
-    \u05EA\u05E2\u05D1\u05D5\u05E8 \u05D0\u05EA \u05D4\u05DE\u05D1\u05D7\u05DF. \u05DC\u05D7\u05E6\u05D5
+    \u05EA\u05E2\u05D1\u05D5\u05E8 \u05D0\u05EA \u05D4\u05DE\u05D1\u05D7\u05DF. \n\u05DC\u05D7\u05E6\u05D5
     \u05E2\u05DC \u05D4\u05E1\u05D8\u05D5\u05E8\u05D9 \u05DB\u05D3\u05D9 \u05DC\u05D2\u05DC\u05D5\u05EA
-    \u05DE\u05D4\u05D5 \u05D4\u05E9\u05DC\u05D1 \u05E9\u05E2\u05D1\u05E8\u05EA\u05DD,"
+    \u05DE\u05D4\u05D5 \u05D4\u05E9\u05DC\u05D1 \u05E9\u05E2\u05D1\u05E8\u05EA\u05DD."
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: 1645c3bb440406545a325034e25340ff, type: 2}
   m_sharedMaterial: {fileID: 8257431407067992821, guid: 1645c3bb440406545a325034e25340ff, type: 2}
@@ -15707,7 +15867,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -1.500442, y: 1.4427752, z: 0, w: 2.1626854}
+  m_margin: {x: -1.500442, y: 32.362595, z: -22.080002, w: 2.1626854}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -16495,6 +16655,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Game2dropdownNumbers3, Assembly-CSharp
         m_MethodName: handleInputData
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -18036,6 +18208,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 431540369}
+        m_TargetAssemblyTypeName: Game2dropdownActive2, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: -1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1532875390}
+        m_TargetAssemblyTypeName: Game2dropdownNumbers2, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1021018332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18304,9 +18512,9 @@ RectTransform:
   - {fileID: 1976813421}
   - {fileID: 700704652}
   - {fileID: 1368636715}
+  - {fileID: 1474210909}
   - {fileID: 1535987727}
   - {fileID: 1508277866}
-  - {fileID: 1474210909}
   - {fileID: 358334711}
   - {fileID: 382713722}
   - {fileID: 1831823261}
@@ -19489,7 +19697,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5768015762085149510, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
   m_PrefabInstance: {fileID: 630428913}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1424187503}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2db2cd89bdcd02b4eac6dc784f9aacb9, type: 3}
@@ -20536,6 +20744,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1157632513
 MonoBehaviour:
@@ -21367,6 +21587,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1186351105
 MonoBehaviour:
@@ -21512,6 +21744,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Game2dropdownNumbers1, Assembly-CSharp
         m_MethodName: handleInputData
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -22255,6 +22499,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1210717696
 MonoBehaviour:
@@ -22400,6 +22656,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Game2dropdownNumbers2, Assembly-CSharp
         m_MethodName: handleInputData
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -22563,7 +22831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7efe5e5d4314fd541b2aa7e91d8ed336, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9de95f015ca897c40aafd6f7723d712f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25308,6 +25576,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1996331905}
+        m_TargetAssemblyTypeName: Game2dropdownActive3, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1145218509}
+        m_TargetAssemblyTypeName: Game2dropdownNumbers3, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1420118168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25576,6 +25880,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422546978}
   m_CullTransparentMesh: 1
+--- !u!1 &1424187503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5768015762085149513, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
+  m_PrefabInstance: {fileID: 630428913}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1424272412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25970,6 +26279,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1575345116}
+        m_TargetAssemblyTypeName: Game2dropdownActive1, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1432049267}
+        m_TargetAssemblyTypeName: Game2dropdownNumbers1, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1448263396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26320,6 +26665,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Game2dropdownActive3, Assembly-CSharp
         m_MethodName: handleInputData
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27123,7 +27480,7 @@ RectTransform:
   m_Children:
   - {fileID: 842184353}
   m_Father: {fileID: 1034268238}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -27677,7 +28034,7 @@ RectTransform:
   - {fileID: 182587861}
   - {fileID: 437367065}
   m_Father: {fileID: 1034268238}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -29602,7 +29959,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668691923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 437367065}
@@ -29610,8 +29967,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24.82, y: -8.25}
-  m_SizeDelta: {x: 9.628, y: 5.511}
+  m_AnchoredPosition: {x: 429, y: -47.918}
+  m_SizeDelta: {x: 526, y: 292.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668691925
 MonoBehaviour:
@@ -32541,6 +32898,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1898636080
 MonoBehaviour:
@@ -33041,6 +33410,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1948807515
 MonoBehaviour:
@@ -33362,7 +33743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u05EA\u05E9\u05D5\u05D1\u05D4 \u05E0\u05DB\u05D5\u05E0\u05D4 \u05D7\u05DC\u05E7\u05D9\u05EA"
+  m_text: 
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: ab66bb3a5fe44f74f819c971202d9e7c, type: 2}
   m_sharedMaterial: {fileID: -4930612811369844878, guid: ab66bb3a5fe44f74f819c971202d9e7c, type: 2}
@@ -34718,6 +35099,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008783820}
   m_CullTransparentMesh: 1
+--- !u!114 &2022145753 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2149119030052066834, guid: bc228c58f1f7e6744bdb51a7bceb06ef, type: 3}
+  m_PrefabInstance: {fileID: 2149119031734955432}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2693f0c1e1f37b4b80eba0cbf108cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2027569268
 GameObject:
   m_ObjectHideFlags: 0
@@ -36606,6 +36998,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Game2dropdownActive2, Assembly-CSharp
         m_MethodName: handleInputData
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56529850}
+        m_TargetAssemblyTypeName: Game2UiManager, Assembly-CSharp
+        m_MethodName: checkDropDownChanges
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

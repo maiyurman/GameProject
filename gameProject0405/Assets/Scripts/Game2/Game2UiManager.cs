@@ -136,6 +136,22 @@ public class Game2UiManager : MonoBehaviour
         }
     }
 
+    public void checkDropDownChanges()
+    {
+            string Active = PlayerPrefs.GetString("Active");
+            string Numbers = PlayerPrefs.GetString("Numbers");
+
+        if (Numbers == "notValue" || Active == "notValue")
+            {
+                cheakBtn.disableBtn();
+            }
+            else
+            {
+                cheakBtn.enableBtn();
+
+        }
+    }
+
 
     public void StopTamir()
     {

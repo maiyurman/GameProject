@@ -10,6 +10,10 @@ public class Game2dropdownActive5 : MonoBehaviour
         {
             PlayerPrefs.SetString("Active", "true");
         }
+        else if (valActive == -1)
+        {
+            PlayerPrefs.SetString("Active", "notValue");
+        }
         else
         {
             PlayerPrefs.SetString("Active", "false");
