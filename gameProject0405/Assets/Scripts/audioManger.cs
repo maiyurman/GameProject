@@ -23,7 +23,6 @@ public class audioManger : MonoBehaviour
             return;
         }
 
-        //DontDestroyOnLoad(gameObject);
 
         foreach(sound s in sounds)
         {

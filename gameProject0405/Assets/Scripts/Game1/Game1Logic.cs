@@ -51,6 +51,9 @@ public class Game1Logic : MonoBehaviour
     public Animator emaAnimator;
 
     public Image sound1;
+    public Image sound2;
+    public Image sound3;
+
 
     void Start()
     {
@@ -164,26 +167,30 @@ public class Game1Logic : MonoBehaviour
 
     IEnumerator sentenceVideo2()
     {
-        FindObjectOfType<audioManger>().Play("orRecord");
         subtitleBK2.SetActive(true);
         orAnimator.SetBool("isTalk", true);
-        yield return new WaitForSeconds(1);
+        FindObjectOfType<audioManger>().Play("orRecord");
         textVideo2.text = "היי אחי, השעה 03:11 ירדתי בדיוק מהאוטו של יוסי המורה שלי לנהיגה.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5.5f);
         textVideo2.text = "נהגתי כמעט שעה ואפילו עליתי על הכביש המהיר! אתה לא מבין איזה גז דפקתי! ";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5.5f);
         textVideo2.text = "המורה לנהיגה ממש התעצבן עלי הוא אמר שאני לא יכול לעשות מה שאני רוצה.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5.5f);
         textVideo2.text = "אני חייב לחשוב לפני שאני מגיב.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5.5f);
         textVideo2.text = "אני לא מבין מה הוא רוצה ממני! גם כשאני רב עם ההורים שלי אני כל קודם מדבר ורק אז חושב, אני מרגיש שאני לא מצליח לעצור ולרוב זה פוגע בי ובהם.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5.5f);
         textVideo2.text = "אני לא מבין מה הבעיה שלי.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5.5f);
         orAnimator.SetBool("isTalk", false);
         textVideo2.text = "";
         subtitleBK2.SetActive(false);
         stopMusic("orRecord");
+    }
+
+    public void sentence2Or()
+    {
+        textVideo2.text = "נהגתי כמעט שעה ואפילו עליתי על הכביש המהיר! אתה לא מבין איזה גז דפקתי! ";
 
     }
 
@@ -201,7 +208,6 @@ public class Game1Logic : MonoBehaviour
         textVideo3.text = "שובצתי בכלל להיות תצפיתנית, אני לא מבינה איך זה קרה.";
         yield return new WaitForSeconds(4);
         emaAnimator.SetBool("isTalk", false);
-        textVideo3.text = "";
         subtitleBK3.SetActive(false);
         stopMusic("emaRecord");
     }
