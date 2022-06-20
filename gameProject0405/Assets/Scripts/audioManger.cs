@@ -52,12 +52,13 @@ public class audioManger : MonoBehaviour
         s.source.Stop();
     }
 
-    public void click(string sound, int numvolume)
+    public void click(string sound)
     {
+        Debug.Log("לחצתי על הכפתור");
         sound s = Array.Find(sounds, item => item.name == sound);
-        if(s.source.volume == 0)
+        if (s.source.volume == 0)
         {
-            s.source.volume = numvolume;
+            s.source.volume = 1;
             if (sound == "tamarRecord")
             {
                 mybutton1.enableBtn();

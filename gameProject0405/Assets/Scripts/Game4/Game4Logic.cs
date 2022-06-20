@@ -14,6 +14,10 @@ public class Game4Logic : MonoBehaviour
     public navigation sendBtnGame1;
     public navigation sendBtnGame2;
 
+    public navigation placeBtn;
+    public navigation userBtn;
+    public navigation MessageBtn;
+
     //משתנים משחק 1
     public Chat chatGame1;
     string MessageinputGame1;
@@ -59,6 +63,9 @@ public class Game4Logic : MonoBehaviour
             loadStoryBtn.EnableStoryBtnsForLevel(MaxStage);
             Debug.Log(MaxStage);
         }
+        placeBtn.disableBtn();
+        userBtn.disableBtn();
+        MessageBtn.disableBtn();
 
         Game4UiManager = transform.gameObject.GetComponent<Game4UiManager>();
     }
@@ -172,14 +179,14 @@ public class Game4Logic : MonoBehaviour
         chatGame2.setChatTitle("efiLretteB");
         chatGame2.setProfilePhoto("BetterLife");
         chatGame2.initChat();
-        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "שלום, מדברת ענת מחברת efiLretteB, חברת מוצרי טכנולוגיה לשיפור אורח חיים בריא. רציתי לעדכן אותך לגבי שינויי החוזה שלנו.", 5);
+        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "שלום, מדברת ענת מחברת efiLretteB, חברת מוצרי טכנולוגיה לשיפור אורח חיים בריא. רציתי לעדכן אותך לגבי שינויי החוזה שלנו.", 6);
         StartCoroutine(sendMessageChat2());
     }
 
     IEnumerator sendMessageChat2()
     {
         yield return new WaitForSeconds(3);
-        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "לצערי, אין לנו יכולת לשלם לך יותר מ-000,3 שקלים על כל העלאת פוסט של מוצרי החברה שלנו בפרופיל האישי שלך.", 5);
+        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "לצערי, אין לנו יכולת לשלם לך יותר מ-000,3 שקלים על כל העלאת פוסט של מוצרי החברה שלנו בפרופיל האישי שלך.", 6);
         yield return new WaitForSeconds(5);
         chatGame2.addTextMessage(Chat.Direction.RECEIVE, "מאחר ומאוד התרשמנו מהפרופיל שלך ומהאופן שבו אתה משווק את המוצרים שלנו, אנחנו נשמח לשמוע ממך איך אתה רוצה שנתגמל אותך במקום?", 6);
     }

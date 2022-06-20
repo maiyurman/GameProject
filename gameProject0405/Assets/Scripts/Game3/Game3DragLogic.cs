@@ -31,15 +31,15 @@ public class Game3DragLogic : MonoBehaviour, i_DragAndDropLogic
         availablePlaces.Add("food", new HashSet<int>() { 0, 1, 2, 3, 4, 5 });
 
         Queue<string> productAndFriendQueue = new Queue<string>();
-        productAndFriendQueue.Enqueue("אתם בצעד הראשון להבין את החוקיות");
-        productAndFriendQueue.Enqueue("!אלופים הצלחתם להבין את החוקיות תמונה של מוצר לפני ציטוט הכרחית ליצירת פיד מנצח");
+        productAndFriendQueue.Enqueue("אתם בצעד הראשון להבין את החוקיות הראשונה");
+        productAndFriendQueue.Enqueue("אלופים הצלחתם להבין את החוקיות תמונה של מוצר אחרי ציטוט הכרחית ליצירת פיד מנצח!");
         Queue<string> foodAndNatureQueue = new Queue<string>();
-        foodAndNatureQueue.Enqueue("אתם בצעד הראשון להבין את החוקיות");
-        foodAndNatureQueue.Enqueue("!אלופים הצלחתם להבין את החוקיות תמונה של טבע אחרי אוכל הכרחית ליצירת פיד מנצח");
+        foodAndNatureQueue.Enqueue("אתם בצעד הראשון להבין את החוקיות השניה");
+        foodAndNatureQueue.Enqueue("אלופים הצלחתם להבין את החוקיות תמונה של טבע אחרי אוכל הכרחית ליצירת פיד מנצח!");
         Queue<string> animalQueue = new Queue<string>();
-        animalQueue.Enqueue("!אלופים הצלחתם להבין את החוקיות תמונה עם חיית מחמד הכרחית ליצירת פיד מנצח");
+        animalQueue.Enqueue("אלופים הצלחתם להבין את החוקיות תמונה עם חיית מחמד הכרחית ליצירת פיד מנצח!");
         Queue<string> sunglassesQueue = new Queue<string>();
-        sunglassesQueue.Enqueue("!אלופים הצלחתם להבין את החוקיות תמונה עם משקפי שמש חייבת להיות בפיד העליון כדי ליצור פיד מנצח");
+        sunglassesQueue.Enqueue("אלופים הצלחתם להבין את החוקיות תמונה עם משקפי שמש חייבת להיות בפיד העליון כדי ליצור פיד מנצח!");
 
         nextFeedback.Add("product", productAndFriendQueue);
         nextFeedback.Add("friend", productAndFriendQueue);

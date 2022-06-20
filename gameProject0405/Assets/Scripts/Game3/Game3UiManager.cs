@@ -68,6 +68,7 @@ public class Game3UiManager : MonoBehaviour
     //------>אנימציה תמיר 
     public Animator tamirAnimator;
 
+    public GameObject animationFinish;
 
     public void Start()
     {
@@ -94,6 +95,8 @@ public class Game3UiManager : MonoBehaviour
         //חלון פידבק
         feedbackWindow.SetActive(false);
         StockImages();
+
+        animationFinish.SetActive(false);
     }
 
     public void stopTamirTalk(){
@@ -242,7 +245,7 @@ public void UpdateUi(int NumOfPage)
     //פתיחת הוראות
     public void infoText()
     {
-        infoTXt.text = "!עליכם להסתכל בפרופילים של משפיענים ולגלות את ארבעת החוקים שבאמצעותם תעזרו לאור לייצר פיד מנצח";
+        infoTXt.text = "עליכם להסתכל בפרופילים של משפיענים ולגלות את ארבעת החוקים שבאמצעותם תעזרו לאור לייצר פיד מנצח!";
         helpTxt.text = "";
         intoBtn.transform.gameObject.SetActive(false);
         helpBtn.transform.gameObject.SetActive(false);
@@ -337,8 +340,8 @@ public void UpdateUi(int NumOfPage)
             yield return new WaitForSeconds(numbersec / 100);
             followNumber.text = Reverse(i) + " עוקבים";
         }
-
-        yield return new WaitForSeconds(secs/2);
+        animationFinish.SetActive(true);
+        yield return new WaitForSeconds(4);
 
         //הפעלת סטורי
         Game3Logic.finishGame();

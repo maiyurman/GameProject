@@ -115,6 +115,7 @@ public class Game1Logic : MonoBehaviour
 
     private void playVideo1()
     {
+        StopAllCoroutines();
         video1.SetActive(false);
         video1.SetActive(true);
         StartCoroutine(sentenceVideo1());
@@ -122,6 +123,7 @@ public class Game1Logic : MonoBehaviour
 
     private void playVideo2()
     {
+        StopAllCoroutines();
         video2.SetActive(false);
         video2.SetActive(true);
         StartCoroutine(sentenceVideo2());
@@ -130,6 +132,7 @@ public class Game1Logic : MonoBehaviour
 
     private void playVideo3()
     {
+        StopAllCoroutines();
         video3.SetActive(false);
         video3.SetActive(true);
         StartCoroutine(sentenceVideo3());
@@ -141,24 +144,23 @@ public class Game1Logic : MonoBehaviour
 
     IEnumerator sentenceVideo1()
     {
-        stopMusic("tamarRecord");
+        tamarAnimator.SetBool("isTalk", false);
         FindObjectOfType<audioManger>().Play("tamarRecord");
+        yield return new WaitForSeconds(0.5f);
         subtitleBK1.SetActive(true);
-        tamarAnimator.SetBool("isTalk", true);
         textVideo1.text = "היי תמיר, שאלת בזמן האחרון למה נעלמתי והחלטתי פשוט לצלם לך סרטון ולתאר מה עבר עלי.";
-        yield return new WaitForSeconds(8);
-        Debug.Log(Time.time);
+        tamarAnimator.SetBool("isTalk", true);
+        yield return new WaitForSeconds(7.5f);
         textVideo1.text = "הרגשתי בזמן האחרון שאין לי זמן לשום דבר.";
-        yield return new WaitForSeconds(8);
-        Debug.Log(Time.time);
+        yield return new WaitForSeconds(3.3f);
         textVideo1.text = "אני מנסה לשלב הכל חברים, עבודה, לימודים ותמיד אני מוצאת את עצמי מפספסת משהו. כולם תמיד נעלבים ממני.";
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(8f);
         textVideo1.text = "שום דבר לא יוצא כמו שאני רוצה.";
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(2.5f);
         textVideo1.text = "בשבוע שעבר, הבוס שלי ביקש ממני לעבוד כל השבוע והיה מבחן ביום רביעי אז מצאתי את עצמי לומדת בזמן המשמרת ואז לא התרכזתי לא בעבודה ולא בלימודים.";
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(9.5f);
         textVideo1.text = "אני לא יודעת מה לעשות.. מחכה לתגובה ממך.";
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(3f);
         tamarAnimator.SetBool("isTalk", false);
         textVideo1.text = "";
         subtitleBK1.SetActive(false);
@@ -171,27 +173,21 @@ public class Game1Logic : MonoBehaviour
         orAnimator.SetBool("isTalk", true);
         FindObjectOfType<audioManger>().Play("orRecord");
         textVideo2.text = "היי אחי, השעה 03:11 ירדתי בדיוק מהאוטו של יוסי המורה שלי לנהיגה.";
-        yield return new WaitForSeconds(5.5f);
+        yield return new WaitForSeconds(5f);
         textVideo2.text = "נהגתי כמעט שעה ואפילו עליתי על הכביש המהיר! אתה לא מבין איזה גז דפקתי! ";
-        yield return new WaitForSeconds(5.5f);
+        yield return new WaitForSeconds(6f);
         textVideo2.text = "המורה לנהיגה ממש התעצבן עלי הוא אמר שאני לא יכול לעשות מה שאני רוצה.";
-        yield return new WaitForSeconds(5.5f);
+        yield return new WaitForSeconds(6f);
         textVideo2.text = "אני חייב לחשוב לפני שאני מגיב.";
-        yield return new WaitForSeconds(5.5f);
+        yield return new WaitForSeconds(2.5f);
         textVideo2.text = "אני לא מבין מה הוא רוצה ממני! גם כשאני רב עם ההורים שלי אני כל קודם מדבר ורק אז חושב, אני מרגיש שאני לא מצליח לעצור ולרוב זה פוגע בי ובהם.";
-        yield return new WaitForSeconds(5.5f);
-        textVideo2.text = "אני לא מבין מה הבעיה שלי.";
-        yield return new WaitForSeconds(5.5f);
+        yield return new WaitForSeconds(9f);
         orAnimator.SetBool("isTalk", false);
+        textVideo2.text = "אני לא מבין מה הבעיה שלי.";
+        yield return new WaitForSeconds(2f);
         textVideo2.text = "";
         subtitleBK2.SetActive(false);
         stopMusic("orRecord");
-    }
-
-    public void sentence2Or()
-    {
-        textVideo2.text = "נהגתי כמעט שעה ואפילו עליתי על הכביש המהיר! אתה לא מבין איזה גז דפקתי! ";
-
     }
 
     IEnumerator sentenceVideo3()
@@ -200,14 +196,15 @@ public class Game1Logic : MonoBehaviour
         subtitleBK3.SetActive(true);
         emaAnimator.SetBool("isTalk", true);
         textVideo3.text = "היי תמיר, אתה לא מאמין מה קרה לי?";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5.5f);
         textVideo3.text = "אתה זוכר שסיפרתי לך שאני הולכת למיונים ליחידה של 0028 של חיל המודיעין ואני בדוק עוברת?";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(7.5f);
         textVideo3.text = "מרוב שהייתי בטוחה בעצמי אפילו לא התכוננתי למבחנים וכבר סיפרתי לכולם שבטוח התקבלתי.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(7f);
         textVideo3.text = "שובצתי בכלל להיות תצפיתנית, אני לא מבינה איך זה קרה.";
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5f);
         emaAnimator.SetBool("isTalk", false);
+        textVideo3.text = "";
         subtitleBK3.SetActive(false);
         stopMusic("emaRecord");
     }
@@ -217,6 +214,7 @@ public class Game1Logic : MonoBehaviour
 
     public void startOverVideo1()
     {
+        StopAllCoroutines();
         video1.SetActive(false);
         video1.SetActive(true);
         StartCoroutine(sentenceVideo1());
@@ -224,6 +222,7 @@ public class Game1Logic : MonoBehaviour
 
     public void startOverVideo2()
     {
+        StopAllCoroutines();
         video2.SetActive(false);
         video2.SetActive(true);
         StartCoroutine(sentenceVideo2());
@@ -231,18 +230,19 @@ public class Game1Logic : MonoBehaviour
 
     public void startOverVideo3()
     {
+        StopAllCoroutines();
         video3.SetActive(false);
         video3.SetActive(true);
-        stopMusic("emaRecord");
         StartCoroutine(sentenceVideo3());
     }
     public void ClickSoundBtn(string sound)
     {
-        FindObjectOfType<audioManger>().click(sound, 1);
+        FindObjectOfType<audioManger>().click(sound);
     }
 
     public void stopMusic(string musicName)
     {
+        StopAllCoroutines();
         FindObjectOfType<audioManger>().StopPlaying(musicName);
     }
 
@@ -279,7 +279,7 @@ public class Game1Logic : MonoBehaviour
         yield return new WaitForSeconds(1);
         if (isAnswerTrue)
         {
-            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "ניהול זמן בהחלט יכול לעזור לי להתנהל טוב יותר.", 2);
+            chatGame1.addTextMessage(Chat.Direction.RECEIVE, "ניהול זמן בהחלט יכול לעזור לי להתנהל טוב יותר.", 3);
             finishGame1.SetActive(true);
             trueAnimation1.SetActive(true);
             isAnswerTrue = false;
@@ -289,15 +289,15 @@ public class Game1Logic : MonoBehaviour
         {
             if (tryGame1 == 2)
             {
-                chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אני לא בטוחה שזה מקור הבעיה, כדאי לבחור באפשרות אחרת.", 2);
+                chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אני לא בטוחה שזה מקור הבעיה, כדאי לבחור באפשרות אחרת.", 3);
             }
             else if (tryGame1 == 1)
             {
-                chatGame1.addTextMessage(Chat.Direction.RECEIVE, "צפייה חוזרת בסרטון למעלה תעזור לזהות את מקור הבעיה.", 2);
+                chatGame1.addTextMessage(Chat.Direction.RECEIVE, "צפייה חוזרת בסרטון למעלה תעזור לזהות את מקור הבעיה.", 3);
             }
             else
             {
-                chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אחרי שחשבתי על זה, הגעתי למסקנה שהבעיה שלי היא בכלל ניהול זמן לא נכון !צפיתי בסרטון שוב ומצאתי את המכנה המשותף אבל תודה על הרצון לעזור.", 5);
+                chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אחרי שחשבתי על זה, הגעתי למסקנה שהבעיה שלי היא בכלל ניהול זמן לא נכון !צפיתי בסרטון שוב ומצאתי את המכנה המשותף אבל תודה על הרצון לעזור.", 7);
                 finishGame1.SetActive(true);
                 isAnswerTrue = false;
                 finishGame1Open();
@@ -338,7 +338,7 @@ public class Game1Logic : MonoBehaviour
         yield return new WaitForSeconds(1);
         if (isAnswerTrue)
         {
-            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "נכון, לחשוב לפני שאני פועל יכול לעזור לי, תודה על העזרה!", 2);
+            chatGame2.addTextMessage(Chat.Direction.RECEIVE, "נכון, לחשוב לפני שאני פועל יכול לעזור לי, תודה על העזרה!", 3);
             finishGame2.SetActive(true);
             trueAnimation2.SetActive(true);
             isAnswerTrue = false;
@@ -348,11 +348,11 @@ public class Game1Logic : MonoBehaviour
         {
             if (tryGame2 == 2)
             {
-                chatGame2.addTextMessage(Chat.Direction.RECEIVE, "אני לא בטוח שזה מקור הבעיה, כדאי לבחור באפשרות אחרת.", 2);
+                chatGame2.addTextMessage(Chat.Direction.RECEIVE, "אני לא בטוח שזה מקור הבעיה, כדאי לבחור באפשרות אחרת.", 3);
             }
             else if (tryGame2 == 1)
             {
-                chatGame2.addTextMessage(Chat.Direction.RECEIVE, "צפייה חוזרת בסרטון למעלה תעזור לזהות את מקור הבעיה.", 2);
+                chatGame2.addTextMessage(Chat.Direction.RECEIVE, "צפייה חוזרת בסרטון למעלה תעזור לזהות את מקור הבעיה.", 3);
             }
             else
             {
@@ -397,7 +397,7 @@ public class Game1Logic : MonoBehaviour
         yield return new WaitForSeconds(1);
         if (isAnswerTrue)
         {
-            chatGame3.addTextMessage(Chat.Direction.RECEIVE, "נכון, יש לי נטייה כזו אני צריכה לעבוד על זה! תודה על העזרה!", 2);
+            chatGame3.addTextMessage(Chat.Direction.RECEIVE, "נכון, יש לי נטייה כזו אני צריכה לעבוד על זה! תודה על העזרה!", 3);
             finishGame3.SetActive(true);
             trueAnimation3.SetActive(true);
             isAnswerTrue = false;
@@ -407,15 +407,15 @@ public class Game1Logic : MonoBehaviour
         {
             if (tryGame3 == 2)
             {
-                chatGame3.addTextMessage(Chat.Direction.RECEIVE, "אני לא בטוחה שזה מקור הבעיה, כדאי לבחור באפשרות אחרת.", 2);
+                chatGame3.addTextMessage(Chat.Direction.RECEIVE, "אני לא בטוחה שזה מקור הבעיה, כדאי לבחור באפשרות אחרת.", 3);
             }
             else if (tryGame3 == 1)
             {
-                chatGame3.addTextMessage(Chat.Direction.RECEIVE, "צפייה חוזרת בסרטון למעלה תעזור לזהות את מקור הבעיה.", 2);
+                chatGame3.addTextMessage(Chat.Direction.RECEIVE, "צפייה חוזרת בסרטון למעלה תעזור לזהות את מקור הבעיה.", 3);
             }
             else
             {
-                chatGame3.addTextMessage(Chat.Direction.RECEIVE, "אחרי שחשבתי על זה, הגעתי למסקנה שהבעיה שלי היא שהייתי יהירה מידי בנוגע לקבלה ליחידה. צפיתי בסרטון שוב ומצאתי את המכנה המשותף אבל תודה על הרצון לעזור.", 5);
+                chatGame3.addTextMessage(Chat.Direction.RECEIVE, "אחרי שחשבתי על זה, הגעתי למסקנה שהבעיה שלי היא שהייתי יהירה מידי בנוגע לקבלה ליחידה. צפיתי בסרטון שוב ומצאתי את המכנה המשותף אבל תודה על הרצון לעזור.", 7);
                 finishGame3.SetActive(true);
                 isAnswerTrue = false;
                 finishGame3Open();

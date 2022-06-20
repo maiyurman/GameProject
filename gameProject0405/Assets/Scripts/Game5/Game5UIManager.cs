@@ -24,6 +24,9 @@ public class Game5UIManager : MonoBehaviour
     public GameObject round3Animation;
     public navigation level5Btn;
     public GameObject goodFeedback;
+    public navigation placeBtn;
+    public navigation userBtn;
+    public navigation MessageBtn;
 
     //דמות תמיר
     public GameObject tamir;
@@ -59,6 +62,10 @@ public class Game5UIManager : MonoBehaviour
             loadStoryBtn.EnableStoryBtnsForLevel(MaxStage);
             Debug.Log(MaxStage);
         }
+
+        placeBtn.disableBtn();
+        userBtn.disableBtn();
+        MessageBtn.disableBtn();
 
     }
 

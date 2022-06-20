@@ -583,7 +583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &179106590
 RectTransform:
   m_ObjectHideFlags: 0
@@ -639,15 +639,15 @@ RectTransform:
   m_GameObject: {fileID: 235801158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 39.200256, y: 39.200256, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1034268238}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.124115, y: -3.6705036}
-  m_SizeDelta: {x: 38.906, y: 24.207}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &235801160
 MonoBehaviour:
@@ -1923,15 +1923,15 @@ RectTransform:
   m_GameObject: {fileID: 836389678}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 39.160213, y: 39.160213, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1034268238}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.868164, y: 0.010559678}
-  m_SizeDelta: {x: 37.927, y: 23.796}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &836389680
 MonoBehaviour:
@@ -2759,8 +2759,8 @@ MonoBehaviour:
   m_text: "\u05EA\u05D5\u05DB\u05DC\u05D5 \u05DC\u05E2\u05D1\u05D5\u05E8 \u05E2\u05DC
     \u05D4\u05E1\u05D8\u05D5\u05E8\u05D9 \u05DB\u05D3\u05D9 \u05DC\u05D4\u05D9\u05D6\u05DB\u05E8
     \u05D1\u05DB\u05DC \u05D4\u05E9\u05DC\u05D1\u05D9\u05DD \u05E9\u05E2\u05D1\u05E8\u05EA\u05DD.
-    \u05D1\u05DB\u05DC\u05D9\u05DD \u05E9\u05E8\u05DB\u05E9\u05EA\u05DD \u05EA\u05D5\u05DB\u05DC\u05D5
-    \u05DC\u05D4\u05E9\u05EA\u05DE\u05E9 \u05D1\u05DB\u05DC \u05D1\u05E2\u05D9\u05D4
+    \u05EA\u05D5\u05DB\u05DC\u05D5 \u05DC\u05D4\u05E9\u05EA\u05DE\u05E9 \u05D1\u05DB\u05DC\u05D9\u05DD
+    \u05E9\u05E8\u05DB\u05E9\u05EA\u05DD \u05D1\u05DB\u05DC \u05D1\u05E2\u05D9\u05D4
     \u05E9\u05EA\u05EA\u05E7\u05DC\u05D5 \u05D1\u05D4, \u05D1\u05DB\u05DC \u05E0\u05D5\u05E9\u05D0!"
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: 1645c3bb440406545a325034e25340ff, type: 2}
@@ -3922,7 +3922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1843114276
 RectTransform:
   m_ObjectHideFlags: 0
