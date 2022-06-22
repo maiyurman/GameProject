@@ -33,7 +33,9 @@ public class CloseGameLogic : MonoBehaviour
     }
     public void startOverGame()
     {
-        SceneManager.LoadScene("openGame");
+        PlayerPrefs.SetInt("gameNumIn", 0);
+        PlayerPrefs.SetInt("GameMax", 0);
+        SceneManager.LoadScene("Game1");
     }
 
     public void closeGame()

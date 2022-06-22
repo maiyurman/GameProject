@@ -42,7 +42,6 @@ public class openGameUi : MonoBehaviour
     {
         storyPic.GetComponent<Image>().sprite = Resources.Load<Sprite>("openGame/opening1");
         //תמיר אליאנס
-        Debug.Log("soundMangarOpen");
         startTxt.text = "היי חברים, שמח שהגעתם!";
         yield return new WaitForSeconds(2.5f);
         startTxt.text = "אני תמיר בן 71 מתל אביב. אני לומד בתיכון אליאנס.";
@@ -109,6 +108,8 @@ public class openGameUi : MonoBehaviour
     public void startOverVideotamir()
     {
         StopAllCoroutines();
+        tamirSound.Stop();
+        tamirSound.Play();
         StartCoroutine(sentenceVideo1());
     }
 
