@@ -35,5 +35,30 @@ public class navigation : MonoBehaviour
 
     }
 
+    void OnMouseOver()
+    {
+        if (mybutton.image.sprite == imageOff)
+        {
+            Debug.Log(mybutton + "אני לא פעיל");
+        }
+        else
+        {
+            Debug.Log(mybutton + "אני בתוך אובייקט פעיל");
+        }
+    }
+
+    void OnMouseExit()
+    {
+        if (mybutton.image.sprite == imageOff)
+        {
+            Debug.Log(mybutton + "אני לא פעיל");
+        }
+        else
+        {
+            Debug.Log(mybutton + "אני מחוץ לאובייקט פעיל");
+        }
+
+    }
+
 
 }
