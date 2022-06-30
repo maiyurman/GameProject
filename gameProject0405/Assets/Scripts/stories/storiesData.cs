@@ -23,7 +23,6 @@ public class storiesData : MonoBehaviour
 
         pageNumber = PlayerPrefs.GetInt("gameNumIn");
         Debug.Log(pageNumber);
-        UIMangerstory.updateArrows();
         UIMangerstory.updateUi();
         openGameMax = PlayerPrefs.GetInt("GameMax");
         loadStoryBtn.disableStoryBtnAll();

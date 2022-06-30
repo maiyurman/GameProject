@@ -10,8 +10,8 @@ public class UIMangerstory : MonoBehaviour
     private storiesData storiesData;
 
     //משתנים לייצוג המשתנים של הכפתורים
-    public navigation prevPageBtn;
-    public navigation nextPageBtn;
+    //public navigation prevPageBtn;
+    //public navigation nextPageBtn;
 
     //משתנה לייצוג הטקסט
     public TextMeshProUGUI storyText;
@@ -28,39 +28,39 @@ public class UIMangerstory : MonoBehaviour
     }
 
     //איפוס חיצים
-    public void updateArrows()
-    {
-        //הצגת פעילות החיצים בהתאם למספר המקסימלי שפועל
-        if (MaxNumber == storiesData.pageNumber)
-        {
-            prevPageBtn.enableBtn();
-            nextPageBtn.disableBtn();
-        }
-        else
-        {
-            prevPageBtn.enableBtn();
-            nextPageBtn.enableBtn();
-        }
+    //public void updateArrows()
+    //{
+    //    //הצגת פעילות החיצים בהתאם למספר המקסימלי שפועל
+    //    if (MaxNumber == storiesData.pageNumber)
+    //    {
+    //        prevPageBtn.enableBtn();
+    //        nextPageBtn.disableBtn();
+    //    }
+    //    else
+    //    {
+    //        prevPageBtn.enableBtn();
+    //        nextPageBtn.enableBtn();
+    //    }
 
-        //הצגת החיצים בהתאם למספר העמוד בו נמצא המשתמש
+    //    //הצגת החיצים בהתאם למספר העמוד בו נמצא המשתמש
 
-        if (storiesData.pageNumber == 1)
-        {
-            prevPageBtn.transform.gameObject.SetActive(false);
-            nextPageBtn.transform.gameObject.SetActive(true);
-        }
-        else if (storiesData.pageNumber == 5)
-        {
-            prevPageBtn.transform.gameObject.SetActive(true);
-            nextPageBtn.transform.gameObject.SetActive(false);
+    //    if (storiesData.pageNumber == 1)
+    //    {
+    //        prevPageBtn.transform.gameObject.SetActive(false);
+    //        nextPageBtn.transform.gameObject.SetActive(true);
+    //    }
+    //    else if (storiesData.pageNumber == 5)
+    //    {
+    //        prevPageBtn.transform.gameObject.SetActive(true);
+    //        nextPageBtn.transform.gameObject.SetActive(false);
 
-        }
-        else
-        {
-            prevPageBtn.transform.gameObject.SetActive(true);
-            nextPageBtn.transform.gameObject.SetActive(true);
-        }
-    }
+    //    }
+    //    else
+    //    {
+    //        prevPageBtn.transform.gameObject.SetActive(true);
+    //        nextPageBtn.transform.gameObject.SetActive(true);
+    //    }
+    //}
 
     public void NextPage()
     {
@@ -71,7 +71,7 @@ public class UIMangerstory : MonoBehaviour
             storiesData.pageNumber++;
 
             //תשנה את הנתונים
-            updateArrows();
+            //updateArrows();
             updateUi();
 
         }
@@ -86,7 +86,7 @@ public class UIMangerstory : MonoBehaviour
             storiesData.pageNumber--;
 
             //תשנה את הנתונים
-            updateArrows();
+            //updateArrows();
             updateUi();
 
         }
