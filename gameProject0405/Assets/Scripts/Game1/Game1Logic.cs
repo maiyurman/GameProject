@@ -17,6 +17,7 @@ public class Game1Logic : MonoBehaviour
     public GameObject questions1;
     public GameObject finishgame1;
     public GameObject subtitleBK1;
+    public GameObject lightBtn1;
 
     //משתנים משחק 2
     public Chat chatGame2;
@@ -28,6 +29,7 @@ public class Game1Logic : MonoBehaviour
     public GameObject questions2;
     public GameObject finishgame2;
     public GameObject subtitleBK2;
+    public GameObject lightBtn2;
 
 
     //משתנים משחק 3
@@ -40,6 +42,7 @@ public class Game1Logic : MonoBehaviour
     public GameObject questions3;
     public GameObject finishgame3;
     public GameObject subtitleBK3;
+    public GameObject lightBtn3;
 
     //סטורי
     private loadStoryBtn loadStoryBtn;
@@ -65,6 +68,7 @@ public class Game1Logic : MonoBehaviour
         chatGame1.setChatTitle("תמר לוי");
         chatGame1.setProfilePhoto("tamar");
         chatGame1.addVideo(Chat.Direction.RECEIVE, "tamarVideoPhotos", playVideo1);
+        chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה שצפיתם תמיד תוכלו לחזור ולצפות בסרטון שוב כדי לעזור לי", 3);
         tryGame1 = 2;
         video1.SetActive(false);
         textVideo1.text = "";
@@ -73,11 +77,12 @@ public class Game1Logic : MonoBehaviour
         finishgame1.SetActive(false);
         subtitleBK1.SetActive(true);
 
-        //משחק 2
-        chatGame2.initChat();
+    //משחק 2
+    chatGame2.initChat();
         chatGame2.setChatTitle("אור בן ישי");
         chatGame2.setProfilePhoto("or");
         chatGame2.addVideo(Chat.Direction.RECEIVE, "orVideoPhotos", playVideo2);
+        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "תודה שצפיתם תמיד תוכלו לחזור ולצפות בסרטון שוב כדי לעזור לי", 3);
         tryGame2 = 2;
         video2.SetActive(false);
         textVideo2.text = "";
@@ -86,12 +91,12 @@ public class Game1Logic : MonoBehaviour
         finishgame2.SetActive(false);
         subtitleBK2.SetActive(true);
 
-
         //משחק 3
         chatGame3.initChat();
         chatGame3.setChatTitle("אמה דוידוביץ'");
         chatGame3.setProfilePhoto("ema");
         chatGame3.addVideo(Chat.Direction.RECEIVE, "emaVideoPhotos", playVideo3);
+        chatGame3.addTextMessage(Chat.Direction.RECEIVE, "תודה שצפיתם תמיד תוכלו לחזור ולצפות בסרטון שוב כדי לעזור לי", 3);
         tryGame3 = 2;
         video3.SetActive(false);
         textVideo3.text = "";
@@ -99,7 +104,6 @@ public class Game1Logic : MonoBehaviour
         questions3.SetActive(true);
         finishgame3.SetActive(false);
         subtitleBK3.SetActive(true);
-
 
         //כיבוי כל הסטורי
         loadStoryBtn.disableStoryBtnAll();
@@ -113,7 +117,8 @@ public class Game1Logic : MonoBehaviour
         }
     }
 
-    private void playVideo1()
+
+    public void playVideo1()
     {
         StopAllCoroutines();
         video1.SetActive(false);
@@ -121,7 +126,7 @@ public class Game1Logic : MonoBehaviour
         StartCoroutine(sentenceVideo1());
     }
 
-    private void playVideo2()
+    public void playVideo2()
     {
         StopAllCoroutines();
         video2.SetActive(false);
@@ -130,7 +135,7 @@ public class Game1Logic : MonoBehaviour
 
     }
 
-    private void playVideo3()
+    public void playVideo3()
     {
         StopAllCoroutines();
         video3.SetActive(false);
@@ -165,6 +170,8 @@ public class Game1Logic : MonoBehaviour
         textVideo1.text = "";
         subtitleBK1.SetActive(false);
         stopMusic("tamarRecord");
+        yield return new WaitForSeconds(1f);
+        video1.SetActive(false);
     }
 
     IEnumerator sentenceVideo2()
@@ -188,6 +195,8 @@ public class Game1Logic : MonoBehaviour
         textVideo2.text = "";
         subtitleBK2.SetActive(false);
         stopMusic("orRecord");
+        yield return new WaitForSeconds(1f);
+        video2.SetActive(false);
     }
 
     IEnumerator sentenceVideo3()
@@ -207,6 +216,8 @@ public class Game1Logic : MonoBehaviour
         textVideo3.text = "";
         subtitleBK3.SetActive(false);
         stopMusic("emaRecord");
+        yield return new WaitForSeconds(1f);
+        video3.SetActive(false);
     }
 
 

@@ -37,26 +37,36 @@ public class navigation : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (mybutton.image.sprite == imageOff)
+        if (mybutton.enabled == false)
         {
             Debug.Log(mybutton + "אני לא פעיל");
         }
         else
         {
             Debug.Log(mybutton + "אני בתוך אובייקט פעיל");
+            cursorControllerNew.instance.ActivateclickerCursor();
+
         }
     }
 
     void OnMouseExit()
     {
-        if (mybutton.image.sprite == imageOff)
+        if (mybutton.enabled == false)
         {
             Debug.Log(mybutton + "אני לא פעיל");
         }
         else
         {
             Debug.Log(mybutton + "אני מחוץ לאובייקט פעיל");
+            cursorControllerNew.instance.ActivateRegularCursor();
+
         }
+
+    }
+
+    private void OnMouseDown()
+    {
+        cursorControllerNew.instance.ActivateRegularCursor();
 
     }
 

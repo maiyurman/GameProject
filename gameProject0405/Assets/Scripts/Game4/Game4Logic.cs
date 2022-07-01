@@ -24,6 +24,7 @@ public class Game4Logic : MonoBehaviour
     public GameObject finishgame1;
     public GameObject questionGame1;
     public TMP_InputField inputGame1;
+    public GameObject lightBtn1;
 
     //משתנים משחק 2
     public Chat chatGame2;
@@ -31,6 +32,7 @@ public class Game4Logic : MonoBehaviour
     public GameObject finishgame2;
     public GameObject questionGame2;
     public TMP_InputField inputGame2;
+    public GameObject lightBtn2;
 
     //סטורי
     private loadStoryBtn loadStoryBtn;
@@ -80,6 +82,34 @@ public class Game4Logic : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         tamirAnimator.SetBool("isTalk", false);
+    }
+
+    public void opengame1ChatBox()
+    {
+    
+        StartCoroutine(lightBtn1Box());
+    }
+
+    IEnumerator lightBtn1Box()
+    {
+        lightBtn1.SetActive(false);
+        yield return new WaitForSeconds(3f);
+        lightBtn1.SetActive(true);
+
+    }
+
+    public void opengame2ChatBox()
+    {
+
+        StartCoroutine(lightBtn2Box());
+    }
+
+    IEnumerator lightBtn2Box()
+    {
+        lightBtn2.SetActive(false);
+        yield return new WaitForSeconds(3f);
+        lightBtn2.SetActive(true);
+
     }
 
 

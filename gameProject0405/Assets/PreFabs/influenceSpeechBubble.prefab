@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 5768015762085149509}
   - component: {fileID: 5768015762085149508}
   - component: {fileID: 5768015762085149515}
+  - component: {fileID: 8532846013265287503}
   - component: {fileID: 5768015762085149510}
   m_Layer: 6
   m_Name: continueBtn
@@ -479,6 +480,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8532846013265287503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5768015762085149513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13193591ce3b87444a0db2b35423b00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5768015762085149510
 MonoBehaviour:
   m_ObjectHideFlags: 0

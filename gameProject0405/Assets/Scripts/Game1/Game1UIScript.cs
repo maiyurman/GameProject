@@ -12,10 +12,13 @@ public class Game1UIScript : MonoBehaviour
     public GameObject openScreen;
     public GameObject game1ChatBox;
     public GameObject game1Chat;
+    public GameObject lightBtn1;
     public GameObject game2ChatBox;
     public GameObject game2Chat;
+    public GameObject lightBtn2;
     public GameObject game3ChatBox;
     public GameObject game3Chat;
+    public GameObject lightBtn3;
 
     public navigation nextBtn;
 
@@ -56,6 +59,15 @@ public class Game1UIScript : MonoBehaviour
     {
         openScreen.SetActive(false);
         game1ChatBox.SetActive(true);
+        StartCoroutine(lightBtn1Box());
+    }
+
+    IEnumerator lightBtn1Box()
+    {
+        lightBtn1.SetActive(false);
+        yield return new WaitForSeconds(3f);
+        lightBtn1.SetActive(true);
+
     }
 
     public void opengame1Chat()
@@ -68,7 +80,17 @@ public class Game1UIScript : MonoBehaviour
     {
         game1Chat.SetActive(false);
         game2ChatBox.SetActive(true);
+        StartCoroutine(lightBtn2Box());
     }
+
+
+    IEnumerator lightBtn2Box()
+    {
+        lightBtn2.SetActive(false);
+        yield return new WaitForSeconds(3f);
+        lightBtn2.SetActive(true);
+    }
+
 
     public void opengame2Chat()
     {
@@ -80,6 +102,15 @@ public class Game1UIScript : MonoBehaviour
     {
         game2Chat.SetActive(false);
         game3ChatBox.SetActive(true);
+        StartCoroutine(lightBtn3Box());
+
+    }
+
+    IEnumerator lightBtn3Box()
+    {
+        lightBtn3.SetActive(false);
+        yield return new WaitForSeconds(3f);
+        lightBtn3.SetActive(true);
     }
 
     public void opengame3Chat()
