@@ -436,18 +436,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222373838}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 1963397369}
-  m_Father: {fileID: 1270692468}
-  m_RootOrder: 0
+  m_Father: {fileID: 1034268238}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7, y: -270}
-  m_SizeDelta: {x: 147, y: 67}
+  m_AnchoredPosition: {x: -9.600002, y: -259.98}
+  m_SizeDelta: {x: 202.22, y: 67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &222373840
 BoxCollider2D:
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c035520ae68cb84da5e704c40541a72, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16e6495b59acc6f46b48b0e81889d98c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2225,7 +2225,7 @@ RectTransform:
   - {fileID: 1061190630}
   - {fileID: 1758660423}
   - {fileID: 370298143}
-  - {fileID: 1270692468}
+  - {fileID: 222373839}
   - {fileID: 457730493}
   - {fileID: 418473634}
   m_Father: {fileID: 0}
@@ -2325,7 +2325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\u05D8\u05E7\u05E1\u05D8 \u05E1\u05D8\u05D5\u05E8\u05D9"
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: 1645c3bb440406545a325034e25340ff, type: 2}
   m_sharedMaterial: {fileID: 8257431407067992821, guid: 1645c3bb440406545a325034e25340ff, type: 2}
@@ -2806,37 +2806,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1270692467
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1270692468}
-  m_Layer: 5
-  m_Name: Buttons
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1270692468
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270692467}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16, y: 9.62, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
-  m_Children:
-  - {fileID: 222373839}
-  m_Father: {fileID: 1034268238}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1291239349
 GameObject:
@@ -4084,7 +4053,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u05DE\u05D4 \u05DC\u05DE\u05D3\u05E0\u05D5?"
+  m_text: "\u05D0\u05D9\u05DA \u05D6\u05D4 \u05D9\u05E2\u05D6\u05D5\u05E8 \u05DC\u05D9?"
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: 6be3710071090ee4c97d49b8f970f66f, type: 2}
   m_sharedMaterial: {fileID: -5686423593144649238, guid: 6be3710071090ee4c97d49b8f970f66f, type: 2}
@@ -4111,8 +4080,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4614,7 +4583,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -3.820877, z: 0, w: 0}
+  m_margin: {x: -4.225601, y: 4.6321483, z: 4.2257314, w: -200.76045}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4644,8 +4613,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.13, y: 81.43}
-  m_SizeDelta: {x: 275.06, y: 350.65}
+  m_AnchoredPosition: {x: 0.00000047684, y: 159.06}
+  m_SizeDelta: {x: 299.9, y: 188.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2102695779
 GameObject:
