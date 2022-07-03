@@ -23,7 +23,7 @@ public class activeGrabCursor : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        cursorControllerNew.instance.ActivategrabCursor();
+        cursorControllerNew.instance.ActivateholdCursor();
     }
 
     private void OnMouseUp()

@@ -17,6 +17,8 @@ public class UIMangerstory : MonoBehaviour
     public TextMeshProUGUI storyText;
     //משתנה לייצוג הטקסט של כפתור השלב הבא
     public TextMeshProUGUI NextLevelTXTbtn;
+    //משתנה לייצוג הטקסט
+    public TextMeshProUGUI learningText;
 
     int MaxNumber;
 
@@ -96,6 +98,7 @@ public class UIMangerstory : MonoBehaviour
     {
         int numbertext = storiesData.pageNumber - 1;
         storyText.text = storiesData.Storytext[numbertext];
+        learningText.text = storiesData.learningText[numbertext];
         if (storiesData.pageNumber == 5)
         {
             NextLevelTXTbtn.text = "למסך הסיום";

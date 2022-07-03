@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1004576502712472601}
   - component: {fileID: 1004576502712472606}
+  - component: {fileID: 7050972669818307078}
   - component: {fileID: 1004576502712472607}
   - component: {fileID: 1004576502712472600}
-  - component: {fileID: 203573907757500441}
   - component: {fileID: 762082496803931913}
   m_Layer: 5
   m_Name: Button
@@ -48,6 +48,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004576502712472602}
   m_CullTransparentMesh: 1
+--- !u!114 &7050972669818307078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004576502712472602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db2cd89bdcd02b4eac6dc784f9aacb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageOff: {fileID: 21300000, guid: ddb20e3963fb8374ba11bb8237b13a64, type: 3}
+  imageOn: {fileID: 21300000, guid: ddb20e3963fb8374ba11bb8237b13a64, type: 3}
+  imagehover: {fileID: 21300000, guid: 42ec456ea0119c74c9071b1d3d0e105d, type: 3}
 --- !u!114 &1004576502712472607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,18 +137,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &203573907757500441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004576502712472602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13193591ce3b87444a0db2b35423b00d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &762082496803931913
 BoxCollider2D:
   m_ObjectHideFlags: 0

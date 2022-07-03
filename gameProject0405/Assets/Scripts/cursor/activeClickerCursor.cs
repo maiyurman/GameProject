@@ -18,7 +18,6 @@ public class activeClickerCursor : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        Debug.Log("πλπρ");
         cursorControllerNew.instance.ActivateclickerCursor();
     }
 

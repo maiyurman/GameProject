@@ -284,6 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageOff: {fileID: 21300000, guid: 722e3f6a22b1ec14ba5558d780404717, type: 3}
   imageOn: {fileID: 21300000, guid: 7efe5e5d4314fd541b2aa7e91d8ed336, type: 3}
+  imagehover: {fileID: 21300000, guid: 3180d5aff88c5494f98554da5698569e, type: 3}
 --- !u!114 &5930123248712566954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,6 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageOff: {fileID: 21300000, guid: 722e3f6a22b1ec14ba5558d780404717, type: 3}
   imageOn: {fileID: 21300000, guid: 7efe5e5d4314fd541b2aa7e91d8ed336, type: 3}
+  imagehover: {fileID: 21300000, guid: 3180d5aff88c5494f98554da5698569e, type: 3}
 --- !u!61 &8512490290772269672
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -878,6 +880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageOff: {fileID: 21300000, guid: 1884b557f2c2fa74ab9ba6dc7c5e9a25, type: 3}
   imageOn: {fileID: 21300000, guid: a08e9bd4457be00458753fdaf49fd19c, type: 3}
+  imagehover: {fileID: 21300000, guid: 9a6bda0e3b90b9c4583b3a5002c85f83, type: 3}
 --- !u!61 &4348553611811752013
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -914,9 +917,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8740590599822234868}
   - component: {fileID: 8740590599822234825}
+  - component: {fileID: 247147840580722982}
   - component: {fileID: 8740590599822234870}
   - component: {fileID: 8740590599822234871}
-  - component: {fileID: 9152951144971605816}
   - component: {fileID: 394726057901944395}
   m_Layer: 5
   m_Name: Xbtn
@@ -952,6 +955,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8740590599822234869}
   m_CullTransparentMesh: 1
+--- !u!114 &247147840580722982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8740590599822234869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db2cd89bdcd02b4eac6dc784f9aacb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageOff: {fileID: 21300000, guid: 6694030ede16f6547a063df6d1d62604, type: 3}
+  imageOn: {fileID: 21300000, guid: 6694030ede16f6547a063df6d1d62604, type: 3}
+  imagehover: {fileID: 21300000, guid: f1ee5980052fafc4b8365b8b206bbc17, type: 3}
 --- !u!114 &8740590599822234870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,18 +1092,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9152951144971605816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8740590599822234869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13193591ce3b87444a0db2b35423b00d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &394726057901944395
 BoxCollider2D:
   m_ObjectHideFlags: 0

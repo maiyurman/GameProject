@@ -8,6 +8,8 @@ public class storiesData : MonoBehaviour
 {
     [TextArea(3, 10)]
     public string[] Storytext;
+    [TextArea(3, 10)]
+    public string[] learningText;
     public int pageNumber;
     private UIMangerstory UIMangerstory;
     private loadStoryBtn loadStoryBtn;

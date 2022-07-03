@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Test2D
-  defaultCursor: {fileID: 2800000, guid: aedcb592fcfeb7d48bdb12e583e8be31, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 115fe1281e3bd3148967e1bff137f88a, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

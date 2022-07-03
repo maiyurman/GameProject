@@ -7,7 +7,7 @@ public class cursorControllerNew : MonoBehaviour
 
     public static cursorControllerNew instance;
 
-    public Texture2D regularCursor, clickerCursor, grabCursor;
+    public Texture2D regularCursor, clickerCursor, grabCursor , holdCursor , noExitCursor;
 
     private void Awake()
     {
@@ -20,7 +20,6 @@ public class cursorControllerNew : MonoBehaviour
         Cursor.SetCursor(regularCursor, Vector2.zero, cursorMode:CursorMode.Auto);
     }
 
-
     public void ActivateclickerCursor()
     {
         Cursor.SetCursor(clickerCursor, Vector2.zero, cursorMode: CursorMode.Auto);
@@ -31,16 +30,14 @@ public class cursorControllerNew : MonoBehaviour
         Cursor.SetCursor(grabCursor, Vector2.zero, cursorMode: CursorMode.Auto);
     }
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void ActivateholdCursor()
     {
-        
+        Cursor.SetCursor(holdCursor, Vector2.zero, cursorMode: CursorMode.Auto);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ActivatenoExitCursor()
     {
-        
+        Cursor.SetCursor(noExitCursor, Vector2.zero, cursorMode: CursorMode.Auto);
     }
+
 }

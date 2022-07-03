@@ -8,9 +8,9 @@ public class audioManger : MonoBehaviour
 
     public static audioManger instance;
 
-    public navigation mybutton1;
-    public navigation mybutton2;
-    public navigation mybutton3;
+    public navgationFor2 mybutton1;
+    public navgationFor2 mybutton2;
+    public navgationFor2 mybutton3;
 
 
     void Awake()

@@ -358,7 +358,6 @@ GameObject:
   - component: {fileID: 5768015762085149509}
   - component: {fileID: 5768015762085149508}
   - component: {fileID: 5768015762085149515}
-  - component: {fileID: 8532846013265287503}
   - component: {fileID: 5768015762085149510}
   m_Layer: 6
   m_Name: continueBtn
@@ -480,18 +479,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8532846013265287503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5768015762085149513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13193591ce3b87444a0db2b35423b00d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5768015762085149510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,5 +491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db2cd89bdcd02b4eac6dc784f9aacb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageOff: {fileID: 21300000, guid: e48504304ae0e3943b9cdd748b721c8f, type: 3}
+  imageOff: {fileID: 21300000, guid: 3638a465257c2a54990b4d2cd2ac6270, type: 3}
   imageOn: {fileID: 21300000, guid: e48504304ae0e3943b9cdd748b721c8f, type: 3}
+  imagehover: {fileID: 21300000, guid: dd304e834533e48419c6bd27a3078b2a, type: 3}

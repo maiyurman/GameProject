@@ -17,7 +17,7 @@ public class openGameUi : MonoBehaviour
     public GameObject tamir2;
     public Animator tamirAnimator;
     public AudioSource tamirSound;
-    public navigation soundBtn;
+    public navgationFor2 soundBtn;
 
     void Start()
     {
@@ -97,11 +97,14 @@ public class openGameUi : MonoBehaviour
         {
             tamirSound.volume = 0;
             soundBtn.notMusic();
+            Debug.Log("notMusic");
         }
         else
         {
             tamirSound.volume = 1;
             soundBtn.enableBtn();
+            Debug.Log("enableBtn");
+
         }
     }
 

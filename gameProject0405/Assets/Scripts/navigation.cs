@@ -10,6 +10,7 @@ public class navigation : MonoBehaviour
     private Button mybutton;
     public Sprite imageOff;
     public Sprite imageOn;
+    public Sprite imagehover;
 
     public void Awake()
     {
@@ -19,19 +20,19 @@ public class navigation : MonoBehaviour
 
     public void enableBtn()
     {
-        mybutton.image.overrideSprite = imageOn;
+        mybutton.image.sprite = imageOn;
         mybutton.enabled = true;
     }
 
     public void disableBtn()
     {
-        mybutton.image.overrideSprite = imageOff;
+        mybutton.image.sprite = imageOff;
         mybutton.enabled = false;
     }
 
     public void notMusic()
     {
-        mybutton.image.overrideSprite = imageOff;
+        mybutton.image.sprite = imageOff;
 
     }
 
@@ -39,13 +40,25 @@ public class navigation : MonoBehaviour
     {
         if (mybutton.enabled == false)
         {
-            Debug.Log(mybutton + "אני לא פעיל");
+            cursorControllerNew.instance.ActivatenoExitCursor();
         }
         else
         {
-            Debug.Log(mybutton + "אני בתוך אובייקט פעיל");
-            cursorControllerNew.instance.ActivateclickerCursor();
+            //כשפעיל ולא כבוי
+            if (mybutton.image.sprite == imageOn || mybutton.image.sprite == imagehover)
+            {
+                cursorControllerNew.instance.ActivateclickerCursor();
+                Debug.Log("כפתור פעיל ולא כבוי");
+                mybutton.image.sprite = imagehover;
+                Debug.Log(mybutton.image.sprite);
+            }
+            else
+            {
+                mybutton.image.sprite = imageOff;
+                cursorControllerNew.instance.ActivateclickerCursor();
+                Debug.Log(mybutton.image.sprite);
 
+            }
         }
     }
 
@@ -53,21 +66,36 @@ public class navigation : MonoBehaviour
     {
         if (mybutton.enabled == false)
         {
-            Debug.Log(mybutton + "אני לא פעיל");
+            cursorControllerNew.instance.ActivateRegularCursor();
         }
         else
         {
-            Debug.Log(mybutton + "אני מחוץ לאובייקט פעיל");
             cursorControllerNew.instance.ActivateRegularCursor();
-
+            //אם התמונה מכובה
+            if (mybutton.image.sprite == imageOff)
+            {
+                Debug.Log("התמונה מכובה");
+                mybutton.image.sprite = imageOff;
+            }
+            else
+            {
+                mybutton.image.sprite = imageOn;
+            }
         }
 
     }
 
     private void OnMouseDown()
     {
-        cursorControllerNew.instance.ActivateRegularCursor();
-
+        if (mybutton.enabled == false)
+        {
+            cursorControllerNew.instance.ActivatenoExitCursor();
+        }
+        else
+        {
+            cursorControllerNew.instance.ActivateclickerCursor();
+            mybutton.image.sprite = imagehover;
+        }
     }
 
 
