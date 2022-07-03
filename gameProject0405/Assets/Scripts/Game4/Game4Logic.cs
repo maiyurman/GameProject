@@ -130,9 +130,11 @@ public class Game4Logic : MonoBehaviour
 
     IEnumerator sendMessageChat1()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
+        playMessage();
         chatGame1.addTextMessage(Chat.Direction.RECEIVE, "בהמשך לשיחתנו, אנחנו יודעים שתתקשה להתחייב לשתף איתנו פעולה במשך שנה שלמה ולכן אנחנו מוכנים לשנות את החוזה לתקופה של חצי שנה.", 5);
         yield return new WaitForSeconds(5);
+        playMessage();
         chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אבל נשמח שבתמורה תחשוב על מספר שירותים נוספים שתוכל לספק עבורנו בפלטפורמה זו.", 4);
     }
 
@@ -168,8 +170,10 @@ public class Game4Logic : MonoBehaviour
         bool isCorrectAnswer = answer.Contains("תיוג") || answer.Contains("פרסום מוצרים") || answer.Contains("פרסום סרטון המלצה");
         if (isCorrectAnswer)
         {
+            playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "נשמע פתרון מעולה! חשבנו גם על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד ופרסום סרטון המלצה.", 7);
             yield return new WaitForSeconds(2);
+            playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "חוזה מעודכן ישלח בהמשך, תודה רבה על שיתוף הפעולה!", 4);
             yield return new WaitForSeconds(1);
             //אנימציה כל הכבוד
@@ -179,13 +183,16 @@ public class Game4Logic : MonoBehaviour
         } 
         else if (Game1Try == 0)
         {
+            playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על תשובתך, נשמח לשמוע על פתרונות נוספים.", 5);
             Game1Try = 1;
         } 
         else
         {
+            playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "תודה על השתתפותך, אנחנו חשבנו על ההצעות הבאות: תיוג בסטורי פעם בשבוע, פרסום מוצרים בפיד, פרסום סרטון המלצה.", 5);
             yield return new WaitForSeconds(3);
+            playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "במידה ויהיו לך פתרונות נוספים נדון עליהם בהמשך.", 5);
             displayFinishGame1Screen();
         }
@@ -215,9 +222,11 @@ public class Game4Logic : MonoBehaviour
 
     IEnumerator sendMessageChat2()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
+        playMessage();
         chatGame2.addTextMessage(Chat.Direction.RECEIVE, "לצערי, אין לנו יכולת לשלם לך יותר מ-000,3 שקלים על כל העלאת פוסט של מוצרי החברה שלנו בפרופיל האישי שלך.", 6);
         yield return new WaitForSeconds(5);
+        playMessage();
         chatGame2.addTextMessage(Chat.Direction.RECEIVE, "מאחר ומאוד התרשמנו מהפרופיל שלך ומהאופן שבו אתה משווק את המוצרים שלנו, אנחנו נשמח לשמוע ממך איך אתה רוצה שנתגמל אותך במקום?", 6);
     }
 
@@ -253,8 +262,10 @@ public class Game4Logic : MonoBehaviour
         bool isCorrectAnswer = answer.Contains("מוצרים") || answer.Contains("הנחות") || answer.Contains("קופונים") || answer.Contains("פרזנטור") || answer.Contains("פרסום") || answer.Contains("אירוע");
         if (isCorrectAnswer)
         {
+            playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "נשמע פתרון מעולה! חשבנו גם על התגמולים הבאים: יותר מוצרים מחברה שלנו בחינם, קופונים והנחות לעוקבים, הארכת חוזה לשנה כפרזנטור, פרסום התמונה שלך עם המוצר באתר שלנו וכניסה חינם לאירועים שלנו.", 9);
             yield return new WaitForSeconds(2);
+            playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "חוזה מעודכן ישלח בהמשך, תודה רבה על שיתוף הפעולה!", 5);
             yield return new WaitForSeconds(1);
             //אנימציה כל הכבוד
@@ -263,13 +274,16 @@ public class Game4Logic : MonoBehaviour
         }
         else if (Game2Try == 0)
         {
+            playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "תודה על תשובתך, נשמח לשמוע רעיונות נוספים לתגמולים.", 5);
             Game2Try = 1;
         }
         else
         {
+            playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "תודה על השתתפותך, חשבנו גם על התגמולים הבאים: יותר מוצרים מחברה שלנו בחינם, קופונים והנחות לעוקבים, הארכת חוזה לשנה כפרזנטור, פרסום התמונה שלך עם המוצר באתר שלנו וכניסה חינם לאירועים שלנו. ", 8);
             yield return new WaitForSeconds(3);
+            playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "במידה ויהיו לך רעיונות נוספים נדון עליהם בהמשך.", 4);
             displayFinishGame2Screen();
         }
@@ -299,12 +313,14 @@ public class Game4Logic : MonoBehaviour
         {
             chatGame1.addPhoto(Chat.Direction.SEND, "Emoji happy 1");
             yield return new WaitForSeconds(1);
+            playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם ושאתם חלק ממשפחתנו!", 2);
         }
         else
         {
             chatGame2.addPhoto(Chat.Direction.SEND, "Emoji happy 1");
             yield return new WaitForSeconds(1);
+            playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם ושאתם חלק ממשפחתנו!", 2);
         }
 
@@ -323,12 +339,14 @@ public class Game4Logic : MonoBehaviour
         {
             chatGame1.addPhoto(Chat.Direction.SEND, "Emoji cry 1");
             yield return new WaitForSeconds(1);
+            playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שככה אתם מרגישים, תמיד תוכלו ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);
         }
         else
         {
             chatGame2.addPhoto(Chat.Direction.SEND, "Emoji cry 1");
             yield return new WaitForSeconds(1);
+            playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שככה אתם מרגישים, תמיד תוכלו ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);
         }
     }
@@ -346,12 +364,14 @@ public class Game4Logic : MonoBehaviour
         {
             chatGame1.addPhoto(Chat.Direction.SEND, "Emoji like");
             yield return new WaitForSeconds(1);
+            playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם.", 2);
         }
         else
         {
             chatGame2.addPhoto(Chat.Direction.SEND, "Emoji like");
             yield return new WaitForSeconds(1);
+            playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם.", 2);
         }
     }
@@ -368,12 +388,14 @@ public class Game4Logic : MonoBehaviour
         {
             chatGame1.addPhoto(Chat.Direction.SEND, "Emoji dislike");
             yield return new WaitForSeconds(1);
+            playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שזו התחושה שלכם. תוכלו להיכנס ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);
         }
         else
         {
             chatGame2.addPhoto(Chat.Direction.SEND, "Emoji dislike");
             yield return new WaitForSeconds(1);
+            playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שזו התחושה שלכם. תוכלו להיכנס ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);
         }
     }
@@ -390,6 +412,11 @@ public class Game4Logic : MonoBehaviour
         int myMaxLevel = PlayerPrefs.GetInt("GameMax");
         Debug.Log("Max Level" + myMaxLevel);
         loadStoryBtn.enableStoryBtn(myMaxLevel);
+    }
+
+    public void playMessage()
+    {
+        FindObjectOfType<audioManger>().Play("receiveMessage");
     }
 
 }
