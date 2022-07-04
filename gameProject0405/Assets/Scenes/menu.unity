@@ -1078,6 +1078,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6082768642743362162, guid: 8b545454890f9914eb28e5204de89a45, type: 3}
   m_PrefabInstance: {fileID: 238565814}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &249158963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4520887426113145223, guid: 7b1994e25cd3fc048b266ed1d87440d4, type: 3}
+  m_PrefabInstance: {fileID: 253748193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &249158964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249158963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6abddeb42918004c9c08f932db13fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tamirAnimator: {fileID: 249158965}
+--- !u!95 &249158965 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 587774082311008520, guid: 7b1994e25cd3fc048b266ed1d87440d4, type: 3}
+  m_PrefabInstance: {fileID: 253748193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &253748193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1101,6 +1124,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 587774082311008520, guid: 7b1994e25cd3fc048b266ed1d87440d4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 37eefe0ce68939e46a4ed3aff3b1981d, type: 2}
     - target: {fileID: 701222388222467825, guid: 7b1994e25cd3fc048b266ed1d87440d4, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -2249,6 +2276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: amit
       objectReference: {fileID: 0}
+    - target: {fileID: 8947646251615125969, guid: eb24e0777994512429c6150c0c30c4a4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fe6c6fade694ba64bb9579b2a26105b3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb24e0777994512429c6150c0c30c4a4, type: 3}
 --- !u!1 &631562930
@@ -4320,10 +4351,10 @@ MonoBehaviour:
     \u05DC\u05D4\u05E4\u05D2\u05D9\u05DF \u05E9\u05DC\u05D9\u05D8\u05D4 \u05DE\u05DC\u05D0\u05D4
     \u05D1\u05DE\u05D9\u05D5\u05DE\u05E0\u05D5\u05D9\u05D5\u05EA \u05E8\u05D1\u05D5\u05EA
     \u05E9\u05D1\u05E2\u05D1\u05E8 \u05DC\u05D0 \u05D4\u05D9\u05D4 \u05D1\u05D4\u05DF
-    \u05E6\u05D5\u05E8\u05DA. \u05DE\u05D2\u05D9\u05DC \u05E6\u05E2\u05D9\u05E8 \u05E2\u05DC
-    \u05D4\u05EA\u05DC\u05DE\u05D9\u05D3\u05D9\u05DD \u05DC\u05E8\u05DB\u05D5\u05E9
-    \u05DE\u05D9\u05D5\u05DE\u05E0\u05D5\u05D9\u05D5\u05EA \u05DB\u05DE\u05D5 \u05E4\u05EA\u05E8\u05D5\u05DF
-    \u05D1\u05E2\u05D9\u05D5\u05EA, \u05EA\u05E7\u05E9\u05D5\u05E8\u05EA, \u05D9\u05E6\u05D9\u05E8\u05EA\u05D9\u05D5\u05EA
+    \u05E6\u05D5\u05E8\u05DA. \u05DE\u05D2\u05D9\u05DC \u05E6\u05E2\u05D9\u05E8 \u05D4\u05EA\u05DC\u05DE\u05D9\u05D3\u05D9\u05DD
+    \u05E0\u05D3\u05E8\u05E9\u05D9\u05DD \u05DC\u05E8\u05DB\u05D5\u05E9 \u05DE\u05D9\u05D5\u05DE\u05E0\u05D5\u05D9\u05D5\u05EA
+    \u05DB\u05DE\u05D5 \u05E4\u05EA\u05E8\u05D5\u05DF \u05D1\u05E2\u05D9\u05D5\u05EA,
+    \u05EA\u05E7\u05E9\u05D5\u05E8\u05EA, \u05D9\u05E6\u05D9\u05E8\u05EA\u05D9\u05D5\u05EA
     \u05D5\u05DB\u05D5' \u05E2\u05DC \u05DE\u05E0\u05EA \u05DC\u05E9\u05E8\u05D5\u05D3
     \u05D1\u05E2\u05D5\u05DC\u05DD \u05D4\u05DE\u05D5\u05D3\u05E8\u05E0\u05D9. \r\n"
   m_isRightToLeft: 1

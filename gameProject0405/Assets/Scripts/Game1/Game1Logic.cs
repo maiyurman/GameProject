@@ -52,10 +52,13 @@ public class Game1Logic : MonoBehaviour
     public Animator orAnimator;
     public Animator tamarAnimator;
     public Animator emaAnimator;
+    public Animator tamir;
 
     public Image sound1;
     public Image sound2;
     public Image sound3;
+
+    public navigation continuebtn;
 
 
     void Start()
@@ -115,6 +118,45 @@ public class Game1Logic : MonoBehaviour
             Debug.Log(MaxStage);
             loadStoryBtn.EnableStoryBtnsForLevel(MaxStage);        
         }
+
+        continuebtn.disableBtn();
+        FindObjectOfType<audioManger>().Play("stage1Sentence1");
+        StartCoroutine(stage1Sentence1());
+
+    }
+
+    IEnumerator stage1Sentence1()
+    {
+        yield return new WaitForSeconds(0.02f);
+        tamir.SetBool("isTalk", false);
+        continuebtn.enableBtn();
+    }
+
+    public void startstage1Sentence2()
+    {
+        tamir.SetBool("isTalk", true);
+        FindObjectOfType<audioManger>().Play("stage1Sentence2");
+        StartCoroutine(stage1Sentence2());
+
+    }
+
+    IEnumerator stage1Sentence2()
+    {
+        yield return new WaitForSeconds(1);
+        tamir.SetBool("isTalk", false);
+    }
+
+    public void startstage1Sentence3()
+    {
+        tamir.SetBool("isTalk", true);
+        FindObjectOfType<audioManger>().Play("stage1Sentence3");
+        StartCoroutine(stage1Sentence3());
+    }
+
+    IEnumerator stage1Sentence3()
+    {
+        yield return new WaitForSeconds(1);
+        tamir.SetBool("isTalk", false);
     }
 
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wavingTime : MonoBehaviour
+public class wavingTime2 : MonoBehaviour
 {
     public Animator tamirAnimator;
 
@@ -18,15 +18,14 @@ public class wavingTime : MonoBehaviour
         tamirAnimator.SetBool("isWave", true);
         //קוד להעלאת מספרים
         int numbergro = 0;
-        int finalenumber = 6;
+        int finalenumber = 5;
         for (int i = numbergro; i <= finalenumber; i++)
         {
             Debug.Log(i);
             yield return new WaitForSeconds(numbersec);
         }
-        Debug.Log("סיימתי");
         tamirAnimator.SetBool("isWave", false);
-        
+
         yield return new WaitForSeconds(2);
         StartCoroutine(waving(1));
     }

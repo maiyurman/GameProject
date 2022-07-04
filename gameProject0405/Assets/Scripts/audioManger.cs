@@ -8,9 +8,13 @@ public class audioManger : MonoBehaviour
 
     public static audioManger instance;
 
-    public navgationFor2 mybutton1;
-    public navgationFor2 mybutton2;
-    public navgationFor2 mybutton3;
+    public navgationFor2 tamarSound;
+    public navgationFor2 orSound;
+    public navgationFor2 emaSound;
+    public navgationFor2 sentence1;
+    public navgationFor2 sentence2;
+    public navgationFor2 sentence3;
+
 
 
     void Awake()
@@ -54,24 +58,36 @@ public class audioManger : MonoBehaviour
 
     public void click(string sound)
     {
-        Debug.Log("לחצתי על הכפתור");
         sound s = Array.Find(sounds, item => item.name == sound);
         if (s.source.volume == 0)
         {
             s.source.volume = 1;
+
             if (sound == "tamarRecord")
             {
-                mybutton1.enableBtn();
+                tamarSound.enableBtn();
 
             }
-            else if(sound == "orRecord")
+            else if (sound == "orRecord")
             {
-                mybutton2.enableBtn();
+                orSound.enableBtn();
 
             }
-            else if(sound == "emaRecord")
+            else if (sound == "emaRecord")
             {
-                mybutton3.enableBtn();
+                emaSound.enableBtn();
+            }
+            else if (sound == "stage1Sentence1")
+            {
+                sentence1.enableBtn();
+            }
+            else if (sound == "stage1Sentence2")
+            {
+                sentence2.enableBtn();
+            }
+            else if (sound == "stage1Sentence3")
+            {
+                sentence3.enableBtn();
             }
         }
         else
@@ -80,15 +96,27 @@ public class audioManger : MonoBehaviour
 
             if (sound == "tamarRecord")
             {
-                mybutton1.notMusic();
+                tamarSound.notMusic();
             }
             else if (sound == "orRecord")
             {
-                mybutton2.notMusic();
+                orSound.notMusic();
             }
             else if (sound == "emaRecord")
             {
-                mybutton3.notMusic();
+                emaSound.notMusic();
+            }
+            else if (sound == "stage1Sentence1")
+            {
+                sentence1.notMusic();
+            }
+            else if (sound == "stage1Sentence2")
+            {
+                sentence2.notMusic();
+            }
+            else if (sound == "stage1Sentence3")
+            {
+                sentence3.notMusic();
             }
         }
     }

@@ -21,9 +21,10 @@ public class navgationFor2 : MonoBehaviour
 
         public void enableBtn()
         {
-            mybutton.enabled = true;
             cursorControllerNew.instance.ActivateclickerCursor();
+            mybutton.image.overrideSprite = imageOn;
             mybutton.image.sprite = imageOn;
+            mybutton.enabled = true;
 
     }
 
@@ -37,12 +38,9 @@ public class navgationFor2 : MonoBehaviour
         public void notMusic()
         {
             mybutton.image.overrideSprite = imageOff;
-            Debug.Log(mybutton.image.sprite);
             mybutton.image.sprite = imageOff;
             cursorControllerNew.instance.ActivateclickerCursor();
-
-
-    }
+        }
 
     void OnMouseOver()
         {
