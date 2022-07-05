@@ -1558,6 +1558,10 @@ MonoBehaviour:
   game4Animation2: {fileID: 1557892620}
   tamirAnimator: {fileID: 1813752314}
   tamir: {fileID: 1813752314}
+  emojiHappy: {fileID: 9037884370851157187, guid: 8089de8a52d1542eb87701759768e901, type: 3}
+  emojiSad: {fileID: 3301192953113592492, guid: 78fb4f798b7814681a219326b82fc7e2, type: 3}
+  emojiLike: {fileID: 3523583382234173414, guid: db69cc0640d7846559fa97f42bcf0972, type: 3}
+  emojiDislike: {fileID: 1403179444765217491, guid: ee3113aa85b924a41a26eba4b1c7d286, type: 3}
 --- !u!4 &56529851
 Transform:
   m_ObjectHideFlags: 0
@@ -18713,6 +18717,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chat
       objectReference: {fileID: 0}
+    - target: {fileID: 6631343989238251266, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
+      propertyPath: objectTemplate
+      value: 
+      objectReference: {fileID: 5718358244925922337, guid: 0fd00e83d2457b945a9db3e9f0c4ad55, type: 3}
     - target: {fileID: 6631343989238251267, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -23632,6 +23640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chat
       objectReference: {fileID: 0}
+    - target: {fileID: 6631343989238251266, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
+      propertyPath: objectTemplate
+      value: 
+      objectReference: {fileID: 5718358244925922337, guid: 0fd00e83d2457b945a9db3e9f0c4ad55, type: 3}
     - target: {fileID: 6631343989238251267, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

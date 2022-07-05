@@ -47,6 +47,11 @@ public class Game4Logic : MonoBehaviour
 
     public Animator tamir;
 
+    public GameObject emojiHappy;
+    public GameObject emojiSad;
+    public GameObject emojiLike;
+    public GameObject emojiDislike;
+
     string musicOn;
 
 
@@ -213,12 +218,15 @@ public class Game4Logic : MonoBehaviour
 
     IEnumerator sendMessageChat1()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         playMessage();
-        chatGame1.addTextMessage(Chat.Direction.RECEIVE, "בהמשך לשיחתנו, אנחנו יודעים שתתקשה להתחייב לשתף איתנו פעולה במשך שנה שלמה ולכן אנחנו מוכנים לשנות את החוזה לתקופה של חצי שנה.", 5);
-        yield return new WaitForSeconds(5);
+        chatGame1.addTextMessage(Chat.Direction.RECEIVE, "בהמשך לשיחתנו, כחלק מהצטרפותך לחברה סוכם כי תפרסם סטורי אחד לשבוע בו תצלם/תספר על  נעלי הספורט החדשות שלנו.", 6);
+        yield return new WaitForSeconds(4);
         playMessage();
-        chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אבל נשמח שבתמורה תחשוב על מספר שירותים נוספים שתוכל לספק עבורנו בפלטפורמה זו.", 4);
+        chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אנחנו יודעים מהשיחה הקודמת שנערכה איתך שתתקשה להתחייב לשתף איתנו פעולה במשך שנה שלמה.", 4);
+        yield return new WaitForSeconds(4);
+        playMessage();
+        chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אנחנו מוכנים לשנות את החוזה לתקופה של חצי שנה אך, נשמח שבתמורה תחשוב על מספר שירותים נוספים שתוכל לספק עבורינו.", 7);
     }
 
     public void updateGame1Message(string Message)
@@ -394,14 +402,14 @@ public class Game4Logic : MonoBehaviour
     {
         if (mumber == 1)
         {
-            chatGame1.addPhoto(Chat.Direction.SEND, "Emoji happy 1");
+            chatGame1.addObject(Chat.Direction.SEND, emojiHappy);
             yield return new WaitForSeconds(1);
             playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם ושאתם חלק ממשפחתנו!", 2);
         }
         else
         {
-            chatGame2.addPhoto(Chat.Direction.SEND, "Emoji happy 1");
+            chatGame2.addObject(Chat.Direction.SEND, emojiHappy);
             yield return new WaitForSeconds(1);
             playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם ושאתם חלק ממשפחתנו!", 2);
@@ -420,14 +428,14 @@ public class Game4Logic : MonoBehaviour
     {
         if (number == 1)
         {
-            chatGame1.addPhoto(Chat.Direction.SEND, "Emoji cry 1");
+            chatGame1.addObject(Chat.Direction.SEND, emojiSad);
             yield return new WaitForSeconds(1);
             playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שככה אתם מרגישים, תמיד תוכלו ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);
         }
         else
         {
-            chatGame2.addPhoto(Chat.Direction.SEND, "Emoji cry 1");
+            chatGame2.addObject(Chat.Direction.SEND, emojiSad);
             yield return new WaitForSeconds(1);
             playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שככה אתם מרגישים, תמיד תוכלו ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);
@@ -445,14 +453,14 @@ public class Game4Logic : MonoBehaviour
     {
         if (number == 1)
         {
-            chatGame1.addPhoto(Chat.Direction.SEND, "Emoji like");
+            chatGame1.addObject(Chat.Direction.SEND, emojiLike);
             yield return new WaitForSeconds(1);
             playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם.", 2);
         }
         else
         {
-            chatGame2.addPhoto(Chat.Direction.SEND, "Emoji like");
+            chatGame2.addObject(Chat.Direction.SEND, emojiLike);
             yield return new WaitForSeconds(1);
             playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "אנחנו שמחים שזו התחושה שלכם.", 2);
@@ -469,14 +477,14 @@ public class Game4Logic : MonoBehaviour
     {
         if (number == 1)
         {
-            chatGame1.addPhoto(Chat.Direction.SEND, "Emoji dislike");
+            chatGame1.addObject(Chat.Direction.SEND, emojiDislike);
             yield return new WaitForSeconds(1);
             playMessage();
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שזו התחושה שלכם. תוכלו להיכנס ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);
         }
         else
         {
-            chatGame2.addPhoto(Chat.Direction.SEND, "Emoji dislike");
+            chatGame2.addObject(Chat.Direction.SEND, emojiDislike);
             yield return new WaitForSeconds(1);
             playMessage();
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "מצטערים לשמוע שזו התחושה שלכם. תוכלו להיכנס ללחוץ על הכפתור של תמיר על מנת לבקש עזרה.", 4);

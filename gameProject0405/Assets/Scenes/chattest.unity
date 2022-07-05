@@ -1800,6 +1800,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6631343987993048184, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6631343988528398082, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1826,12 +1830,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6631343988937570285, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.22537
+      value: 191.5012
       objectReference: {fileID: 0}
     - target: {fileID: 6631343989238251264, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
       propertyPath: m_Name
       value: Chat
       objectReference: {fileID: 0}
+    - target: {fileID: 6631343989238251266, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
+      propertyPath: testObject
+      value: 
+      objectReference: {fileID: 1557855083673041446, guid: 257f76ef20b664aea99b3569ef9c27e8, type: 3}
+    - target: {fileID: 6631343989238251266, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
+      propertyPath: objectTemplate
+      value: 
+      objectReference: {fileID: 5718358244925922337, guid: 0fd00e83d2457b945a9db3e9f0c4ad55, type: 3}
     - target: {fileID: 6631343989238251267, guid: e48d8196a8d9f894a9b0559a0fd7489c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

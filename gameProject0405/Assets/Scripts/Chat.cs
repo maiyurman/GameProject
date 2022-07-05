@@ -16,11 +16,14 @@ public class Chat : MonoBehaviour
     public GameObject videoTemplate;
     public GameObject photoTemplate;
     public GameObject textMessageTemplate;
+    public GameObject objectTemplate;
 
     private float initialContentHeight;
     private float currentHeight = 0;
     private bool isInit = false;
     private string profilePhoto = "chatUser";
+
+    //public GameObject testObject;
 
     public void initChat()
     {
@@ -52,17 +55,18 @@ public class Chat : MonoBehaviour
 
     //public void B1()
     //{
-    //    addVideo(Direction.RECEIVE, "6", playVideo2);
+    //    addObject(Direction.RECEIVE, testObject);
+    //    //addVideo(Direction.RECEIVE, "6", playVideo2);
     //    addPhoto(Direction.RECEIVE, "6");
-    //    addTextMessage(Direction.RECEIVE, "sdfsdfs\ndsfsfsfs");
-    //    addTextMessage(Direction.RECEIVE, "טקסט בלה בלה בלה גכדגלכחד דןגכדוג כדוגככ בלה בלה בלה 'יכוגדטכוןדג דגוכטוד9", 3);
+    //    //addTextMessage(Direction.RECEIVE, "sdfsdfs\ndsfsfsfs");
+    //    //addTextMessage(Direction.RECEIVE, "טקסט בלה בלה בלה גכדגלכחד דןגכדוג כדוגככ בלה בלה בלה 'יכוגדטכוןדג דגוכטוד9", 3);
     //}
 
     //public void B2()
     //{
-    //    addVideo(Direction.SEND, "2", playVideo3);
+    //    //addVideo(Direction.SEND, "2", playVideo3);
     //    addPhoto(Direction.SEND, "2");
-    //    addTextMessage(Direction.SEND, "טקסט בלה בלה בלה גכדגלכחד דןגכדוג כדוגככ בלה בלה בלה 'יכוגדטכוןדג דגוכטוד9", 3);
+    //    //addTextMessage(Direction.SEND, "טקסט בלה בלה בלה גכדגלכחד דןגכדוג כדוגככ בלה בלה בלה 'יכוגדטכוןדג דגוכטוד9", 3);
     //}
 
     //public void playVideo2()
@@ -84,6 +88,19 @@ public class Chat : MonoBehaviour
         video.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(action);
 
         addMessageItem(direction, video.transform);
+    }
+
+    public void addObject(Direction direction, GameObject requestedObject)
+    {
+        GameObject objTemplate = Instantiate(objectTemplate, new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject newObject = Instantiate(requestedObject, new Vector3(0, 0, 0), Quaternion.identity);
+        newObject.transform.SetParent(objTemplate.transform, false);
+        newObject.transform.localScale = new Vector3(1, 1, 1);
+        float width = getWidth(objTemplate);
+        float height = getHeight(objTemplate);
+        setSize(newObject, width * 0.75f, height * 0.75f);
+
+        addMessageItem(direction, objTemplate.transform);
     }
 
     public void addPhoto(Direction direction, string imageName)
@@ -179,9 +196,24 @@ public class Chat : MonoBehaviour
         return obj.GetComponent<RectTransform>().rect.height;
     }
 
+    private float getWidth(GameObject obj)
+    {
+        return obj.GetComponent<RectTransform>().rect.width;
+    }
+
     private void setHeight(GameObject obj, float height)
     {
-        obj.GetComponent<RectTransform>().sizeDelta = new Vector2(obj.GetComponent<RectTransform>().rect.width, height);
+        setSize(obj, obj.GetComponent<RectTransform>().rect.width, height);
+    }
+
+    private void setWidth(GameObject obj, float width)
+    {
+        setSize(obj, width, obj.GetComponent<RectTransform>().rect.height);
+    }
+
+    private void setSize(GameObject obj, float width, float height)
+    {
+        obj.GetComponent<RectTransform>().sizeDelta = new Vector2(width, height);
     }
 
     private void scrollToBottom()
