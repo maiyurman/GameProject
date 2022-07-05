@@ -60,6 +60,8 @@ public class Game1Logic : MonoBehaviour
 
     public navigation continuebtn;
 
+    string musicOn;
+
 
     void Start()
     {
@@ -121,8 +123,24 @@ public class Game1Logic : MonoBehaviour
 
         continuebtn.disableBtn();
         FindObjectOfType<audioManger>().Play("stage1Sentence1");
+        Checkmusicbtns("stage1Sentence1");
         StartCoroutine(stage1Sentence1());
+    }
 
+    public void Checkmusicbtns(string musicBtnName)
+    {
+        musicOn = PlayerPrefs.GetString("isMusicOn");
+        Debug.Log("סטטוס מוזיקה" + musicOn);
+        //אם המוזיקה מופעלת
+        if (musicOn == "true")
+        {
+            Debug.Log("שם המוזיקה" + musicBtnName);
+            FindObjectOfType<audioManger>().stayOn(musicBtnName);
+        }
+        else
+        {
+            FindObjectOfType<audioManger>().stayOff(musicBtnName);
+        }
     }
 
     IEnumerator stage1Sentence1()
@@ -165,6 +183,7 @@ public class Game1Logic : MonoBehaviour
         StopAllCoroutines();
         video1.SetActive(false);
         video1.SetActive(true);
+        Checkmusicbtns("tamarRecord");
         StartCoroutine(sentenceVideo1());
     }
 
@@ -173,6 +192,7 @@ public class Game1Logic : MonoBehaviour
         StopAllCoroutines();
         video2.SetActive(false);
         video2.SetActive(true);
+        Checkmusicbtns("orRecord");
         StartCoroutine(sentenceVideo2());
 
     }
@@ -182,6 +202,7 @@ public class Game1Logic : MonoBehaviour
         StopAllCoroutines();
         video3.SetActive(false);
         video3.SetActive(true);
+        Checkmusicbtns("emaRecord");
         StartCoroutine(sentenceVideo3());
 
     }
@@ -332,7 +353,10 @@ public class Game1Logic : MonoBehaviour
         yield return new WaitForSeconds(1);
         if (isAnswerTrue)
         {
-            FindObjectOfType<audioManger>().Play("receiveMessage");
+            if (musicOn == "true")
+            {
+                FindObjectOfType<audioManger>().Play("receiveMessage");
+            }
             chatGame1.addTextMessage(Chat.Direction.RECEIVE, "ניהול זמן בהחלט יכול לעזור לי להתנהל טוב יותר.", 3);
             finishGame1.SetActive(true);
             trueAnimation1.SetActive(true);
@@ -343,17 +367,26 @@ public class Game1Logic : MonoBehaviour
         {
             if (tryGame1 == 2)
             {
-                FindObjectOfType<audioManger>().Play("receiveMessage");
+                if (musicOn == "true")
+                {
+                    FindObjectOfType<audioManger>().Play("receiveMessage");
+                }
                 chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אני לא בטוחה שזה מקור הבעיה, כדאי לבחור באפשרות אחרת.", 3);
             }
             else if (tryGame1 == 1)
             {
-                FindObjectOfType<audioManger>().Play("receiveMessage");
+                if (musicOn == "true")
+                {
+                    FindObjectOfType<audioManger>().Play("receiveMessage");
+                }
                 chatGame1.addTextMessage(Chat.Direction.RECEIVE, "צפייה חוזרת בסרטון למעלה תעזור לזהות את מקור הבעיה.", 3);
             }
             else
             {
-                FindObjectOfType<audioManger>().Play("receiveMessage");
+                if (musicOn == "true")
+                {
+                    FindObjectOfType<audioManger>().Play("receiveMessage");
+                }
                 chatGame1.addTextMessage(Chat.Direction.RECEIVE, "אחרי שחשבתי על זה, הגעתי למסקנה שהבעיה שלי היא בכלל ניהול זמן לא נכון !צפיתי בסרטון שוב ומצאתי את המכנה המשותף אבל תודה על הרצון לעזור.", 7);
                 finishGame1.SetActive(true);
                 isAnswerTrue = false;
@@ -395,7 +428,10 @@ public class Game1Logic : MonoBehaviour
         yield return new WaitForSeconds(1);
         if (isAnswerTrue)
         {
-            FindObjectOfType<audioManger>().Play("receiveMessage");
+            if (musicOn == "true")
+            {
+                FindObjectOfType<audioManger>().Play("receiveMessage");
+            }
             chatGame2.addTextMessage(Chat.Direction.RECEIVE, "נכון, לחשוב לפני שאני פועל יכול לעזור לי, תודה על העזרה!", 3);
             finishGame2.SetActive(true);
             trueAnimation2.SetActive(true);
@@ -406,17 +442,26 @@ public class Game1Logic : MonoBehaviour
         {
             if (tryGame2 == 2)
             {
-                FindObjectOfType<audioManger>().Play("receiveMessage");
+                if (musicOn == "true")
+                {
+                    FindObjectOfType<audioManger>().Play("receiveMessage");
+                }
                 chatGame2.addTextMessage(Chat.Direction.RECEIVE, "אני לא בטוח שזה מקור הבעיה, כדאי לבחור באפשרות אחרת.", 3);
             }
             else if (tryGame2 == 1)
             {
-                FindObjectOfType<audioManger>().Play("receiveMessage");
+                if (musicOn == "true")
+                {
+                    FindObjectOfType<audioManger>().Play("receiveMessage");
+                }
                 chatGame2.addTextMessage(Chat.Direction.RECEIVE, "צפייה חוזרת בסרטון למעלה תעזור לזהות את מקור הבעיה.", 3);
             }
             else
             {
-                FindObjectOfType<audioManger>().Play("receiveMessage");
+                if (musicOn == "true")
+                {
+                    FindObjectOfType<audioManger>().Play("receiveMessage");
+                }
                 chatGame2.addTextMessage(Chat.Direction.RECEIVE, "צפיתי בסרטון שוב ומצאתי את המכנה המשותף, אני צריך לחשוב לפני שאני פועל. אבל תודה על הרצון לעזור.", 5);
                 finishGame2.SetActive(true);
                 isAnswerTrue = false;
@@ -458,7 +503,10 @@ public class Game1Logic : MonoBehaviour
         yield return new WaitForSeconds(1);
         if (isAnswerTrue)
         {
-            FindObjectOfType<audioManger>().Play("receiveMessage");
+            if (musicOn == "true")
+            {
+                FindObjectOfType<audioManger>().Play("receiveMessage");
+            }
             chatGame3.addTextMessage(Chat.Direction.RECEIVE, "נכון, יש לי נטייה כזו אני צריכה לעבוד על זה! תודה על העזרה!", 3);
             finishGame3.SetActive(true);
             trueAnimation3.SetActive(true);
@@ -469,17 +517,26 @@ public class Game1Logic : MonoBehaviour
         {
             if (tryGame3 == 2)
             {
-                FindObjectOfType<audioManger>().Play("receiveMessage");
+                if (musicOn == "true")
+                {
+                    FindObjectOfType<audioManger>().Play("receiveMessage");
+                }
                 chatGame3.addTextMessage(Chat.Direction.RECEIVE, "אני לא בטוחה שזה מקור הבעיה, כדאי לבחור באפשרות אחרת.", 3);
             }
             else if (tryGame3 == 1)
             {
-                FindObjectOfType<audioManger>().Play("receiveMessage");
+                if (musicOn == "true")
+                {
+                    FindObjectOfType<audioManger>().Play("receiveMessage");
+                }
                 chatGame3.addTextMessage(Chat.Direction.RECEIVE, "צפייה חוזרת בסרטון למעלה תעזור לזהות את מקור הבעיה.", 3);
             }
             else
             {
-                FindObjectOfType<audioManger>().Play("receiveMessage");
+                if (musicOn == "true")
+                {
+                    FindObjectOfType<audioManger>().Play("receiveMessage");
+                }
                 chatGame3.addTextMessage(Chat.Direction.RECEIVE, "אחרי שחשבתי על זה, הגעתי למסקנה שהבעיה שלי היא שהייתי יהירה מידי בנוגע לקבלה ליחידה. צפיתי בסרטון שוב ומצאתי את המכנה המשותף אבל תודה על הרצון לעזור.", 7);
                 finishGame3.SetActive(true);
                 isAnswerTrue = false;

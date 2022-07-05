@@ -16,8 +16,7 @@ public class menuUI : MonoBehaviour
     {
         aboutWindow.SetActive(false);
         menu.SetActive(true);
-        HIT.enableBtn();
-        Matach.enableBtn();
+        PlayerPrefs.SetString("isMusicOn", "true");
     }
 
     public void openGame()

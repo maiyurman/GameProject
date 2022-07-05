@@ -347,7 +347,9 @@ public void UpdateUi(int NumOfPage)
         Game3Logic.finishGame();
         //הדלקת מסך סיום המשחק
         finishGameBk.SetActive(true);
-        StartCoroutine(stopTamirStartTalk());
+        Game3Logic.startstage3Sentence4();
+        Game3Logic.Checkmusicbtns("stage3Sentence4");
+        //StartCoroutine(stopTamirStartTalk());
     }
 
 

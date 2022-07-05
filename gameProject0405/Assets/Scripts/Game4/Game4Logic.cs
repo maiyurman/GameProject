@@ -45,6 +45,11 @@ public class Game4Logic : MonoBehaviour
     //------>אנימציה תמיר 
     public Animator tamirAnimator;
 
+    public Animator tamir;
+
+    string musicOn;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +75,81 @@ public class Game4Logic : MonoBehaviour
         MessageBtn.disableBtn();
 
         Game4UiManager = transform.gameObject.GetComponent<Game4UiManager>();
+        FindObjectOfType<audioManger4>().Play("stage4Sentence1");
+        Checkmusicbtns("stage4Sentence1");
+        StartCoroutine(stage4Sentence1());
     }
+
+    public void Checkmusicbtns(string musicBtnName)
+    {
+        musicOn = PlayerPrefs.GetString("isMusicOn");
+        //אם המוזיקה מופעלת
+        if (musicOn == "true")
+        {
+            FindObjectOfType<audioManger4>().stayOn(musicBtnName);
+        }
+        else
+        {
+            FindObjectOfType<audioManger4>().stayOff(musicBtnName);
+        }
+    }
+
+    IEnumerator stage4Sentence1()
+        {
+            yield return new WaitForSeconds(0.02f);
+            tamir.SetBool("isTalk", false);
+        }
+
+        public void startstage4Sentence2()
+        {
+            tamir.SetBool("isTalk", true);
+            FindObjectOfType<audioManger4>().Play("stage4Sentence2");
+            StartCoroutine(stage4Sentence2());
+
+        }
+
+        IEnumerator stage4Sentence2()
+        {
+            yield return new WaitForSeconds(1);
+            tamir.SetBool("isTalk", false);
+        }
+
+        public void startstage4Sentence3()
+        {
+            tamir.SetBool("isTalk", true);
+            FindObjectOfType<audioManger4>().Play("stage4Sentence3");
+            StartCoroutine(stage4Sentence3());
+        }
+
+        IEnumerator stage4Sentence3()
+        {
+            yield return new WaitForSeconds(1);
+            tamir.SetBool("isTalk", false);
+        }
+
+        public void startstage4Sentence4()
+        {
+            tamir.SetBool("isTalk", true);
+            FindObjectOfType<audioManger4>().Play("stage4Sentence4");
+            StartCoroutine(stage4Sentence4());
+        }
+
+        IEnumerator stage4Sentence4()
+        {
+            yield return new WaitForSeconds(1);
+            tamir.SetBool("isTalk", false);
+        }
+
+        public void ClickSoundBtn(string sound)
+        {
+            FindObjectOfType<audioManger4>().click(sound);
+        }
+
+        public void stopMusic(string musicName)
+        {
+            StopAllCoroutines();
+            FindObjectOfType<audioManger4>().StopPlaying(musicName);
+        }
 
     public void stopTamirTalk()
     {
@@ -125,6 +204,10 @@ public class Game4Logic : MonoBehaviour
         chatGame1.setProfilePhoto("EasyStep");
         chatGame1.initChat();
         chatGame1.addTextMessage(Chat.Direction.RECEIVE, " שלום, מדבר מתן מחברת petSyzaE, חברה העוסקת במכירת מוצרי ספורט.", 3);
+    }
+
+    public void sendMessageStart()
+    {
         StartCoroutine(sendMessageChat1());
     }
 
@@ -416,7 +499,10 @@ public class Game4Logic : MonoBehaviour
 
     public void playMessage()
     {
-        FindObjectOfType<audioManger>().Play("receiveMessage");
+        if (musicOn == "true")
+        {
+            FindObjectOfType<audioManger4>().Play("receiveMessage");
+        }
     }
 
 }

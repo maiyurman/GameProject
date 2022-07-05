@@ -35,6 +35,8 @@ public class Game5UIManager : MonoBehaviour
     public Animator tamirAnimator;
     private loadStoryBtn loadStoryBtn;
 
+    public Animator tamirTTB;
+    string musicOn;
 
     void Start()
     {
@@ -66,7 +68,80 @@ public class Game5UIManager : MonoBehaviour
         placeBtn.disableBtn();
         userBtn.disableBtn();
         MessageBtn.disableBtn();
+        FindObjectOfType<audioManger5>().Play("stage5Sentence1");
+        Checkmusicbtns("stage5Sentence1");
+        StartCoroutine(stage5Sentence1());
+    }
 
+    public void Checkmusicbtns(string musicBtnName)
+    {
+        musicOn = PlayerPrefs.GetString("isMusicOn");
+        //אם המוזיקה מופעלת
+        if (musicOn == "true")
+        {
+            FindObjectOfType<audioManger5>().stayOn(musicBtnName);
+        }
+        else
+        {
+            FindObjectOfType<audioManger5>().stayOff(musicBtnName);
+        }
+    }
+
+    IEnumerator stage5Sentence1()
+    {
+        yield return new WaitForSeconds(0.02f);
+        tamirTTB.SetBool("isTalk", false);
+    }
+
+    public void startstage5Sentence2()
+    {
+        tamirTTB.SetBool("isTalk", true);
+        FindObjectOfType<audioManger5>().Play("stage5Sentence2");
+        StartCoroutine(stage5Sentence2());
+
+    }
+
+    IEnumerator stage5Sentence2()
+    {
+        yield return new WaitForSeconds(1);
+        tamirTTB.SetBool("isTalk", false);
+    }
+
+    public void startstage5Sentence3()
+    {
+        tamirTTB.SetBool("isTalk", true);
+        FindObjectOfType<audioManger5>().Play("stage5Sentence3");
+        StartCoroutine(stage5Sentence3());
+    }
+
+    IEnumerator stage5Sentence3()
+    {
+        yield return new WaitForSeconds(1);
+        tamirTTB.SetBool("isTalk", false);
+    }
+
+    public void startstage5Sentence4()
+    {
+        tamirTTB.SetBool("isTalk", true);
+        FindObjectOfType<audioManger5>().Play("stage5Sentence4");
+        StartCoroutine(stage5Sentence4());
+    }
+
+    IEnumerator stage5Sentence4()
+    {
+        yield return new WaitForSeconds(1);
+        tamirTTB.SetBool("isTalk", false);
+    }
+
+    public void ClickSoundBtn(string sound)
+    {
+        FindObjectOfType<audioManger5>().click(sound);
+    }
+
+    public void stopMusic(string musicName)
+    {
+        StopAllCoroutines();
+        FindObjectOfType<audioManger5>().StopPlaying(musicName);
     }
 
     public void stopTamirTalk()
@@ -232,10 +307,11 @@ public class Game5UIManager : MonoBehaviour
             {
                 PlayerPrefs.SetInt("GameMax", 5);
             }
-
+            Checkmusicbtns("stage5Sentence4");
             int myMaxLevel = PlayerPrefs.GetInt("GameMax");
             Debug.Log("Max Level" + myMaxLevel);
             loadStoryBtn.enableStoryBtn(myMaxLevel);
+            startstage5Sentence4();
         }
 
     }
