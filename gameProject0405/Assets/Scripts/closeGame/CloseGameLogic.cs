@@ -17,7 +17,9 @@ public class CloseGameLogic : MonoBehaviour
 
 
     //------>אנימציה תמיר 
-    public Animator tamirAnimator;
+
+    public Animator tamirTTB;
+    string musicOn;
 
     private void Start()
     {
@@ -29,8 +31,93 @@ public class CloseGameLogic : MonoBehaviour
         level3.enableBtn();
         level4.enableBtn();
         level5.enableBtn();
+        tamirTTB.SetBool("isTalk", true);
+        FindObjectOfType<audioMangerEnd>().Play("endSentence1");
+        Checkmusicbtns("endSentence1");
+        StartCoroutine(stageEndSentence1());
 
     }
+
+    public void Checkmusicbtns(string musicBtnName)
+    {
+        musicOn = PlayerPrefs.GetString("isMusicOn");
+        //אם המוזיקה מופעלת
+        if (musicOn == "true")
+        {
+            FindObjectOfType<audioMangerEnd>().stayOn(musicBtnName);
+        }
+        else
+        {
+            FindObjectOfType<audioMangerEnd>().stayOff(musicBtnName);
+        }
+    }
+
+    IEnumerator stageEndSentence1()
+    {
+        Debug.Log("enter to 1 before");
+        yield return new WaitForSeconds(0.5f);
+        tamirTTB.SetBool("isTalk", false);
+        Debug.Log("finish 1 and" + tamirTTB.GetBool("isTalk"));
+    }
+
+    public void startstageEndSentence2()
+    {
+        tamirTTB.SetBool("isTalk", true);
+        FindObjectOfType<audioMangerEnd>().Play("endSentence2");
+        StartCoroutine(stageEndSentence2());
+
+    }
+
+    IEnumerator stageEndSentence2()
+    {
+        Debug.Log("enter to 2 before");
+        yield return new WaitForSeconds(1.5f);
+        tamirTTB.SetBool("isTalk", false);
+        Debug.Log("finish 2 and" + tamirTTB.GetBool("isTalk"));
+
+    }
+
+    public void startstageEndSentence3()
+    {
+        tamirTTB.SetBool("isTalk", true);
+        FindObjectOfType<audioMangerEnd>().Play("endSentence3");
+        StartCoroutine(stageEndSentence3());
+    }
+
+    IEnumerator stageEndSentence3()
+    {
+        Debug.Log("enter to 3 before");
+        yield return new WaitForSeconds(1.5f);
+        tamirTTB.SetBool("isTalk", false);
+        Debug.Log("finish 3 and" + tamirTTB.GetBool("isTalk"));
+    }
+
+    public void startstageEndSentence4()
+    {
+        tamirTTB.SetBool("isTalk", true);
+        FindObjectOfType<audioMangerEnd>().Play("endSentence4");
+        StartCoroutine(stageEndSentence4());
+    }
+
+    IEnumerator stageEndSentence4()
+    {
+        Debug.Log("enter to 4 before");
+        yield return new WaitForSeconds(0.5f);
+        tamirTTB.SetBool("isTalk", false);
+        Debug.Log("finish 4 and" + tamirTTB.GetBool("isTalk"));
+    }
+
+    public void ClickSoundBtn(string sound)
+    {
+        FindObjectOfType<audioMangerEnd>().click(sound);
+    }
+
+    public void stopMusic(string musicName)
+    {
+        StopAllCoroutines();
+        FindObjectOfType<audioMangerEnd>().StopPlaying(musicName);
+    }
+
     public void startOverGame()
     {
         PlayerPrefs.SetInt("gameNumIn", 0);
@@ -45,13 +132,14 @@ public class CloseGameLogic : MonoBehaviour
 
     public void stopTamirTalk()
     {
-        StartCoroutine(stopTamirStartTalk());
+        tamirTTB.SetBool("isTalk", false);
 
     }
 
-    IEnumerator stopTamirStartTalk()
+    public void startTamirTalk()
     {
-        yield return new WaitForSeconds(2);
-        tamirAnimator.SetBool("isTalk", false);
+        tamirTTB.SetBool("isTalk", true);
+
     }
+
 }

@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: tamirRecord
-    clip: {fileID: 8300000, guid: c91c24fd3ce502c438d0f8013fe1d639, type: 3}
+    clip: {fileID: 8300000, guid: 360cddbee0933ae478377391c6e784a5, type: 3}
     volume: 1
     pitch: 1
     loop: 0
