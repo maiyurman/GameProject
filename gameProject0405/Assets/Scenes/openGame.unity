@@ -1466,6 +1466,114 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: openSentence1
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence2
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence3
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence4
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence5
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence6
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence7
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence8
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence9
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence10
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence11
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence12
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence13
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence14
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence15
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence16
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence17
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: openSentence18
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   TamirSound: {fileID: 1061052109}
 --- !u!4 &1284534339
 Transform:
