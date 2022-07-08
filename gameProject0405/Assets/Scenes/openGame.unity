@@ -187,6 +187,7 @@ MonoBehaviour:
   tamir2: {fileID: 831671656}
   tamirAnimator: {fileID: 831671657}
   soundBtn: {fileID: 1061052109}
+  currentMusic: 
 --- !u!1001 &208818692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1461,7 +1462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: tamirRecord
-    clip: {fileID: 8300000, guid: 360cddbee0933ae478377391c6e784a5, type: 3}
+    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -1473,103 +1474,103 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: openSentence2
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: 7dfa474fff5901848891ea30480ce626, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence3
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: c0931fe8108063a43831038cc5cfe77a, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence4
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: c47fb2cf45e0b014db431f94ab92cde4, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence5
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: 0b5274cd0f0e84c49a659402c1b10134, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence6
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: adb61a688d5bc2c458e5b6d94c15fb33, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence7
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: b1eb4c98b84bf9a44891d571efec29f3, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence8
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: f473a8ac43da7f44284bc8318ae9ddb5, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence9
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: a642b1eb9991cb6439e757224674ec83, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence10
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: baebe4bc1a086c748956bd7ccdf90770, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence11
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: 17f4b79572ff36447bd7debe009604b0, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence12
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: cec51595668371441a7558242e418a88, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence13
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: 333a49dfdfc53b947a98bc9d2aa357d0, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence14
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: e8804a5583f27df48ad9975b87e23169, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence15
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: 130ddfbb960dba340b3d7c3ab254d02a, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence16
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: f2170ecee1eafe345abb91b092c50eab, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence17
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: a40d757030add7f4ea91e8f58066153e, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: openSentence18
-    clip: {fileID: 8300000, guid: e5cf3d52e744e5c47aa5c2f18a53c943, type: 3}
+    clip: {fileID: 8300000, guid: e11e8ba64127d9843acf2f6fb12a6c45, type: 3}
     volume: 1
     pitch: 1
     loop: 0

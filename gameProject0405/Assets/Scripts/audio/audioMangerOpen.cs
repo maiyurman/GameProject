@@ -20,11 +20,12 @@ public class audioMangerOpen : MonoBehaviour
 
     void Start()
     {
-        openGameUi = transform.gameObject.GetComponent<openGameUi>();
+        openGameUi = GameObject.Find("GameManager").GetComponent<openGameUi>();
 
     }
     void Awake()
     {
+
         if (instance == null)
             instance = this;
         else
@@ -59,7 +60,14 @@ public class audioMangerOpen : MonoBehaviour
             return;
         }
 
-        s.source.Stop();
+        string btn = "openSentence";
+        for (int i = 1; i < 19; i++)
+        {
+            string number = i.ToString();
+            string thebtn = btn + i;
+            sound myBtn = Array.Find(sounds, item => item.name == thebtn);
+            myBtn.source.Stop();
+        }
     }
 
     public void click(string sound)
@@ -69,29 +77,57 @@ public class audioMangerOpen : MonoBehaviour
         {
             s.source.volume = 1;
             PlayerPrefs.SetString("isMusicOn", "true");
+            string btn = "openSentence";
+            for (int i = 1; i < 19; i++)
+            {
+                string number = i.ToString();
+                string thebtn = btn + i;
+                sound myBtn = Array.Find(sounds, item => item.name == thebtn);
+                myBtn.source.volume = 1;
+            }
             TamirSound.enableBtn();
         }
         else
         {
             s.source.volume = 0;
             PlayerPrefs.SetString("isMusicOn", "false");
+            string btn = "openSentence";
+            for (int i = 1; i < 19; i++)
+            {
+                string number = i.ToString();
+                string thebtn = btn + i;
+                sound myBtn = Array.Find(sounds, item => item.name == thebtn);
+                myBtn.source.volume = 0;
+            }
             TamirSound.notMusic();
         }
     }
 
-    public void stayOn(string sound)
+    public void stayOn()
     {
         PlayerPrefs.SetString("isMusicOn", "true");
-        sound s = Array.Find(sounds, item => item.name == sound);
-        s.source.volume = 1;
+        string btn = "openSentence";
+        for (int i = 1; i < 19; i++)
+        {
+            string number = i.ToString();
+            string thebtn = btn + i;
+            sound myBtn = Array.Find(sounds, item => item.name == thebtn);
+            myBtn.source.volume = 1;
+        }
         TamirSound.enableBtn();
     }
 
-    public void stayOff(string sound)
+    public void stayOff()
     {
         PlayerPrefs.SetString("isMusicOn", "false");
-        sound s = Array.Find(sounds, item => item.name == sound);
-        s.source.volume = 0;
+        string btn = "openSentence";
+        for (int i = 1; i < 19; i++)
+        {
+            string number = i.ToString();
+            string thebtn = btn + i;
+            sound myBtn = Array.Find(sounds, item => item.name == thebtn);
+            myBtn.source.volume = 0;
+        }
         TamirSound.notMusic();
     }
 
