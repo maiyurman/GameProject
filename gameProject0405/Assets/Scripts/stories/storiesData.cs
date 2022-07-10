@@ -28,9 +28,8 @@ public class storiesData : MonoBehaviour
         UIMangerstory.updateUi();
         openGameMax = PlayerPrefs.GetInt("GameMax");
         loadStoryBtn.disableStoryBtnAll();
+        Debug.Log("disabling");
         loadStoryBtn.EnableStoryBtnsForLevel(openGameMax);
+        Debug.Log("enable openGameMax " + openGameMax);
     }
-
-    
-
 }

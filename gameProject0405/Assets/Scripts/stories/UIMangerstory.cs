@@ -27,6 +27,8 @@ public class UIMangerstory : MonoBehaviour
     {
         storiesData = transform.gameObject.GetComponent<storiesData>();
         MaxNumber = PlayerPrefs.GetInt("GameMax");
+        Debug.Log("UIM MaxNumber - " + MaxNumber);
+        Debug.Log("UIM gameNumIn - " + PlayerPrefs.GetInt("gameNumIn"));
     }
 
     //איפוס חיצים

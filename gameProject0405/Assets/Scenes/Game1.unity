@@ -8197,7 +8197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242385881699441482, guid: 4fa87725b61ed88408083f327094d906, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1019.99945
+      value: 1019.9994
       objectReference: {fileID: 0}
     - target: {fileID: 5242385881699441482, guid: 4fa87725b61ed88408083f327094d906, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9122,7 +9122,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.35686275, g: 0.38823533, b: 0.80392164, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.35686275, g: 0.38823533, b: 0.80392164, a: 1}
     m_PressedColor: {r: 0.35686275, g: 0.38823533, b: 0.80392164, a: 1}
     m_SelectedColor: {r: 0.35686275, g: 0.38823533, b: 0.80392164, a: 1}
@@ -23022,7 +23022,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.3647059, g: 0.37254903, b: 0.8000001, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.3647059, g: 0.37254903, b: 0.8000001, a: 1}
     m_PressedColor: {r: 0.3647059, g: 0.37254903, b: 0.8000001, a: 1}
     m_SelectedColor: {r: 0.3647059, g: 0.37254903, b: 0.8000001, a: 1}

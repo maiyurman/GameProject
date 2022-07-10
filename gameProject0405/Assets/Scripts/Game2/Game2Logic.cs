@@ -56,7 +56,7 @@ public class Game2Logic : MonoBehaviour
 
     IEnumerator stage1Sentence1()
     {
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(1);
         tamir.SetBool("isTalk", false);
         continuebtn.enableBtn();
     }
@@ -108,9 +108,8 @@ public class Game2Logic : MonoBehaviour
         {
             PlayerPrefs.SetInt("GameMax", 2);
         }
-     
+
         int myMaxLevel = PlayerPrefs.GetInt("GameMax");
-        Debug.Log("Max Level" + myMaxLevel);
         loadStoryBtn.enableStoryBtn(myMaxLevel);
     }
 }

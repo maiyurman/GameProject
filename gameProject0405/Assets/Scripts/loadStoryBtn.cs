@@ -48,6 +48,7 @@ public class loadStoryBtn : MonoBehaviour
     public void enableStoryBtn(int buttonNum)
     {
         PlayerPrefs.SetInt("GameMax", buttonNum);
+        Debug.Log("enableStoryBtn" + PlayerPrefs.GetInt("GameMax"));
         storyBtns[buttonNum - 1].enableBtn();
     }
 
