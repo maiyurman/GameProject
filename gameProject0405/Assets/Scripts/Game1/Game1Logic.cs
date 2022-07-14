@@ -58,10 +58,8 @@ public class Game1Logic : MonoBehaviour
     public Image sound2;
     public Image sound3;
 
-    public navigation continuebtn;
-
     string musicOn;
-
+    string currentMusic;
 
     void Start()
     {
@@ -121,10 +119,9 @@ public class Game1Logic : MonoBehaviour
             loadStoryBtn.EnableStoryBtnsForLevel(MaxStage);        
         }
 
-        continuebtn.disableBtn();
-        FindObjectOfType<audioManger>().Play("stage1Sentence1");
+        currentMusic = "stage1Sentence1";
         Checkmusicbtns("stage1Sentence1");
-        StartCoroutine(stage1Sentence1());
+        stage1Sentence1();
     }
 
     public void Checkmusicbtns(string musicBtnName)
@@ -143,143 +140,301 @@ public class Game1Logic : MonoBehaviour
         }
     }
 
-    IEnumerator stage1Sentence1()
+    //משפטים סאונד
+
+    public void stage1Sentence1()
     {
-        yield return new WaitForSeconds(0.02f);
-        tamir.SetBool("isTalk", false);
-        continuebtn.enableBtn();
+            tamir.SetBool("isTalk", true);
+            currentMusic = "stage1Sentence1";
+            Checkmusicbtns(currentMusic);
+            FindObjectOfType<audioManger>().Play("stage1Sentence1");
+            FindObjectOfType<audioManger>().isPlaying("stage1Sentence1");
     }
 
-    public void startstage1Sentence2()
+    public void stage1Sentence2()
     {
-        tamir.SetBool("isTalk", true);
-        FindObjectOfType<audioManger>().Play("stage1Sentence2");
-        StartCoroutine(stage1Sentence2());
-
+        if (currentMusic == "stage1Sentence1")
+        {
+            stopMusic();
+            tamir.SetBool("isTalk", true);
+            currentMusic = "stage1Sentence2";
+            Checkmusicbtns(currentMusic);
+            FindObjectOfType<audioManger>().Play("stage1Sentence2");
+            FindObjectOfType<audioManger>().isPlaying("stage1Sentence2");
+        }
     }
 
-    IEnumerator stage1Sentence2()
+    public void stage1Sentence3()
     {
-        yield return new WaitForSeconds(1);
-        tamir.SetBool("isTalk", false);
-    }
-
-    public void startstage1Sentence3()
-    {
-        tamir.SetBool("isTalk", true);
-        FindObjectOfType<audioManger>().Play("stage1Sentence3");
-        StartCoroutine(stage1Sentence3());
-    }
-
-    IEnumerator stage1Sentence3()
-    {
-        yield return new WaitForSeconds(1);
-        tamir.SetBool("isTalk", false);
+            tamir.SetBool("isTalk", true);
+            currentMusic = "stage1Sentence3";
+            Checkmusicbtns(currentMusic);
+            FindObjectOfType<audioManger>().Play("stage1Sentence3");
+            FindObjectOfType<audioManger>().isPlaying("stage1Sentence3");
     }
 
 
     public void playVideo1()
     {
-        StopAllCoroutines();
         video1.SetActive(false);
         video1.SetActive(true);
-        Checkmusicbtns("tamarRecord");
-        StartCoroutine(sentenceVideo1());
+        Checkmusicbtns("tamarRecord1");
+        tamarRecord1();
     }
 
     public void playVideo2()
     {
-        StopAllCoroutines();
         video2.SetActive(false);
         video2.SetActive(true);
-        Checkmusicbtns("orRecord");
-        StartCoroutine(sentenceVideo2());
+        Checkmusicbtns("orRecord1");
+        orRecord1();
 
     }
 
     public void playVideo3()
     {
-        StopAllCoroutines();
         video3.SetActive(false);
         video3.SetActive(true);
-        Checkmusicbtns("emaRecord");
-        StartCoroutine(sentenceVideo3());
+        Checkmusicbtns("emaRecord1");
+        emaRecord1();
 
     }
 
 
-    //-----> הפעלת כתוביות
+    //-----> וידאו מספר 1
 
-    IEnumerator sentenceVideo1()
+
+    public void tamarRecord1()
+    {
+        currentMusic = "tamarRecord1";
+        tamarAnimator.SetBool("isTalk", true);
+        subtitleBK1.SetActive(true);
+        Checkmusicbtns(currentMusic);
+        textVideo1.text = "היי תמיר, שאלת בזמן האחרון למה נעלמתי והחלטתי פשוט לצלם לך סרטון ולתאר מה עבר עלי.";
+        FindObjectOfType<audioManger>().Play("tamarRecord1");
+        FindObjectOfType<audioManger>().isPlaying("tamarRecord1");
+    }
+
+    public void tamarRecord2()
+    {
+        if (currentMusic == "tamarRecord1")
+        {
+            currentMusic = "tamarRecord2";
+            tamarAnimator.SetBool("isTalk", true);
+            subtitleBK1.SetActive(true);
+            Checkmusicbtns(currentMusic);
+            textVideo1.text = "הרגשתי בזמן האחרון שאין לי זמן לשום דבר.";
+            FindObjectOfType<audioManger>().Play("tamarRecord2");
+            FindObjectOfType<audioManger>().isPlaying("tamarRecord2");
+        }
+    }
+
+    public void tamarRecord3()
+    {
+        if (currentMusic == "tamarRecord2")
+        {
+            currentMusic = "tamarRecord3";
+            tamarAnimator.SetBool("isTalk", true);
+            subtitleBK1.SetActive(true);
+            Checkmusicbtns(currentMusic);
+            textVideo1.text = "אני מנסה לשלב הכל חברים, עבודה, לימודים ותמיד אני מוצאת את עצמי מפספסת משהו. כולם תמיד נעלבים ממני.";
+            FindObjectOfType<audioManger>().Play("tamarRecord3");
+            FindObjectOfType<audioManger>().isPlaying("tamarRecord3");
+        }
+    }
+
+    public void tamarRecord4()
+    {
+        if (currentMusic == "tamarRecord3")
+        {
+            currentMusic = "tamarRecord4";
+            tamarAnimator.SetBool("isTalk", true);
+            subtitleBK1.SetActive(true);
+            Checkmusicbtns(currentMusic);
+            textVideo1.text = "שום דבר לא יוצא כמו שאני רוצה.";
+            FindObjectOfType<audioManger>().Play("tamarRecord4");
+            FindObjectOfType<audioManger>().isPlaying("tamarRecord4");
+        }
+    }
+
+    public void tamarRecord5()
+    {
+        if (currentMusic == "tamarRecord4")
+        {
+            currentMusic = "tamarRecord5";
+            tamarAnimator.SetBool("isTalk", true);
+            subtitleBK1.SetActive(true);
+            Checkmusicbtns(currentMusic);
+            textVideo1.text = "בשבוע שעבר, הבוס שלי ביקש ממני לעבוד כל השבוע והיה מבחן ביום רביעי אז מצאתי את עצמי לומדת בזמן המשמרת ואז לא התרכזתי לא בעבודה ולא בלימודים.";
+            FindObjectOfType<audioManger>().Play("tamarRecord5");
+            FindObjectOfType<audioManger>().isPlaying("tamarRecord5");
+        }
+    }
+
+    public void tamarRecord6()
+    {
+        if (currentMusic == "tamarRecord5")
+        {
+            currentMusic = "tamarRecord6";
+            tamarAnimator.SetBool("isTalk", true);
+            subtitleBK1.SetActive(true);
+            Checkmusicbtns(currentMusic);
+            textVideo1.text = "אני לא יודעת מה לעשות.. מחכה לתגובה ממך.";
+            FindObjectOfType<audioManger>().Play("tamarRecord6");
+            FindObjectOfType<audioManger>().isPlaying("tamarRecord6");
+        }
+    }
+
+    public void finishtamarRecord6()
     {
         tamarAnimator.SetBool("isTalk", false);
-        FindObjectOfType<audioManger>().Play("tamarRecord");
-        yield return new WaitForSeconds(0.5f);
-        subtitleBK1.SetActive(true);
-        textVideo1.text = "היי תמיר, שאלת בזמן האחרון למה נעלמתי והחלטתי פשוט לצלם לך סרטון ולתאר מה עבר עלי.";
-        tamarAnimator.SetBool("isTalk", true);
-        yield return new WaitForSeconds(7.5f);
-        textVideo1.text = "הרגשתי בזמן האחרון שאין לי זמן לשום דבר.";
-        yield return new WaitForSeconds(3.3f);
-        textVideo1.text = "אני מנסה לשלב הכל חברים, עבודה, לימודים ותמיד אני מוצאת את עצמי מפספסת משהו. כולם תמיד נעלבים ממני.";
-        yield return new WaitForSeconds(8f);
-        textVideo1.text = "שום דבר לא יוצא כמו שאני רוצה.";
-        yield return new WaitForSeconds(2.5f);
-        textVideo1.text = "בשבוע שעבר, הבוס שלי ביקש ממני לעבוד כל השבוע והיה מבחן ביום רביעי אז מצאתי את עצמי לומדת בזמן המשמרת ואז לא התרכזתי לא בעבודה ולא בלימודים.";
-        yield return new WaitForSeconds(9.5f);
-        textVideo1.text = "אני לא יודעת מה לעשות.. מחכה לתגובה ממך.";
-        yield return new WaitForSeconds(3f);
-        tamarAnimator.SetBool("isTalk", false);
-        textVideo1.text = "";
         subtitleBK1.SetActive(false);
-        stopMusic("tamarRecord");
-        yield return new WaitForSeconds(1f);
+        stopMusic();
         video1.SetActive(false);
     }
 
-    IEnumerator sentenceVideo2()
+
+    //-----> וידאו מספר 2
+
+    public void orRecord1()
     {
-        subtitleBK2.SetActive(true);
+        currentMusic = "orRecord1";
         orAnimator.SetBool("isTalk", true);
-        FindObjectOfType<audioManger>().Play("orRecord");
+        subtitleBK2.SetActive(true);
         textVideo2.text = "היי אחי, השעה 03:11 ירדתי בדיוק מהאוטו של יוסי המורה שלי לנהיגה.";
-        yield return new WaitForSeconds(5f);
-        textVideo2.text = "נהגתי כמעט שעה ואפילו עליתי על הכביש המהיר! אתה לא מבין איזה גז דפקתי! ";
-        yield return new WaitForSeconds(6f);
-        textVideo2.text = "המורה לנהיגה ממש התעצבן עלי הוא אמר שאני לא יכול לעשות מה שאני רוצה.";
-        yield return new WaitForSeconds(6f);
-        textVideo2.text = "אני חייב לחשוב לפני שאני מגיב.";
-        yield return new WaitForSeconds(2.5f);
-        textVideo2.text = "אני לא מבין מה הוא רוצה ממני! גם כשאני רב עם ההורים שלי אני כל קודם מדבר ורק אז חושב, אני מרגיש שאני לא מצליח לעצור ולרוב זה פוגע בי ובהם.";
-        yield return new WaitForSeconds(9f);
+        FindObjectOfType<audioManger>().Play("orRecord1");
+        FindObjectOfType<audioManger>().isPlaying("orRecord1");
+    }
+
+    public void orRecord2()
+    {
+        if (currentMusic == "orRecord1")
+        {
+            currentMusic = "orRecord2";
+            textVideo2.text = "נהגתי כמעט שעה ואפילו עליתי על הכביש המהיר! אתה לא מבין איזה גז דפקתי! ";
+            FindObjectOfType<audioManger>().Play("orRecord2");
+            FindObjectOfType<audioManger>().isPlaying("orRecord2");
+        }
+    }
+
+    public void orRecord3()
+    {
+        if (currentMusic == "orRecord2")
+        {
+            currentMusic = "orRecord3";
+            textVideo2.text = "המורה לנהיגה ממש התעצבן עלי הוא אמר שאני לא יכול לעשות מה שאני רוצה.";
+            FindObjectOfType<audioManger>().Play("orRecord3");
+            FindObjectOfType<audioManger>().isPlaying("orRecord3");
+        }
+    }
+
+
+    public void orRecord4()
+    {
+        if (currentMusic == "orRecord3")
+        {
+            currentMusic = "orRecord4";
+            textVideo2.text = "אני חייב לחשוב לפני שאני מגיב.";
+            FindObjectOfType<audioManger>().Play("orRecord4");
+            FindObjectOfType<audioManger>().isPlaying("orRecord4");
+        }
+    }
+
+    public void orRecord5()
+    {
+        if (currentMusic == "orRecord4")
+        {
+            currentMusic = "orRecord5";
+            textVideo2.text = "אני לא מבין מה הוא רוצה ממני! גם כשאני רב עם ההורים שלי אני כל קודם מדבר ורק אז חושב, אני מרגיש שאני לא מצליח לעצור ולרוב זה פוגע בי ובהם.";
+            FindObjectOfType<audioManger>().Play("orRecord5");
+            FindObjectOfType<audioManger>().isPlaying("orRecord5");
+        }
+    }
+
+    public void orRecord6()
+    {
+        if (currentMusic == "orRecord5")
+        {
+            currentMusic = "orRecord6";
+            textVideo2.text = "אני לא מבין מה הבעיה שלי.";
+            FindObjectOfType<audioManger>().Play("orRecord6");
+            FindObjectOfType<audioManger>().isPlaying("orRecord6");
+        }
+    }
+
+    public void finishorRecord6()
+    {
         orAnimator.SetBool("isTalk", false);
-        textVideo2.text = "אני לא מבין מה הבעיה שלי.";
-        yield return new WaitForSeconds(2f);
-        textVideo2.text = "";
         subtitleBK2.SetActive(false);
-        stopMusic("orRecord");
-        yield return new WaitForSeconds(1f);
+        stopMusic();
+        textVideo2.text = "";
         video2.SetActive(false);
     }
 
-    IEnumerator sentenceVideo3()
+
+    //-----> וידאו מספר 3
+
+    public void emaRecord1()
     {
-        FindObjectOfType<audioManger>().Play("emaRecord");
-        subtitleBK3.SetActive(true);
-        emaAnimator.SetBool("isTalk", true);
+        currentMusic = "emaRecord1";
+        orAnimator.SetBool("isTalk", true);
+        subtitleBK2.SetActive(true);
         textVideo3.text = "היי תמיר, אתה לא מאמין מה קרה לי?";
-        yield return new WaitForSeconds(5.5f);
-        textVideo3.text = "אתה זוכר שסיפרתי לך שאני הולכת למיונים ליחידה של 0028 של חיל המודיעין ואני בדוק עוברת?";
-        yield return new WaitForSeconds(7.5f);
-        textVideo3.text = "מרוב שהייתי בטוחה בעצמי אפילו לא התכוננתי למבחנים וכבר סיפרתי לכולם שבטוח התקבלתי.";
-        yield return new WaitForSeconds(7f);
-        textVideo3.text = "שובצתי בכלל להיות תצפיתנית, אני לא מבינה איך זה קרה.";
-        yield return new WaitForSeconds(5f);
+        FindObjectOfType<audioManger>().Play("emaRecord1");
+        FindObjectOfType<audioManger>().isPlaying("emaRecord1");
+    }
+
+    public void emaRecord2()
+    {
+        if (currentMusic == "emaRecord1")
+        {
+            currentMusic = "emaRecord2";
+            textVideo3.text = "אתה זוכר שסיפרתי לך שאני הולכת למיונים ליחידה של 0028 של חיל המודיעין ואני בדוק עוברת?";
+            FindObjectOfType<audioManger>().Play("emaRecord2");
+            FindObjectOfType<audioManger>().isPlaying("emaRecord2");
+        }
+    }
+
+
+    public void emaRecord3()
+    {
+        if (currentMusic == "emaRecord2")
+        {
+            currentMusic = "emaRecord3";
+            textVideo3.text = "מרוב שהייתי בטוחה בעצמי אפילו לא התכוננתי למבחנים וכבר סיפרתי לכולם שבטוח התקבלתי.";
+            FindObjectOfType<audioManger>().Play("emaRecord3");
+            FindObjectOfType<audioManger>().isPlaying("emaRecord3");
+        }
+    }
+
+    public void emaRecord4()
+    {
+        if (currentMusic == "emaRecord3")
+        {
+            currentMusic = "emaRecord4";
+            textVideo3.text = "שובצתי בכלל להיות תצפיתנית, אני לא מבינה איך זה קרה.";
+            FindObjectOfType<audioManger>().Play("emaRecord4");
+            FindObjectOfType<audioManger>().isPlaying("emaRecord4");
+        }
+    }
+
+    public void emaRecord5()
+    {
+        if (currentMusic == "emaRecord4")
+        {
+            currentMusic = "emaRecord5";
+            textVideo3.text = "שובצתי בכלל להיות תצפיתנית, אני לא מבינה איך זה קרה.";
+            FindObjectOfType<audioManger>().Play("emaRecord5");
+            FindObjectOfType<audioManger>().isPlaying("emaRecord5");
+        }
+    }
+
+    public void finishemaRecord5()
+    {
         emaAnimator.SetBool("isTalk", false);
+        stopMusic();
         textVideo3.text = "";
         subtitleBK3.SetActive(false);
-        stopMusic("emaRecord");
-        yield return new WaitForSeconds(1f);
         video3.SetActive(false);
     }
 
@@ -288,37 +443,78 @@ public class Game1Logic : MonoBehaviour
 
     public void startOverVideo1()
     {
-        StopAllCoroutines();
         video1.SetActive(false);
         video1.SetActive(true);
-        StartCoroutine(sentenceVideo1());
+        stopMusic();
+        currentMusic = "tamarRecord1";
+        playVideo1();
     }
 
     public void startOverVideo2()
     {
-        StopAllCoroutines();
         video2.SetActive(false);
         video2.SetActive(true);
-        StartCoroutine(sentenceVideo2());
+        stopMusic();
+        currentMusic = "orRecord1";
+        playVideo2();
     }
 
     public void startOverVideo3()
     {
-        StopAllCoroutines();
         video3.SetActive(false);
         video3.SetActive(true);
-        StartCoroutine(sentenceVideo3());
+        stopMusic();
+        currentMusic = "emaRecord1";
+        playVideo3();
     }
-    public void ClickSoundBtn(string sound)
+
+    public void ClickSoundBtn()
     {
+        string sound = currentMusic;
         FindObjectOfType<audioManger>().click(sound);
     }
 
-    public void stopMusic(string musicName)
+    public void stopMusic()
     {
-        StopAllCoroutines();
-        FindObjectOfType<audioManger>().StopPlaying(musicName);
+        string musicName = currentMusic;
+        if (musicName.Contains("tamar") == true)
+        {
+            string btn = "tamarRecord";
+            for (int i = 1; i < 7; i++)
+            {
+                string number = i.ToString();
+                string thebtn = btn + i;
+                FindObjectOfType<audioManger>().StopPlaying(thebtn);
+            }
+        }
+        else if (musicName.Contains("or") == true)
+        {
+            string btn = "orRecord";
+            for (int i = 1; i < 7; i++)
+            {
+                string number = i.ToString();
+                string thebtn = btn + i;
+                FindObjectOfType<audioManger>().StopPlaying(thebtn);
+            }
+        }
+        else if (musicName.Contains("ema") == true)
+        {
+            string btn = "emaRecord";
+            for (int i = 1; i < 5; i++)
+            {
+                string number = i.ToString();
+                string thebtn = btn + i;
+                FindObjectOfType<audioManger>().StopPlaying(thebtn);
+            }
+        }
+        else
+        {
+            FindObjectOfType<audioManger>().StopPlaying(musicName);
+        }
+        currentMusic = "none";
     }
+
+
 
 
     //------------------------------------------------משחק 1 פידבקים
@@ -602,6 +798,8 @@ public class Game1Logic : MonoBehaviour
         questions3.SetActive(false);
         finishgame3.SetActive(true);
     }
+
+
 
 
 }

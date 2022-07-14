@@ -743,7 +743,6 @@ MonoBehaviour:
   sound1: {fileID: 1495188766}
   sound2: {fileID: 751891100}
   sound3: {fileID: 1356177046}
-  continuebtn: {fileID: 856749982}
 --- !u!114 &56529854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1352,7 +1351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -1468,11 +1467,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
-      value: startstage1Sentence2
+      value: stage1Sentence2
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: stopMusic
+      value: Checkmusicbtns
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
@@ -1536,7 +1535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_StringArgument
-      value: stage1Sentence1
+      value: stage1Sentence2
       objectReference: {fileID: 0}
     - target: {fileID: 5768015762085149515, guid: ea32b12cfbba4d949a9e9fab34049ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_StringArgument
@@ -4098,7 +4097,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529853}
         m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
         m_MethodName: ClickSoundBtn
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6593,18 +6592,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 56529853}
-        m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
-        m_MethodName: Checkmusicbtns
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: orRecord
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &554714043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6810,7 +6797,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529853}
         m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
         m_MethodName: ClickSoundBtn
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8197,7 +8184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242385881699441482, guid: 4fa87725b61ed88408083f327094d906, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1019.9994
+      value: 1019.99963
       objectReference: {fileID: 0}
     - target: {fileID: 5242385881699441482, guid: 4fa87725b61ed88408083f327094d906, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9160,7 +9147,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529853}
         m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
         m_MethodName: stopMusic
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9620,7 +9607,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529853}
         m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
         m_MethodName: ClickSoundBtn
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11359,24 +11346,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: tamarRecord
-    clip: {fileID: 8300000, guid: cf365aa09d4420344aa1c03654aeb29e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: emaRecord
-    clip: {fileID: 8300000, guid: 78ed5891b5af7634e810364f5f527ed4, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: orRecord
-    clip: {fileID: 8300000, guid: 3a1e03e514a3a6543adc60b97454589b, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
   - name: receiveMessage
     clip: {fileID: 8300000, guid: 0b6bf7c28e55e37499a79b1b9d8f5dd6, type: 3}
     volume: 1
@@ -11397,6 +11366,102 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: stage1Sentence3
     clip: {fileID: 8300000, guid: ed7da787b5afaf8499f7e889091b8857, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tamarRecord1
+    clip: {fileID: 8300000, guid: aebe7b5d915fb1e48b6554a415db1a81, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tamarRecord2
+    clip: {fileID: 8300000, guid: 8d16569fbc32f0942b85b9f47705d6df, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tamarRecord3
+    clip: {fileID: 8300000, guid: 36a891fd9bb5d754299485ad21e44ce0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tamarRecord4
+    clip: {fileID: 8300000, guid: 318f9cefe5b88574db8fc74d6b47b14e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tamarRecord5
+    clip: {fileID: 8300000, guid: a8e63d86e996cf3449f6438264f618d4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tamarRecord6
+    clip: {fileID: 8300000, guid: 8a056eae71646f243a5f2596c05ae8e2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: orRecord1
+    clip: {fileID: 8300000, guid: 5b01e3b6ec3bb2b42a16374bfac0c050, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: orRecord2
+    clip: {fileID: 8300000, guid: fabe03e9a6bd2ca46bf56bca1303cda1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: orRecord3
+    clip: {fileID: 8300000, guid: 294ffce455406e047bc49a018a4c20ae, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: orRecord4
+    clip: {fileID: 8300000, guid: 9e1820685ef46ae43bee87252e3b5c68, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: orRecord5
+    clip: {fileID: 8300000, guid: dd19c7214fd9a884082600fcdaaccd24, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: orRecord6
+    clip: {fileID: 8300000, guid: 45e763069051dac4fb2afb481e79adb3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: emaRecord1
+    clip: {fileID: 8300000, guid: 292c159955c79fc4f84eba42b8825d2f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: emaRecord2
+    clip: {fileID: 8300000, guid: 4990a8476c4baa645ba93f887ced4e60, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: emaRecord3
+    clip: {fileID: 8300000, guid: 7fdcf0551da4aa44d9f4666ee7363bc3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: emaRecord4
+    clip: {fileID: 8300000, guid: b93b7ff43eae7794d97ba0229e53f241, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -12299,13 +12364,13 @@ MonoBehaviour:
       - m_Target: {fileID: 56529853}
         m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
         m_MethodName: stopMusic
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: tamarRecord
+          m_StringArgument: tamarRecord1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &969729364
@@ -14324,7 +14389,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529853}
         m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
         m_MethodName: stopMusic
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15266,18 +15331,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 56529853}
-        m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
-        m_MethodName: Checkmusicbtns
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: tamarRecord
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1157332875
@@ -16535,18 +16588,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 56529853}
-        m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
-        m_MethodName: Checkmusicbtns
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: emaRecord
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1234065627
@@ -18008,7 +18049,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529853}
         m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
         m_MethodName: ClickSoundBtn
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19897,13 +19938,13 @@ MonoBehaviour:
       - m_Target: {fileID: 56529853}
         m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
         m_MethodName: ClickSoundBtn
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: tamarRecord
+          m_StringArgument: tamarRecord1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1495188766
@@ -23060,7 +23101,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529853}
         m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
         m_MethodName: stopMusic
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

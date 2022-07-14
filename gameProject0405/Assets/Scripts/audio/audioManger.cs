@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 
 public class audioManger : MonoBehaviour
-{ 
+{
     public sound[] sounds;
 
     public static audioManger instance;
@@ -34,7 +34,7 @@ public class audioManger : MonoBehaviour
         }
 
 
-        foreach(sound s in sounds)
+        foreach (sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -46,8 +46,8 @@ public class audioManger : MonoBehaviour
 
     public void Play(string name)
     {
-       sound s = Array.Find(sounds, sound => sound.name == name);
-       s.source.Play();
+        sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.Play();
     }
 
     public void StopPlaying(string sound)
@@ -60,31 +60,6 @@ public class audioManger : MonoBehaviour
         }
 
         s.source.Stop();
-
-        //string btntamar = "tamarRecord";
-        //for (int i = 1; i < 7; i++)
-        //{
-        //    string number = i.ToString();
-        //    string thebtn = btntamar + i;
-        //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-        //    myBtn.source.Stop();
-        //}
-        //string btnor = "orRecord";
-        //for (int i = 1; i < 7; i++)
-        //{
-        //    string number = i.ToString();
-        //    string thebtn = btnor + i;
-        //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-        //    myBtn.source.Stop();
-        //}
-        //string btn = "emaRecord";
-        //for (int i = 1; i < 7; i++)
-        //{
-        //    string number = i.ToString();
-        //    string thebtn = btn + i;
-        //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-        //    myBtn.source.Stop();
-        //}
     }
 
     public void click(string sound)
@@ -93,45 +68,9 @@ public class audioManger : MonoBehaviour
         if (s.source.volume == 0)
         {
             s.source.volume = 1;
-            PlayerPrefs.SetString("isMusicOn","true");
+            PlayerPrefs.SetString("isMusicOn", "true");
 
-            //string btntamar = "tamarRecord";
-            //for (int i = 1; i < 7; i++)
-            //{
-            //    string number = i.ToString();
-            //    string thebtn = btntamar + i;
-            //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-            //    myBtn.source.volume = 1;
-            //}
-            //string btnor = "orRecord";
-            //for (int i = 1; i < 7; i++)
-            //{
-            //    string number = i.ToString();
-            //    string thebtn = btnor + i;
-            //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-            //    myBtn.source.volume = 1;
-            //}
-            //string btn = "emaRecord";
-            //for (int i = 1; i < 7; i++)
-            //{
-            //    string number = i.ToString();
-            //    string thebtn = btn + i;
-            //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-            //    myBtn.source.volume = 1;
-            //}
-            if (sound == "tamarRecord")
-            {
-                tamarSound.enableBtn();
-            }
-            else if (sound == "orRecord")
-            {
-                orSound.enableBtn();
-            }
-            else if (sound == "emaRecord")
-            {
-                emaSound.enableBtn();
-            }
-            else if (sound == "stage1Sentence1")
+            if (sound == "stage1Sentence1")
             {
                 sentence1.enableBtn();
             }
@@ -143,48 +82,120 @@ public class audioManger : MonoBehaviour
             {
                 sentence3.enableBtn();
             }
+            else if (sound == "tamarRecord1")
+            {
+                sound tamarRecord1S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord1S.source.volume = 1;
+                tamarSound.enableBtn();
+            }
+            else if (sound == "tamarRecord2")
+            {
+                sound tamarRecord2S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord2S.source.volume = 1;
+                tamarSound.enableBtn();
+
+            }
+            else if (sound == "tamarRecord3")
+            {
+                sound tamarRecord3S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord3S.source.volume = 1;
+                tamarSound.enableBtn();
+
+            }
+            else if (sound == "tamarRecord4")
+            {
+                sound tamarRecord4S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord4S.source.volume = 1;
+                tamarSound.enableBtn();
+
+            }
+            else if (sound == "tamarRecord5")
+            {
+                sound tamarRecord5S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord5S.source.volume = 1;
+                tamarSound.enableBtn();
+
+            }
+            else if (sound == "tamarRecord6")
+            {
+                sound tamarRecord6S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord6S.source.volume = 1;
+                tamarSound.enableBtn();
+
+            }
+            else if (sound == "orRecord1")
+            {
+                sound orRecord1S = Array.Find(sounds, item => item.name == sound);
+                orRecord1S.source.volume = 1;
+                orSound.enableBtn();
+
+            }
+            else if (sound == "orRecord2")
+            {
+                sound orRecord2S = Array.Find(sounds, item => item.name == sound);
+                orRecord2S.source.volume = 1;
+                orSound.enableBtn();
+
+            }
+            else if (sound == "orRecord3")
+            {
+                sound orRecord3S = Array.Find(sounds, item => item.name == sound);
+                orRecord3S.source.volume = 1;
+                orSound.enableBtn();
+
+            }
+            else if (sound == "orRecord4")
+            {
+                sound orRecord4S = Array.Find(sounds, item => item.name == sound);
+                orRecord4S.source.volume = 1;
+                orSound.enableBtn();
+
+            }
+            else if (sound == "orRecord5")
+            {
+                sound orRecord5S = Array.Find(sounds, item => item.name == sound);
+                orRecord5S.source.volume = 1;
+                orSound.enableBtn();
+
+            }
+            else if (sound == "orRecord6")
+            {
+                sound orRecord6S = Array.Find(sounds, item => item.name == sound);
+                orRecord6S.source.volume = 1;
+                orSound.enableBtn();
+            }
+            else if (sound == "emaRecord1")
+            {
+                sound emaRecord1S = Array.Find(sounds, item => item.name == sound);
+                emaRecord1S.source.volume = 1;
+                emaSound.enableBtn();
+
+            }
+            else if (sound == "emaRecord2")
+            {
+                sound emaRecord2S = Array.Find(sounds, item => item.name == sound);
+                emaRecord2S.source.volume = 1;
+                emaSound.enableBtn();
+            }
+            else if (sound == "emaRecord3")
+            {
+                sound emaRecord3S = Array.Find(sounds, item => item.name == sound);
+                emaRecord3S.source.volume = 1;
+                emaSound.enableBtn();
+
+            }
+            else if (sound == "emaRecord4")
+            {
+                sound emaRecord4S = Array.Find(sounds, item => item.name == sound);
+                emaRecord4S.source.volume = 1;
+                emaSound.enableBtn();
+            }
         }
         else
         {
             s.source.volume = 0;
             PlayerPrefs.SetString("isMusicOn", "false");
-            //string btntamar = "tamarRecord";
-            //for (int i = 1; i < 7; i++)
-            //{
-            //    string number = i.ToString();
-            //    string thebtn = btntamar + i;
-            //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-            //    myBtn.source.volume = 0;
-            //}
-            //string btnor = "orRecord";
-            //for (int i = 1; i < 7; i++)
-            //{
-            //    string number = i.ToString();
-            //    string thebtn = btnor + i;
-            //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-            //    myBtn.source.volume = 0;
-            //}
-            //string btn = "emaRecord";
-            //for (int i = 1; i < 7; i++)
-            //{
-            //    string number = i.ToString();
-            //    string thebtn = btn + i;
-            //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-            //    myBtn.source.volume = 0;
-            //}
-            if (sound == "tamarRecord")
-            {
-                tamarSound.notMusic();
-            }
-            else if (sound == "orRecord")
-            {
-                orSound.notMusic();
-            }
-            else if (sound == "emaRecord")
-            {
-                emaSound.notMusic();
-            }
-            else if (sound == "stage1Sentence1")
+            if (sound == "stage1Sentence1")
             {
                 sentence1.notMusic();
             }
@@ -196,52 +207,115 @@ public class audioManger : MonoBehaviour
             {
                 sentence3.notMusic();
             }
+            else if (sound == "tamarRecord1")
+            {
+                sound tamarRecord1S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord1S.source.volume = 0;
+                tamarSound.notMusic();
+            }
+            else if (sound == "tamarRecord2")
+            {
+                sound tamarRecord2S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord2S.source.volume = 0;
+                tamarSound.notMusic();
+            }
+            else if (sound == "tamarRecord3")
+            {
+                sound tamarRecord3S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord3S.source.volume = 0;
+                tamarSound.notMusic();
+            }
+            else if (sound == "tamarRecord4")
+            {
+                sound tamarRecord4S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord4S.source.volume = 0;
+                tamarSound.notMusic();
+
+            }
+            else if (sound == "tamarRecord5")
+            {
+                sound tamarRecord5S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord5S.source.volume = 0;
+                tamarSound.notMusic();
+
+            }
+            else if (sound == "tamarRecord6")
+            {
+                sound tamarRecord6S = Array.Find(sounds, item => item.name == sound);
+                tamarRecord6S.source.volume = 0;
+                tamarSound.notMusic();
+            }
+            else if (sound == "orRecord1")
+            {
+                sound orRecord1S = Array.Find(sounds, item => item.name == sound);
+                orRecord1S.source.volume = 0;
+                orSound.notMusic();
+            }
+            else if (sound == "orRecord2")
+            {
+                sound orRecord2S = Array.Find(sounds, item => item.name == sound);
+                orRecord2S.source.volume = 0;
+                orSound.notMusic();
+            }
+            else if (sound == "orRecord3")
+            {
+                sound orRecord3S = Array.Find(sounds, item => item.name == sound);
+                orRecord3S.source.volume = 0;
+                orSound.notMusic();
+            }
+            else if (sound == "orRecord4")
+            {
+                sound orRecord4S = Array.Find(sounds, item => item.name == sound);
+                orRecord4S.source.volume = 0;
+                orSound.notMusic();
+            }
+            else if (sound == "orRecord5")
+            {
+                sound orRecord5S = Array.Find(sounds, item => item.name == sound);
+                orRecord5S.source.volume = 0;
+                orSound.notMusic();
+            }
+            else if (sound == "orRecord6")
+            {
+                sound orRecord6S = Array.Find(sounds, item => item.name == sound);
+                orRecord6S.source.volume = 0;
+                emaSound.notMusic();
+            }
+            else if (sound == "emaRecord1")
+            {
+                sound emaRecord1S = Array.Find(sounds, item => item.name == sound);
+                emaRecord1S.source.volume = 0;
+                emaSound.notMusic();
+            }
+            else if (sound == "emaRecord2")
+            {
+                sound emaRecord2S = Array.Find(sounds, item => item.name == sound);
+                emaRecord2S.source.volume = 0;
+                emaSound.notMusic();
+            }
+            else if (sound == "emaRecord3")
+            {
+                sound emaRecord3S = Array.Find(sounds, item => item.name == sound);
+                emaRecord3S.source.volume = 0;
+                emaSound.notMusic();
+            }
+            else if (sound == "emaRecord4")
+            {
+                sound emaRecord4S = Array.Find(sounds, item => item.name == sound);
+                emaRecord4S.source.volume = 0;
+                emaSound.notMusic();
+
+            }
         }
     }
 
     public void stayOn(string sound)
     {
+        Debug.Log("stayOn " + sound);
         sound s = Array.Find(sounds, item => item.name == sound);
         s.source.volume = 1;
         PlayerPrefs.SetString("isMusicOn", "true");
-
-        //string btntamar = "tamarRecord";
-        //for (int i = 1; i < 7; i++)
-        //{
-        //    string number = i.ToString();
-        //    string thebtn = btntamar + i;
-        //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-        //    myBtn.source.volume = 1;
-        //}
-        //string btnor = "orRecord";
-        //for (int i = 1; i < 7; i++)
-        //{
-        //    string number = i.ToString();
-        //    string thebtn = btnor + i;
-        //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-        //    myBtn.source.volume = 1;
-        //}
-        //string btn = "emaRecord";
-        //for (int i = 1; i < 7; i++)
-        //{
-        //    string number = i.ToString();
-        //    string thebtn = btn + i;
-        //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-        //    myBtn.source.volume = 1;
-        //}
-        if (sound == "tamarRecord")
-        {
-            tamarSound.enableBtn();
-        }
-        else if (sound == "orRecord")
-        {
-            orSound.enableBtn();
-        }
-        else if (sound == "emaRecord")
-        {
-            emaSound.enableBtn();
-        }
-        else if (sound == "stage1Sentence1")
+        if (sound == "stage1Sentence1")
         {
             sentence1.enableBtn();
         }
@@ -253,50 +327,125 @@ public class audioManger : MonoBehaviour
         {
             sentence3.enableBtn();
         }
+        else if (sound == "tamarRecord1")
+        {
+            sound tamarRecord1S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord1S.source.volume = 1;
+            tamarSound.enableBtn();
+        }
+        else if (sound == "tamarRecord2")
+        {
+            sound tamarRecord2S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord2S.source.volume = 1;
+            tamarSound.enableBtn();
+
+        }
+        else if (sound == "tamarRecord3")
+        {
+            sound tamarRecord3S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord3S.source.volume = 1;
+            tamarSound.enableBtn();
+
+        }
+        else if (sound == "tamarRecord4")
+        {
+            sound tamarRecord4S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord4S.source.volume = 1;
+            tamarSound.enableBtn();
+
+        }
+        else if (sound == "tamarRecord5")
+        {
+            sound tamarRecord5S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord5S.source.volume = 1;
+            tamarSound.enableBtn();
+
+        }
+        else if (sound == "tamarRecord6")
+        {
+            sound tamarRecord6S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord6S.source.volume = 1;
+            tamarSound.enableBtn();
+
+        }
+        else if (sound == "orRecord1")
+        {
+            sound orRecord1S = Array.Find(sounds, item => item.name == sound);
+            orRecord1S.source.volume = 1;
+            orSound.enableBtn();
+
+        }
+        else if (sound == "orRecord2")
+        {
+            sound orRecord2S = Array.Find(sounds, item => item.name == sound);
+            orRecord2S.source.volume = 1;
+            orSound.enableBtn();
+
+        }
+        else if (sound == "orRecord3")
+        {
+            sound orRecord3S = Array.Find(sounds, item => item.name == sound);
+            orRecord3S.source.volume = 1;
+            orSound.enableBtn();
+
+        }
+        else if (sound == "orRecord4")
+        {
+            sound orRecord4S = Array.Find(sounds, item => item.name == sound);
+            orRecord4S.source.volume = 1;
+            orSound.enableBtn();
+
+        }
+        else if (sound == "orRecord5")
+        {
+            sound orRecord5S = Array.Find(sounds, item => item.name == sound);
+            orRecord5S.source.volume = 1;
+            orSound.enableBtn();
+
+        }
+        else if (sound == "orRecord6")
+        {
+            sound orRecord6S = Array.Find(sounds, item => item.name == sound);
+            orRecord6S.source.volume = 1;
+            orSound.enableBtn();
+        }
+        else if (sound == "emaRecord1")
+        {
+            sound emaRecord1S = Array.Find(sounds, item => item.name == sound);
+            emaRecord1S.source.volume = 1;
+            emaSound.enableBtn();
+
+        }
+        else if (sound == "emaRecord2")
+        {
+            sound emaRecord2S = Array.Find(sounds, item => item.name == sound);
+            emaRecord2S.source.volume = 1;
+            emaSound.enableBtn();
+        }
+        else if (sound == "emaRecord3")
+        {
+            sound emaRecord3S = Array.Find(sounds, item => item.name == sound);
+            emaRecord3S.source.volume = 1;
+            emaSound.enableBtn();
+
+        }
+        else if (sound == "emaRecord4")
+        {
+            sound emaRecord4S = Array.Find(sounds, item => item.name == sound);
+            emaRecord4S.source.volume = 1;
+            emaSound.enableBtn();
+        }
+
     }
 
     public void stayOff(string sound)
     {
+        Debug.Log("stayOff " + sound);
         sound s = Array.Find(sounds, item => item.name == sound);
         s.source.volume = 0;
         PlayerPrefs.SetString("isMusicOn", "false");
-        //string btntamar = "tamarRecord";
-        //for (int i = 1; i < 7; i++)
-        //{
-        //    string number = i.ToString();
-        //    string thebtn = btntamar + i;
-        //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-        //    myBtn.source.volume = 0;
-        //}
-        //string btnor = "orRecord";
-        //for (int i = 1; i < 7; i++)
-        //{
-        //    string number = i.ToString();
-        //    string thebtn = btnor + i;
-        //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-        //    myBtn.source.volume = 0;
-        //}
-        //string btn = "emaRecord";
-        //for (int i = 1; i < 7; i++)
-        //{
-        //    string number = i.ToString();
-        //    string thebtn = btn + i;
-        //    sound myBtn = Array.Find(sounds, item => item.name == thebtn);
-        //    myBtn.source.volume = 0;
-        //}
-        if (sound == "tamarRecord")
-        {
-            tamarSound.notMusic();
-        }
-        else if (sound == "orRecord")
-        {
-            orSound.notMusic();
-        }
-        else if (sound == "emaRecord")
-        {
-            emaSound.notMusic();
-        }
-        else if (sound == "stage1Sentence1")
+
+        if (sound == "stage1Sentence1")
         {
             sentence1.notMusic();
         }
@@ -308,121 +457,233 @@ public class audioManger : MonoBehaviour
         {
             sentence3.notMusic();
         }
+        else if (sound == "tamarRecord1")
+        {
+            sound tamarRecord1S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord1S.source.volume = 0;
+            tamarSound.notMusic();
+        }
+        else if (sound == "tamarRecord2")
+        {
+            sound tamarRecord2S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord2S.source.volume = 0;
+            tamarSound.notMusic();
+        }
+        else if (sound == "tamarRecord3")
+        {
+            sound tamarRecord3S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord3S.source.volume = 0;
+            tamarSound.notMusic();
+        }
+        else if (sound == "tamarRecord4")
+        {
+            sound tamarRecord4S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord4S.source.volume = 0;
+            tamarSound.notMusic();
+
+        }
+        else if (sound == "tamarRecord5")
+        {
+            sound tamarRecord5S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord5S.source.volume = 0;
+            tamarSound.notMusic();
+
+        }
+        else if (sound == "tamarRecord6")
+        {
+            sound tamarRecord6S = Array.Find(sounds, item => item.name == sound);
+            tamarRecord6S.source.volume = 0;
+            tamarSound.notMusic();
+        }
+        else if (sound == "orRecord1")
+        {
+            sound orRecord1S = Array.Find(sounds, item => item.name == sound);
+            orRecord1S.source.volume = 0;
+            orSound.notMusic();
+        }
+        else if (sound == "orRecord2")
+        {
+            sound orRecord2S = Array.Find(sounds, item => item.name == sound);
+            orRecord2S.source.volume = 0;
+            orSound.notMusic();
+        }
+        else if (sound == "orRecord3")
+        {
+            sound orRecord3S = Array.Find(sounds, item => item.name == sound);
+            orRecord3S.source.volume = 0;
+            orSound.notMusic();
+        }
+        else if (sound == "orRecord4")
+        {
+            sound orRecord4S = Array.Find(sounds, item => item.name == sound);
+            orRecord4S.source.volume = 0;
+            orSound.notMusic();
+        }
+        else if (sound == "orRecord5")
+        {
+            sound orRecord5S = Array.Find(sounds, item => item.name == sound);
+            orRecord5S.source.volume = 0;
+            orSound.notMusic();
+        }
+        else if (sound == "orRecord6")
+        {
+            sound orRecord6S = Array.Find(sounds, item => item.name == sound);
+            orRecord6S.source.volume = 0;
+            emaSound.notMusic();
+        }
+        else if (sound == "emaRecord1")
+        {
+            sound emaRecord1S = Array.Find(sounds, item => item.name == sound);
+            emaRecord1S.source.volume = 0;
+            emaSound.notMusic();
+        }
+        else if (sound == "emaRecord2")
+        {
+            sound emaRecord2S = Array.Find(sounds, item => item.name == sound);
+            emaRecord2S.source.volume = 0;
+            emaSound.notMusic();
+        }
+        else if (sound == "emaRecord3")
+        {
+            sound emaRecord3S = Array.Find(sounds, item => item.name == sound);
+            emaRecord3S.source.volume = 0;
+            emaSound.notMusic();
+        }
+        else if (sound == "emaRecord4")
+        {
+            sound emaRecord4S = Array.Find(sounds, item => item.name == sound);
+            emaRecord4S.source.volume = 0;
+            emaSound.notMusic();
+
+        }
     }
 
-    //public void isPlaying(string sound)
-    //{
-    //    sound s = Array.Find(sounds, item => item.name == sound);
-    //    Invoke(sound, s.clip.length);
-    //}
+    public void isPlaying(string sound)
+    {
+        sound s = Array.Find(sounds, item => item.name == sound);
+        Invoke(sound, s.clip.length);
+    }
 
-    //public void emaRecord1()
-    //{
-    //    Debug.Log("הסאונד 1 נגמר");
-    //    Game1Logic.emaRecord1();
-    //}
 
-    //public void emaRecord2()
-    //{
-    //    Debug.Log("הסאונד 2 נגמר");
-    //    Game1Logic.emaRecord2();
-    //}
+    /// <summary>
+    /// משפטי סאונד בועיות
+    /// </summary>
 
-    //public void emaRecord3()
-    //{
-    //    Debug.Log("הסאונד 3 נגמר");
-    //    Game1Logic.emaRecord3();
-    //}
+    public void stage1Sentence1()
+    {
+        Game1Logic.tamir.SetBool("isTalk", false);
+    }
 
-    //public void emaRecord4()
-    //{
-    //    Debug.Log("הסאונד 4 נגמר");
-    //    Game1Logic.emaRecord4();
-    //}
+    public void stage1Sentence2()
+    {
+        Game1Logic.tamir.SetBool("isTalk", false);
+    }
 
-    //public void emaRecord5()
-    //{
-    //    Debug.Log("הסאונד 5 נגמר");
-    //    Game1Logic.emaRecord5();
-    //}
+    public void stage1Sentence3()
+    {
+        Game1Logic.tamir.SetBool("isTalk", false);
+    }
 
-    //public void emaRecord6()
-    //{
-    //    Debug.Log("הסאונד 6 נגמר");
-    //    Game1Logic.emaRecord6();
-    //}
 
-    //public void orRecord1()
-    //{
-    //    Debug.Log("הסאונד 7 נגמר");
-    //    Game1Logic.orRecord1();
-    //}
+    /// <summary>
+    /// משפטי סאונד סרטון תמר
+    /// </summary>
 
-    //public void orRecord2()
-    //{
-    //    Debug.Log("הסאונד 8 נגמר");
-    //    Game1Logic.orRecord2();
-    //}
+    public void tamarRecord1()
+    {
+        Game1Logic.tamarRecord2();
+    }
 
-    //public void orRecord3()
-    //{
-    //    Debug.Log("הסאונד 9 נגמר");
-    //    Game1Logic.orRecord3();
-    //}
+    public void tamarRecord2()
+    {
+        Game1Logic.tamarRecord3();
+    }
 
-    //public void orRecord4()
-    //{
-    //    Debug.Log("הסאונד 10 נגמר");
-    //    Game1Logic.orRecord4();
-    //}
+    public void tamarRecord3()
+    {
+        Game1Logic.tamarRecord4();
+    }
 
-    //public void orRecord5()
-    //{
-    //    Debug.Log("הסאונד 11 נגמר");
-    //    Game1Logic.orRecord5();
-    //}
+    public void tamarRecord4()
+    {
+        Game1Logic.tamarRecord5();
+    }
 
-    //public void orRecord6()
-    //{
-    //    Debug.Log("הסאונד 12 נגמר");
-    //    Game1Logic.orRecord6();
-    //}
+    public void tamarRecord5()
+    {
+        Game1Logic.tamarRecord6();
+    }
 
-    //public void tamarRecord1()
-    //{
-    //    Debug.Log("הסאונד 13 נגמר");
-    //    Game1Logic.tamarRecord1();
-    //}
+    public void tamarRecord6()
+    {
+        Game1Logic.finishtamarRecord6();
+    }
 
-    //public void tamarRecord2()
-    //{
-    //    Debug.Log("הסאונד 14 נגמר");
-    //    Game1Logic.tamarRecord2();
-    //}
 
-    //public void tamarRecord3()
-    //{
-    //    Debug.Log("הסאונד 15 נגמר");
-    //    Game1Logic.tamarRecord3();
-    //}
+    /// <summary>
+    /// משפטי סאונד סרטון אור
+    /// </summary>
 
-    //public void tamarRecord4()
-    //{
-    //    Debug.Log("הסאונד 16 נגמר");
-    //    Game1Logic.tamarRecord4();
-    //}
+    public void orRecord1()
+    {
+        Game1Logic.orRecord2();
+    }
 
-    //public void tamarRecord5()
-    //{
-    //    Debug.Log("הסאונד 17 נגמר");
-    //    Game1Logic.tamarRecord5();
-    //}
+    public void orRecord2()
+    {
+        Game1Logic.orRecord3();
+    }
 
-    //public void tamarRecord6()
-    //{
-    //    Debug.Log("הסאונד 18 נגמר");
-    //    Game1Logic.tamarRecord6();
-    //}
+    public void orRecord3()
+    {
+        Game1Logic.orRecord4();
+    }
 
+    public void orRecord4()
+    {
+        Game1Logic.orRecord5();
+    }
+
+    public void orRecord5()
+    {
+        Game1Logic.orRecord6();
+    }
+
+    public void orRecord6()
+    {
+        Game1Logic.finishorRecord6();
+    }
+
+
+    /// <summary>
+    /// משפטי סאונד סרטון אמה
+    /// </summary>
+
+
+
+    public void emaRecord1()
+    {
+        Game1Logic.emaRecord2();
+    }
+
+    public void emaRecord2()
+    {
+        Game1Logic.emaRecord3();
+    }
+
+    public void emaRecord3()
+    {
+        Game1Logic.emaRecord4();
+    }
+
+    public void emaRecord4()
+    {
+        Game1Logic.emaRecord5();
+    }
+
+    public void emaRecord5()
+    {
+        Game1Logic.finishemaRecord5();
+    }
 
 }

@@ -139,109 +139,91 @@ public class audioMangerOpen : MonoBehaviour
 
     public void openSentence1()
     {
-        Debug.Log("дсаерг 1 рвош");
         openGameUi.sentence2tamir();
     }
 
     public void openSentence2()
     {
-        Debug.Log("дсаерг 2 рвош");
         openGameUi.sentence3tamir();
     }
 
     public void openSentence3()
     {
-        Debug.Log("дсаерг 3 рвош");
         openGameUi.sentence4tamir();
     }
 
     public void openSentence4()
     {
-        Debug.Log("дсаерг 4 рвош");
         openGameUi.sentence5tamir();
     }
 
     public void openSentence5()
     {
-        Debug.Log("дсаерг 5 рвош");
         openGameUi.sentence6tamir();
     }
 
     public void openSentence6()
     {
-        Debug.Log("дсаерг 6 рвош");
         openGameUi.sentence7tamir();
     }
 
     public void openSentence7()
     {
-        Debug.Log("дсаерг 7 рвош");
         openGameUi.sentence8tamir();
     }
 
     public void openSentence8()
     {
-        Debug.Log("дсаерг 8 рвош");
         openGameUi.sentence9tamir();
     }
 
     public void openSentence9()
     {
-        Debug.Log("дсаерг 9 рвош");
         openGameUi.sentence10tamir();
     }
 
     public void openSentence10()
     {
-        Debug.Log("дсаерг 10 рвош");
         openGameUi.sentence11tamir();
     }
 
     public void openSentence11()
     {
-        Debug.Log("дсаерг 11 рвош");
         openGameUi.sentence12tamir();
     }
 
     public void openSentence12()
     {
-        Debug.Log("дсаерг 12 рвош");
         openGameUi.sentence13tamir();
     }
 
     public void openSentence13()
     {
-        Debug.Log("дсаерг 13 рвош");
         openGameUi.sentence14tamir();
     }
 
     public void openSentence14()
     {
-        Debug.Log("дсаерг 14 рвош");
         openGameUi.sentence15tamir();
     }
 
     public void openSentence15()
     {
-        Debug.Log("дсаерг 15 рвош");
         openGameUi.sentence16tamir();
     }
 
     public void openSentence16()
     {
-        Debug.Log("дсаерг 16 рвош");
         openGameUi.sentence17tamir();
     }
 
     public void openSentence17()
     {
-        Debug.Log("дсаерг 17 рвош");
         openGameUi.sentence18tamir();
     }
 
     public void openSentence18()
     {
-        Debug.Log("дсаерг 18 рвош");
         openGameUi.finishTalk();
     }
 }
