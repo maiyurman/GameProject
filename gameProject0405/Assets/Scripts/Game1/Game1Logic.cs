@@ -301,6 +301,7 @@ public class Game1Logic : MonoBehaviour
         currentMusic = "orRecord1";
         orAnimator.SetBool("isTalk", true);
         subtitleBK2.SetActive(true);
+        Checkmusicbtns(currentMusic);
         textVideo2.text = "היי אחי, השעה 03:11 ירדתי בדיוק מהאוטו של יוסי המורה שלי לנהיגה.";
         FindObjectOfType<audioManger>().Play("orRecord1");
         FindObjectOfType<audioManger>().isPlaying("orRecord1");
@@ -311,6 +312,7 @@ public class Game1Logic : MonoBehaviour
         if (currentMusic == "orRecord1")
         {
             currentMusic = "orRecord2";
+            Checkmusicbtns(currentMusic);
             textVideo2.text = "נהגתי כמעט שעה ואפילו עליתי על הכביש המהיר! אתה לא מבין איזה גז דפקתי! ";
             FindObjectOfType<audioManger>().Play("orRecord2");
             FindObjectOfType<audioManger>().isPlaying("orRecord2");
@@ -322,6 +324,7 @@ public class Game1Logic : MonoBehaviour
         if (currentMusic == "orRecord2")
         {
             currentMusic = "orRecord3";
+            Checkmusicbtns(currentMusic);
             textVideo2.text = "המורה לנהיגה ממש התעצבן עלי הוא אמר שאני לא יכול לעשות מה שאני רוצה.";
             FindObjectOfType<audioManger>().Play("orRecord3");
             FindObjectOfType<audioManger>().isPlaying("orRecord3");
@@ -334,6 +337,7 @@ public class Game1Logic : MonoBehaviour
         if (currentMusic == "orRecord3")
         {
             currentMusic = "orRecord4";
+            Checkmusicbtns(currentMusic);
             textVideo2.text = "אני חייב לחשוב לפני שאני מגיב.";
             FindObjectOfType<audioManger>().Play("orRecord4");
             FindObjectOfType<audioManger>().isPlaying("orRecord4");
@@ -345,6 +349,7 @@ public class Game1Logic : MonoBehaviour
         if (currentMusic == "orRecord4")
         {
             currentMusic = "orRecord5";
+            Checkmusicbtns(currentMusic);
             textVideo2.text = "אני לא מבין מה הוא רוצה ממני! גם כשאני רב עם ההורים שלי אני כל קודם מדבר ורק אז חושב, אני מרגיש שאני לא מצליח לעצור ולרוב זה פוגע בי ובהם.";
             FindObjectOfType<audioManger>().Play("orRecord5");
             FindObjectOfType<audioManger>().isPlaying("orRecord5");
@@ -356,6 +361,7 @@ public class Game1Logic : MonoBehaviour
         if (currentMusic == "orRecord5")
         {
             currentMusic = "orRecord6";
+            Checkmusicbtns(currentMusic);
             textVideo2.text = "אני לא מבין מה הבעיה שלי.";
             FindObjectOfType<audioManger>().Play("orRecord6");
             FindObjectOfType<audioManger>().isPlaying("orRecord6");
@@ -378,7 +384,8 @@ public class Game1Logic : MonoBehaviour
     {
         currentMusic = "emaRecord1";
         orAnimator.SetBool("isTalk", true);
-        subtitleBK2.SetActive(true);
+        subtitleBK3.SetActive(true);
+        Checkmusicbtns(currentMusic);
         textVideo3.text = "היי תמיר, אתה לא מאמין מה קרה לי?";
         FindObjectOfType<audioManger>().Play("emaRecord1");
         FindObjectOfType<audioManger>().isPlaying("emaRecord1");
@@ -389,6 +396,7 @@ public class Game1Logic : MonoBehaviour
         if (currentMusic == "emaRecord1")
         {
             currentMusic = "emaRecord2";
+            Checkmusicbtns(currentMusic);
             textVideo3.text = "אתה זוכר שסיפרתי לך שאני הולכת למיונים ליחידה של 0028 של חיל המודיעין ואני בדוק עוברת?";
             FindObjectOfType<audioManger>().Play("emaRecord2");
             FindObjectOfType<audioManger>().isPlaying("emaRecord2");
@@ -401,6 +409,7 @@ public class Game1Logic : MonoBehaviour
         if (currentMusic == "emaRecord2")
         {
             currentMusic = "emaRecord3";
+            Checkmusicbtns(currentMusic);
             textVideo3.text = "מרוב שהייתי בטוחה בעצמי אפילו לא התכוננתי למבחנים וכבר סיפרתי לכולם שבטוח התקבלתי.";
             FindObjectOfType<audioManger>().Play("emaRecord3");
             FindObjectOfType<audioManger>().isPlaying("emaRecord3");
@@ -412,24 +421,15 @@ public class Game1Logic : MonoBehaviour
         if (currentMusic == "emaRecord3")
         {
             currentMusic = "emaRecord4";
+            Checkmusicbtns(currentMusic);
             textVideo3.text = "שובצתי בכלל להיות תצפיתנית, אני לא מבינה איך זה קרה.";
             FindObjectOfType<audioManger>().Play("emaRecord4");
             FindObjectOfType<audioManger>().isPlaying("emaRecord4");
         }
     }
 
-    public void emaRecord5()
-    {
-        if (currentMusic == "emaRecord4")
-        {
-            currentMusic = "emaRecord5";
-            textVideo3.text = "שובצתי בכלל להיות תצפיתנית, אני לא מבינה איך זה קרה.";
-            FindObjectOfType<audioManger>().Play("emaRecord5");
-            FindObjectOfType<audioManger>().isPlaying("emaRecord5");
-        }
-    }
 
-    public void finishemaRecord5()
+    public void finishemaRecord4()
     {
         emaAnimator.SetBool("isTalk", false);
         stopMusic();
@@ -487,7 +487,7 @@ public class Game1Logic : MonoBehaviour
                 FindObjectOfType<audioManger>().StopPlaying(thebtn);
             }
         }
-        else if (musicName.Contains("or") == true)
+        else if (musicName.Contains("orRecord") == true)
         {
             string btn = "orRecord";
             for (int i = 1; i < 7; i++)
@@ -497,14 +497,17 @@ public class Game1Logic : MonoBehaviour
                 FindObjectOfType<audioManger>().StopPlaying(thebtn);
             }
         }
-        else if (musicName.Contains("ema") == true)
+        else if (musicName.Contains("emaRecord") == true)
         {
+            Debug.Log("emalopping");
             string btn = "emaRecord";
             for (int i = 1; i < 5; i++)
             {
                 string number = i.ToString();
                 string thebtn = btn + i;
+                Debug.Log("thebtn "+ thebtn);
                 FindObjectOfType<audioManger>().StopPlaying(thebtn);
+                Debug.Log("stop the music " + thebtn);
             }
         }
         else

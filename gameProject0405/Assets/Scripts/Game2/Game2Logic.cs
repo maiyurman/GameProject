@@ -11,8 +11,9 @@ public class Game2Logic : MonoBehaviour
 {
     private loadStoryBtn loadStoryBtn;
     public Animator tamir;
-    public navigation continuebtn;
     string musicOn;
+    string currentMusic;
+
 
 
     void Start()
@@ -32,16 +33,14 @@ public class Game2Logic : MonoBehaviour
             loadStoryBtn.EnableStoryBtnsForLevel(MaxStage);
             Debug.Log(MaxStage);
         }
-        continuebtn.disableBtn();
-        FindObjectOfType<audioManger2>().Play("stage2Sentence1");
+        currentMusic = "stage2Sentence1";
         Checkmusicbtns("stage2Sentence1");
-        StartCoroutine(stage1Sentence1());
+        stage2Sentence1();
     }
 
     public void Checkmusicbtns(string musicBtnName)
     {
         musicOn = PlayerPrefs.GetString("isMusicOn");
-        Debug.Log("סטטוס מוזיקה" + musicOn);
         //אם המוזיקה מופעלת
         if (musicOn == "true")
         {
@@ -54,48 +53,50 @@ public class Game2Logic : MonoBehaviour
         }
     }
 
-    IEnumerator stage1Sentence1()
-    {
-        yield return new WaitForSeconds(1);
-        tamir.SetBool("isTalk", false);
-        continuebtn.enableBtn();
-    }
-
-    public void startstage2Sentence2()
+    public void stage2Sentence1()
     {
         tamir.SetBool("isTalk", true);
-        FindObjectOfType<audioManger2>().Play("stage2Sentence2");
-        StartCoroutine(stage2Sentence2());
-
+        currentMusic = "stage2Sentence1";
+        Checkmusicbtns(currentMusic);
+        FindObjectOfType<audioManger>().Play("stage2Sentence1");
+        FindObjectOfType<audioManger>().isPlaying("stage2Sentence1");
     }
 
-    IEnumerator stage2Sentence2()
+    public void stage2Sentence2()
     {
-        yield return new WaitForSeconds(1);
-        tamir.SetBool("isTalk", false);
+        if (currentMusic == "stage2Sentence1")
+        {
+            stopMusic();
+            tamir.SetBool("isTalk", true);
+            currentMusic = "stage1Sentence2";
+            Checkmusicbtns(currentMusic);
+            FindObjectOfType<audioManger>().Play("stage1Sentence2");
+            FindObjectOfType<audioManger>().isPlaying("stage1Sentence2");
+        }
     }
 
-    public void startstage2Sentence3()
+    public void stage2Sentence3()
     {
-        tamir.SetBool("isTalk", true);
-        FindObjectOfType<audioManger2>().Play("stage2Sentence3");
-        StartCoroutine(stage2Sentence3());
+        if (currentMusic == "stage2Sentence2")
+        {
+            stopMusic();
+            tamir.SetBool("isTalk", true);
+            currentMusic = "stage2Sentence3";
+            Checkmusicbtns(currentMusic);
+            FindObjectOfType<audioManger>().Play("stage2Sentence3");
+            FindObjectOfType<audioManger>().isPlaying("stage2Sentence3");
+        }
     }
 
-    IEnumerator stage2Sentence3()
-    {
-        yield return new WaitForSeconds(1);
-        tamir.SetBool("isTalk", false);
-    }
 
     public void ClickSoundBtn(string sound)
     {
         FindObjectOfType<audioManger2>().click(sound);
     }
 
-    public void stopMusic(string musicName)
+    public void stopMusic()
     {
-        StopAllCoroutines();
+        string musicName = currentMusic;
         FindObjectOfType<audioManger2>().StopPlaying(musicName);
     }
 

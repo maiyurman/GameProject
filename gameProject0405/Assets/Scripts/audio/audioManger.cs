@@ -678,12 +678,7 @@ public class audioManger : MonoBehaviour
 
     public void emaRecord4()
     {
-        Game1Logic.emaRecord5();
-    }
-
-    public void emaRecord5()
-    {
-        Game1Logic.finishemaRecord5();
+        Game1Logic.finishemaRecord4();
     }
 
 }

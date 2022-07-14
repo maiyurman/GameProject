@@ -11,7 +11,13 @@ public class audioManger2 : MonoBehaviour
     public navgationFor2 sentence1;
     public navgationFor2 sentence2;
     public navgationFor2 sentence3;
+    private Game2Logic Game2Logic;
 
+    void Start()
+    {
+        Game2Logic = GameObject.Find("GameManager").GetComponent<Game2Logic>();
+
+    }
     void Awake()
     {
         if (instance == null)
@@ -131,6 +137,32 @@ public class audioManger2 : MonoBehaviour
         {
             sentence3.notMusic();
         }
+    }
+
+    public void isPlaying(string sound)
+    {
+        sound s = Array.Find(sounds, item => item.name == sound);
+        Invoke(sound, s.clip.length);
+    }
+
+
+    /// <summary>
+    /// משפטי סאונד בועיות
+    /// </summary>
+
+    public void stage2Sentence1()
+    {
+        Game2Logic.tamir.SetBool("isTalk", false);
+    }
+
+    public void stage2Sentence2()
+    {
+        Game2Logic.tamir.SetBool("isTalk", false);
+    }
+
+    public void stage2Sentence3()
+    {
+        Game2Logic.tamir.SetBool("isTalk", false);
     }
 
 }

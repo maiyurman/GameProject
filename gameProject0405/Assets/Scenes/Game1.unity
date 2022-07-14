@@ -2431,7 +2431,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529853}
         m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
         m_MethodName: ClickSoundBtn
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8184,7 +8184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242385881699441482, guid: 4fa87725b61ed88408083f327094d906, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1019.99963
+      value: 1019.9995
       objectReference: {fileID: 0}
     - target: {fileID: 5242385881699441482, guid: 4fa87725b61ed88408083f327094d906, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -22720,21 +22720,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 56529850}
-        m_TargetAssemblyTypeName: Game1UIScript, Assembly-CSharp
-        m_MethodName: finishGameTamirTalk
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 56529853}
         m_TargetAssemblyTypeName: Game1Logic, Assembly-CSharp
-        m_MethodName: startstage1Sentence3
+        m_MethodName: stage1Sentence3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
