@@ -906,7 +906,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game5UIManager, Assembly-CSharp
         m_MethodName: stopMusic
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6602,7 +6602,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game5UIManager, Assembly-CSharp
         m_MethodName: stopMusic
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6613,7 +6613,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game5UIManager, Assembly-CSharp
-        m_MethodName: startstage5Sentence2
+        m_MethodName: stage5Sentence2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6621,18 +6621,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 56529850}
-        m_TargetAssemblyTypeName: Game5UIManager, Assembly-CSharp
-        m_MethodName: Checkmusicbtns
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: stage5Sentence2
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &429087766
@@ -23112,7 +23100,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game5UIManager, Assembly-CSharp
         m_MethodName: stopMusic
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23123,7 +23111,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game5UIManager, Assembly-CSharp
-        m_MethodName: startstage5Sentence3
+        m_MethodName: stage5Sentence3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23131,18 +23119,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 56529850}
-        m_TargetAssemblyTypeName: Game5UIManager, Assembly-CSharp
-        m_MethodName: Checkmusicbtns
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: stage5Sentence3
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1788853498

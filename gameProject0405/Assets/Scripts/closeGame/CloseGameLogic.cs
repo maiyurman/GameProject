@@ -20,6 +20,7 @@ public class CloseGameLogic : MonoBehaviour
 
     public Animator tamirTTB;
     string musicOn;
+    string currentMusic;
 
     private void Start()
     {
@@ -31,10 +32,7 @@ public class CloseGameLogic : MonoBehaviour
         level3.enableBtn();
         level4.enableBtn();
         level5.enableBtn();
-        tamirTTB.SetBool("isTalk", true);
-        FindObjectOfType<audioMangerEnd>().Play("endSentence1");
-        Checkmusicbtns("endSentence1");
-        StartCoroutine(stageEndSentence1());
+        endSentence1();
 
     }
 
@@ -52,69 +50,64 @@ public class CloseGameLogic : MonoBehaviour
         }
     }
 
-    IEnumerator stageEndSentence1()
-    {
-        Debug.Log("enter to 1 before");
-        yield return new WaitForSeconds(0.5f);
-        tamirTTB.SetBool("isTalk", false);
-        Debug.Log("finish 1 and" + tamirTTB.GetBool("isTalk"));
-    }
 
-    public void startstageEndSentence2()
+    public void endSentence1()
     {
         tamirTTB.SetBool("isTalk", true);
-        FindObjectOfType<audioMangerEnd>().Play("endSentence2");
-        StartCoroutine(stageEndSentence2());
-
+        currentMusic = "endSentence1";
+        Checkmusicbtns(currentMusic);
+        FindObjectOfType<audioMangerEnd>().Play("endSentence1");
+        FindObjectOfType<audioMangerEnd>().isPlaying("endSentence1");
     }
 
-    IEnumerator stageEndSentence2()
+    public void endSentence2()
     {
-        Debug.Log("enter to 2 before");
-        yield return new WaitForSeconds(1.5f);
-        tamirTTB.SetBool("isTalk", false);
-        Debug.Log("finish 2 and" + tamirTTB.GetBool("isTalk"));
-
+        if (currentMusic == "endSentence1")
+        {
+            stopMusic();
+            tamirTTB.SetBool("isTalk", true);
+            currentMusic = "endSentence2";
+            Checkmusicbtns(currentMusic);
+            FindObjectOfType<audioMangerEnd>().Play("endSentence2");
+            FindObjectOfType<audioMangerEnd>().isPlaying("endSentence2");
+        }
     }
 
-    public void startstageEndSentence3()
+    public void endSentence3()
     {
-        tamirTTB.SetBool("isTalk", true);
-        FindObjectOfType<audioMangerEnd>().Play("endSentence3");
-        StartCoroutine(stageEndSentence3());
+        if (currentMusic == "endSentence2")
+        {
+            stopMusic();
+            tamirTTB.SetBool("isTalk", true);
+            currentMusic = "endSentence3";
+            Checkmusicbtns(currentMusic);
+            FindObjectOfType<audioMangerEnd>().Play("endSentence3");
+            FindObjectOfType<audioMangerEnd>().isPlaying("endSentence3");
+        }
     }
 
-    IEnumerator stageEndSentence3()
+    public void endSentence4()
     {
-        Debug.Log("enter to 3 before");
-        yield return new WaitForSeconds(1.5f);
-        tamirTTB.SetBool("isTalk", false);
-        Debug.Log("finish 3 and" + tamirTTB.GetBool("isTalk"));
+        if (currentMusic == "endSentence3")
+        {
+            stopMusic();
+            tamirTTB.SetBool("isTalk", true);
+            currentMusic = "endSentence4";
+            Checkmusicbtns(currentMusic);
+            FindObjectOfType<audioMangerEnd>().Play("endSentence4");
+            FindObjectOfType<audioMangerEnd>().isPlaying("endSentence4");
+        }
     }
 
-    public void startstageEndSentence4()
-    {
-        tamirTTB.SetBool("isTalk", true);
-        FindObjectOfType<audioMangerEnd>().Play("endSentence4");
-        StartCoroutine(stageEndSentence4());
-    }
-
-    IEnumerator stageEndSentence4()
-    {
-        Debug.Log("enter to 4 before");
-        yield return new WaitForSeconds(0.5f);
-        tamirTTB.SetBool("isTalk", false);
-        Debug.Log("finish 4 and" + tamirTTB.GetBool("isTalk"));
-    }
 
     public void ClickSoundBtn(string sound)
     {
         FindObjectOfType<audioMangerEnd>().click(sound);
     }
 
-    public void stopMusic(string musicName)
+    public void stopMusic()
     {
-        StopAllCoroutines();
+        string musicName = currentMusic;
         FindObjectOfType<audioMangerEnd>().StopPlaying(musicName);
     }
 

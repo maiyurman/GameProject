@@ -13,6 +13,14 @@ public class audioManger3 : MonoBehaviour
     public navgationFor2 sentence3;
     public navgationFor2 sentence4;
 
+    private Game3Logic Game3Logic;
+
+    void Start()
+    {
+        Game3Logic = GameObject.Find("GameManager").GetComponent<Game3Logic>();
+
+    }
+
     void Awake()
     {
         if (instance == null)
@@ -148,5 +156,38 @@ public class audioManger3 : MonoBehaviour
             sentence4.notMusic();
         }
     }
+
+    public void isPlaying(string sound)
+    {
+        sound s = Array.Find(sounds, item => item.name == sound);
+        Invoke(sound, s.clip.length);
+    }
+
+
+    /// <summary>
+    /// משפטי סאונד בועיות
+    /// </summary>
+
+    public void stage3Sentence1()
+    {
+        Game3Logic.tamir.SetBool("isTalk", false);
+    }
+
+    public void stage3Sentence2()
+    {
+        Game3Logic.tamir.SetBool("isTalk", false);
+    }
+
+    public void stage3Sentence3()
+    {
+        Game3Logic.tamir.SetBool("isTalk", false);
+    }
+
+    public void stage3Sentence4()
+    {
+        Game3Logic.tamir.SetBool("isTalk", false);
+        Debug.Log("tamirFinishSentence4");
+    }
+
 
 }

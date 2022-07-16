@@ -13,6 +13,12 @@ public class audioMangerEnd : MonoBehaviour
     public navgationFor2 sentence3;
     public navgationFor2 sentence4;
 
+    CloseGameLogic CloseGameLogic;
+
+    private void Start()
+    {
+        CloseGameLogic = GameObject.Find("GameManager").GetComponent<CloseGameLogic>();
+    }
     void Awake()
     {
         if (instance == null)
@@ -148,5 +154,37 @@ public class audioMangerEnd : MonoBehaviour
         {
             sentence4.notMusic();
         }
+    }
+
+
+    public void isPlaying(string sound)
+    {
+        sound s = Array.Find(sounds, item => item.name == sound);
+        Invoke(sound, s.clip.length);
+    }
+
+
+    /// <summary>
+    /// משפטי סאונד בועיות
+    /// </summary>
+
+    public void endSentence1()
+    {
+        CloseGameLogic.tamirTTB.SetBool("isTalk", false);
+    }
+
+    public void endSentence2()
+    {
+        CloseGameLogic.tamirTTB.SetBool("isTalk", false);
+    }
+
+    public void endSentence3()
+    {
+        CloseGameLogic.tamirTTB.SetBool("isTalk", false);
+    }
+
+    public void endSentence4()
+    {
+        CloseGameLogic.tamirTTB.SetBool("isTalk", false);
     }
 }

@@ -12,7 +12,13 @@ public class audioManger5 : MonoBehaviour
     public navgationFor2 sentence2;
     public navgationFor2 sentence3;
     public navgationFor2 sentence4;
+    private Game5UIManager Game5UIManager;
 
+    void Start()
+    {
+        Game5UIManager = GameObject.Find("GameManager").GetComponent<Game5UIManager>();
+
+    }
     void Awake()
     {
         if (instance == null)
@@ -149,5 +155,38 @@ public class audioManger5 : MonoBehaviour
             sentence4.notMusic();
         }
     }
+
+
+    public void isPlaying(string sound)
+    {
+        sound s = Array.Find(sounds, item => item.name == sound);
+        Invoke(sound, s.clip.length);
+    }
+
+
+    /// <summary>
+    /// משפטי סאונד בועיות
+    /// </summary>
+
+    public void stage5Sentence1()
+    {
+        Game5UIManager.tamirAnimator.SetBool("isTalk", false);
+    }
+
+    public void stage5Sentence2()
+    {
+        Game5UIManager.tamirAnimator.SetBool("isTalk", false);
+    }
+
+    public void stage5Sentence3()
+    {
+        Game5UIManager.tamirAnimator.SetBool("isTalk", false);
+    }
+
+    public void stage5Sentence4()
+    {
+        Game5UIManager.tamirAnimator.SetBool("isTalk", false);
+    }
+
 
 }

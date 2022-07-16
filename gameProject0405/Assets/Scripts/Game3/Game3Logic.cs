@@ -7,6 +7,8 @@ public class Game3Logic : MonoBehaviour
     private loadStoryBtn loadStoryBtn;
     public Animator tamir;
     string musicOn;
+    string currentMusic;
+    public GameObject tamirGameObject;
 
     void Start()
     {
@@ -25,9 +27,7 @@ public class Game3Logic : MonoBehaviour
             loadStoryBtn.EnableStoryBtnsForLevel(MaxStage);
             Debug.Log(MaxStage);
         }
-        FindObjectOfType<audioManger3>().Play("stage3Sentence1");
-        Checkmusicbtns("stage3Sentence1");
-        StartCoroutine(stage3Sentence1());
+        stage3Sentence1();
     }
 
     public void Checkmusicbtns(string musicBtnName)
@@ -44,60 +44,63 @@ public class Game3Logic : MonoBehaviour
         }
     }
 
-    IEnumerator stage3Sentence1()
-    {
-        yield return new WaitForSeconds(0.02f);
-        tamir.SetBool("isTalk", false);
-    }
-
-    public void startstage3Sentence2()
+    public void stage3Sentence1()
     {
         tamir.SetBool("isTalk", true);
-        FindObjectOfType<audioManger3>().Play("stage3Sentence2");
-        StartCoroutine(stage3Sentence2());
-
+        currentMusic = "stage3Sentence1";
+        Checkmusicbtns(currentMusic);
+        FindObjectOfType<audioManger3>().Play("stage3Sentence1");
+        FindObjectOfType<audioManger3>().isPlaying("stage3Sentence1");
     }
 
-    IEnumerator stage3Sentence2()
+    public void stage3Sentence2()
     {
-        yield return new WaitForSeconds(1);
-        tamir.SetBool("isTalk", false);
+        if (currentMusic == "stage3Sentence1")
+        {
+            stopMusic();
+            tamir.SetBool("isTalk", true);
+            currentMusic = "stage3Sentence2";
+            Checkmusicbtns(currentMusic);
+            FindObjectOfType<audioManger3>().Play("stage3Sentence2");
+            FindObjectOfType<audioManger3>().isPlaying("stage3Sentence2");
+        }
     }
 
-    public void startstage3Sentence3()
+    public void stage3Sentence3()
     {
-        tamir.SetBool("isTalk", true);
-        FindObjectOfType<audioManger3>().Play("stage3Sentence3");
-        StartCoroutine(stage3Sentence3());
+        if (currentMusic == "stage3Sentence2")
+        {
+            stopMusic();
+            tamir.SetBool("isTalk", true);
+            currentMusic = "stage3Sentence3";
+            Checkmusicbtns(currentMusic);
+            FindObjectOfType<audioManger3>().Play("stage3Sentence3");
+            FindObjectOfType<audioManger3>().isPlaying("stage3Sentence3");
+        }
     }
 
-    IEnumerator stage3Sentence3()
+    public void stage3Sentence4()
     {
-        yield return new WaitForSeconds(1);
-        tamir.SetBool("isTalk", false);
+        if (currentMusic == "stage3Sentence3")
+        {
+            stopMusic();
+            tamir.SetBool("isTalk", true);
+            currentMusic = "stage3Sentence4";
+            Checkmusicbtns(currentMusic);
+            FindObjectOfType<audioManger3>().Play("stage3Sentence4");
+            FindObjectOfType<audioManger3>().isPlaying("stage3Sentence4");
+        }
     }
 
-    public void startstage3Sentence4()
-    {
-        tamir.SetBool("isTalk", true);
-        FindObjectOfType<audioManger3>().Play("stage3Sentence4");
-        StartCoroutine(stage3Sentence4());
-    }
-
-    IEnumerator stage3Sentence4()
-    {
-        yield return new WaitForSeconds(1);
-        tamir.SetBool("isTalk", false);
-    }
 
     public void ClickSoundBtn(string sound)
     {
         FindObjectOfType<audioManger3>().click(sound);
     }
 
-    public void stopMusic(string musicName)
+    public void stopMusic()
     {
-        StopAllCoroutines();
+        string musicName = currentMusic;
         FindObjectOfType<audioManger3>().StopPlaying(musicName);
     }
 
@@ -113,6 +116,7 @@ public class Game3Logic : MonoBehaviour
         int myMaxLevel = PlayerPrefs.GetInt("GameMax");
         Debug.Log("Max Level" + myMaxLevel);
         loadStoryBtn.enableStoryBtn(myMaxLevel);
+        tamirGameObject.SetActive(true);
 
     }
 }

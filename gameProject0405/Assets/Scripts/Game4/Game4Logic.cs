@@ -54,6 +54,8 @@ public class Game4Logic : MonoBehaviour
 
     string musicOn;
 
+    string currentMusic;
+
 
     // Start is called before the first frame update
     void Start()
@@ -80,9 +82,7 @@ public class Game4Logic : MonoBehaviour
         MessageBtn.disableBtn();
 
         Game4UiManager = transform.gameObject.GetComponent<Game4UiManager>();
-        FindObjectOfType<audioManger4>().Play("stage4Sentence1");
-        Checkmusicbtns("stage4Sentence1");
-        StartCoroutine(stage4Sentence1());
+        stage4Sentence1();
     }
 
     public void Checkmusicbtns(string musicBtnName)
@@ -99,60 +99,62 @@ public class Game4Logic : MonoBehaviour
         }
     }
 
-    IEnumerator stage4Sentence1()
-        {
-            yield return new WaitForSeconds(0.02f);
-            tamir.SetBool("isTalk", false);
-        }
+    public void stage4Sentence1()
+    {
+        tamir.SetBool("isTalk", true);
+        currentMusic = "stage4Sentence1";
+        Checkmusicbtns(currentMusic);
+        FindObjectOfType<audioManger4>().Play("stage4Sentence1");
+        FindObjectOfType<audioManger4>().isPlaying("stage4Sentence1");
+    }
 
-        public void startstage4Sentence2()
+    public void stage4Sentence2()
+    {
+        if (currentMusic == "stage4Sentence1")
         {
+            stopMusic();
             tamir.SetBool("isTalk", true);
+            currentMusic = "stage4Sentence2";
+            Checkmusicbtns(currentMusic);
             FindObjectOfType<audioManger4>().Play("stage4Sentence2");
-            StartCoroutine(stage4Sentence2());
-
+            FindObjectOfType<audioManger4>().isPlaying("stage4Sentence2");
         }
+    }
 
-        IEnumerator stage4Sentence2()
+    public void stage4Sentence3()
+    {
+        if (currentMusic == "stage4Sentence2")
         {
-            yield return new WaitForSeconds(1);
-            tamir.SetBool("isTalk", false);
-        }
-
-        public void startstage4Sentence3()
-        {
+            stopMusic();
             tamir.SetBool("isTalk", true);
+            currentMusic = "stage4Sentence3";
+            Checkmusicbtns(currentMusic);
             FindObjectOfType<audioManger4>().Play("stage4Sentence3");
-            StartCoroutine(stage4Sentence3());
+            FindObjectOfType<audioManger4>().isPlaying("stage4Sentence3");
         }
+    }
 
-        IEnumerator stage4Sentence3()
+    public void stage4Sentence4()
+    {
+        if (currentMusic == "stage4Sentence3")
         {
-            yield return new WaitForSeconds(1);
-            tamir.SetBool("isTalk", false);
-        }
-
-        public void startstage4Sentence4()
-        {
+            stopMusic();
             tamir.SetBool("isTalk", true);
+            currentMusic = "stage4Sentence4";
+            Checkmusicbtns(currentMusic);
             FindObjectOfType<audioManger4>().Play("stage4Sentence4");
-            StartCoroutine(stage4Sentence4());
+            FindObjectOfType<audioManger4>().isPlaying("stage4Sentence4");
         }
+    }
 
-        IEnumerator stage4Sentence4()
-        {
-            yield return new WaitForSeconds(1);
-            tamir.SetBool("isTalk", false);
-        }
-
-        public void ClickSoundBtn(string sound)
+    public void ClickSoundBtn(string sound)
         {
             FindObjectOfType<audioManger4>().click(sound);
         }
 
-        public void stopMusic(string musicName)
+        public void stopMusic()
         {
-            StopAllCoroutines();
+            string musicName = currentMusic;
             FindObjectOfType<audioManger4>().StopPlaying(musicName);
         }
 

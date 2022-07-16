@@ -34,7 +34,6 @@ public class Game2Logic : MonoBehaviour
             Debug.Log(MaxStage);
         }
         currentMusic = "stage2Sentence1";
-        Checkmusicbtns("stage2Sentence1");
         stage2Sentence1();
     }
 
@@ -58,8 +57,8 @@ public class Game2Logic : MonoBehaviour
         tamir.SetBool("isTalk", true);
         currentMusic = "stage2Sentence1";
         Checkmusicbtns(currentMusic);
-        FindObjectOfType<audioManger>().Play("stage2Sentence1");
-        FindObjectOfType<audioManger>().isPlaying("stage2Sentence1");
+        FindObjectOfType<audioManger2>().Play("stage2Sentence1");
+        FindObjectOfType<audioManger2>().isPlaying("stage2Sentence1");
     }
 
     public void stage2Sentence2()
@@ -68,10 +67,10 @@ public class Game2Logic : MonoBehaviour
         {
             stopMusic();
             tamir.SetBool("isTalk", true);
-            currentMusic = "stage1Sentence2";
+            currentMusic = "stage2Sentence2";
             Checkmusicbtns(currentMusic);
-            FindObjectOfType<audioManger>().Play("stage1Sentence2");
-            FindObjectOfType<audioManger>().isPlaying("stage1Sentence2");
+            FindObjectOfType<audioManger2>().Play("stage2Sentence2");
+            FindObjectOfType<audioManger2>().isPlaying("stage2Sentence2");
         }
     }
 
@@ -83,8 +82,8 @@ public class Game2Logic : MonoBehaviour
             tamir.SetBool("isTalk", true);
             currentMusic = "stage2Sentence3";
             Checkmusicbtns(currentMusic);
-            FindObjectOfType<audioManger>().Play("stage2Sentence3");
-            FindObjectOfType<audioManger>().isPlaying("stage2Sentence3");
+            FindObjectOfType<audioManger2>().Play("stage2Sentence3");
+            FindObjectOfType<audioManger2>().isPlaying("stage2Sentence3");
         }
     }
 
