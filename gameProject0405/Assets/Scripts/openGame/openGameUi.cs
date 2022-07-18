@@ -17,10 +17,48 @@ public class openGameUi : MonoBehaviour
     public Animator tamirAnimator;
     public navgationFor2 soundBtn;
     public string currentMusic;
+    public navgationFor2 pauseBtn;
 
+    public static bool GameIsPaused;
+
+    private audioMangerOpen audioMangerOpen;
+
+    public void clickPauseBtn()
+    {
+        if (GameIsPaused)
+        {
+           Resume();
+        }
+        else
+        {
+           Pause();
+        } 
+    }
+
+    void Resume()
+    {
+        Debug.Log("resume");
+        pauseBtn.enableBtn();
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        Debug.Log("Resume " + currentMusic);
+        audioMangerOpen.NotPause(currentMusic);
+    }
+
+    void Pause()
+    {
+        Debug.Log("pasue");
+        pauseBtn.notMusic();
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+        Debug.Log("Pause " + currentMusic);
+        audioMangerOpen.Pause(currentMusic);
+    }
 
     void Start()
     {
+        audioMangerOpen = transform.gameObject.GetComponent<audioMangerOpen>();
+
         bubble.SetActive(false);
         startGameBtn.gameObject.SetActive(false);
         PlayerPrefs.SetInt("gameNumIn", 0);

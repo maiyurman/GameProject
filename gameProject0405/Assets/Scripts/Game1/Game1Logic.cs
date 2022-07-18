@@ -60,6 +60,38 @@ public class Game1Logic : MonoBehaviour
 
     string musicOn;
     string currentMusic;
+    //navgationFor2 pauseBtn;
+
+    //public static bool GameIsPaused;
+
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        if (GameIsPaused)
+    //        {
+    //            Resume();
+    //        }
+    //        else
+    //        {
+    //            Pause();
+    //        }
+    //    }
+    //}
+
+    //void Resume()
+    //{
+    //    pauseBtn.enableBtn();
+    //    Time.timeScale = 0f;
+    //    GameIsPaused = false;
+    //}
+
+    //void Pause()
+    //{
+    //    pauseBtn.notMusic();
+    //    Time.timeScale = 0f;
+    //    GameIsPaused = true;
+    //}
 
     void Start()
     {
