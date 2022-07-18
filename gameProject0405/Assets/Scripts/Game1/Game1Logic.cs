@@ -60,41 +60,20 @@ public class Game1Logic : MonoBehaviour
 
     string musicOn;
     string currentMusic;
-    //navgationFor2 pauseBtn;
+    public navgationFor2 pauseBtn1;
+    public navgationFor2 pauseBtn2;
+    public navgationFor2 pauseBtn3;
 
-    //public static bool GameIsPaused;
 
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Escape))
-    //    {
-    //        if (GameIsPaused)
-    //        {
-    //            Resume();
-    //        }
-    //        else
-    //        {
-    //            Pause();
-    //        }
-    //    }
-    //}
+    public static bool GameIsPaused;
 
-    //void Resume()
-    //{
-    //    pauseBtn.enableBtn();
-    //    Time.timeScale = 0f;
-    //    GameIsPaused = false;
-    //}
-
-    //void Pause()
-    //{
-    //    pauseBtn.notMusic();
-    //    Time.timeScale = 0f;
-    //    GameIsPaused = true;
-    //}
+    private audioManger audioManger;
+    private int currentVideo;
 
     void Start()
     {
+        currentVideo = 0;
+        audioManger = GameObject.Find("audioManger").GetComponent<audioManger>();
         loadStoryBtn = transform.gameObject.GetComponent<loadStoryBtn>();
         Game1UIScript = transform.gameObject.GetComponent<Game1UIScript>();
         
@@ -154,6 +133,75 @@ public class Game1Logic : MonoBehaviour
         currentMusic = "stage1Sentence1";
         Checkmusicbtns("stage1Sentence1");
         stage1Sentence1();
+    }
+
+
+    public void clickPauseBtn()
+    {
+        if (GameIsPaused)
+        {
+            Resume();
+        }
+        else
+        {
+            Pause();
+        }
+    }
+
+    public void Resume()
+    {
+        Debug.Log("resume");
+        if (currentVideo == 1)
+        {
+            pauseBtn1.enableBtn();
+
+        }
+        else if(currentVideo == 2)
+        {
+            pauseBtn2.enableBtn();
+
+        }
+        else if(currentVideo == 3)
+        {
+            pauseBtn3.enableBtn();
+
+        }
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        Debug.Log("Resume " + currentMusic);
+        audioManger.NotPause(currentMusic);
+    }
+
+    public void Pause()
+    {
+        Debug.Log("pasue");
+
+        if (currentVideo == 1)
+        {
+            pauseBtn1.notMusic();
+
+        }
+        else if (currentVideo == 2)
+        {
+            pauseBtn2.notMusic();
+
+        }
+        else if(currentVideo == 3)
+        {
+            pauseBtn3.notMusic();
+
+        }
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+        Debug.Log("Pause " + currentMusic);
+        audioManger.Pause(currentMusic);
+    }
+
+    public void startoverTime()
+    {
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+
     }
 
     public void Checkmusicbtns(string musicBtnName)
@@ -238,6 +286,7 @@ public class Game1Logic : MonoBehaviour
 
     public void tamarRecord1()
     {
+        currentVideo = 1;
         currentMusic = "tamarRecord1";
         tamarAnimator.SetBool("isTalk", true);
         subtitleBK1.SetActive(true);
@@ -322,6 +371,7 @@ public class Game1Logic : MonoBehaviour
         tamarAnimator.SetBool("isTalk", false);
         subtitleBK1.SetActive(false);
         stopMusic();
+        Resume();
         video1.SetActive(false);
     }
 
@@ -330,6 +380,7 @@ public class Game1Logic : MonoBehaviour
 
     public void orRecord1()
     {
+        currentVideo = 2;
         currentMusic = "orRecord1";
         orAnimator.SetBool("isTalk", true);
         subtitleBK2.SetActive(true);
@@ -406,6 +457,7 @@ public class Game1Logic : MonoBehaviour
         subtitleBK2.SetActive(false);
         stopMusic();
         textVideo2.text = "";
+        Resume();
         video2.SetActive(false);
     }
 
@@ -414,6 +466,7 @@ public class Game1Logic : MonoBehaviour
 
     public void emaRecord1()
     {
+        currentVideo = 3;
         currentMusic = "emaRecord1";
         orAnimator.SetBool("isTalk", true);
         subtitleBK3.SetActive(true);
@@ -467,6 +520,7 @@ public class Game1Logic : MonoBehaviour
         stopMusic();
         textVideo3.text = "";
         subtitleBK3.SetActive(false);
+        Resume();
         video3.SetActive(false);
     }
 
@@ -479,6 +533,7 @@ public class Game1Logic : MonoBehaviour
         video1.SetActive(true);
         stopMusic();
         currentMusic = "tamarRecord1";
+        Resume();
         playVideo1();
     }
 
@@ -488,6 +543,7 @@ public class Game1Logic : MonoBehaviour
         video2.SetActive(true);
         stopMusic();
         currentMusic = "orRecord1";
+        Resume();
         playVideo2();
     }
 
@@ -497,6 +553,7 @@ public class Game1Logic : MonoBehaviour
         video3.SetActive(true);
         stopMusic();
         currentMusic = "emaRecord1";
+        Resume();
         playVideo3();
     }
 

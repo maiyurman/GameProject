@@ -62,6 +62,20 @@ public class audioManger : MonoBehaviour
         s.source.Stop();
     }
 
+    public void Pause(string soundName)
+    {
+        sound currentSound = Array.Find(sounds, s => s.name == soundName);
+        Debug.Log("currentSound: " + currentSound.name);
+        currentSound.source.Pause();
+    }
+
+    public void NotPause(string soundName)
+    {
+        sound currentSound = Array.Find(sounds, s => s.name == soundName);
+        Debug.Log("currentSound: " + currentSound.name);
+        currentSound.source.UnPause();
+    }
+
     public void click(string sound)
     {
         sound s = Array.Find(sounds, item => item.name == sound);

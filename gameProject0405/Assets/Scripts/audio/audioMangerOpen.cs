@@ -103,18 +103,18 @@ public class audioMangerOpen : MonoBehaviour
         }
     }
 
-    public void Pause(string sound)
+    public void Pause(string soundName)
     {
-        sound s = Array.Find(sounds, sound => sound.name == name);
-        Debug.Log("s " + s);
-        s.source.Pause();
+        sound currentSound = Array.Find(sounds, s => s.name == soundName);
+        Debug.Log("currentSound: " + currentSound.name);
+        currentSound.source.Pause();
     }
 
-    public void NotPause(string sound)
+    public void NotPause(string soundName)
     {
-        sound s = Array.Find(sounds, sound => sound.name == name);
-        Debug.Log("s " + s);
-        s.source.UnPause();
+        sound currentSound = Array.Find(sounds, s => s.name == soundName);
+        Debug.Log("currentSound: " + currentSound.name);
+        currentSound.source.UnPause();
     }
 
     public void stayOn()

@@ -23,16 +23,32 @@ public class openGameUi : MonoBehaviour
 
     private audioMangerOpen audioMangerOpen;
 
+   
+    void Start()
+    {
+        audioMangerOpen = GameObject.Find("audioMangerOpen").GetComponent<audioMangerOpen>();
+
+        bubble.SetActive(false);
+        startGameBtn.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("gameNumIn", 0);
+        PlayerPrefs.SetInt("GameMax", 0);
+        sentenceVideo1();
+        tamir1.SetActive(true);
+        tamirAnimator.SetBool("isTalk", true);
+        tamir2.SetActive(false);
+        Checkmusicbtns("openSentence1");
+    }
+
     public void clickPauseBtn()
     {
         if (GameIsPaused)
         {
-           Resume();
+            Resume();
         }
         else
         {
-           Pause();
-        } 
+            Pause();
+        }
     }
 
     void Resume()
@@ -55,20 +71,6 @@ public class openGameUi : MonoBehaviour
         audioMangerOpen.Pause(currentMusic);
     }
 
-    void Start()
-    {
-        audioMangerOpen = transform.gameObject.GetComponent<audioMangerOpen>();
-
-        bubble.SetActive(false);
-        startGameBtn.gameObject.SetActive(false);
-        PlayerPrefs.SetInt("gameNumIn", 0);
-        PlayerPrefs.SetInt("GameMax", 0);
-        sentenceVideo1();
-        tamir1.SetActive(true);
-        tamirAnimator.SetBool("isTalk", true);
-        tamir2.SetActive(false);
-        Checkmusicbtns("openSentence1");
-    }
 
     public void Checkmusicbtns(string musicName)
     {
