@@ -98,7 +98,7 @@ public class openGameUi : MonoBehaviour
         FindObjectOfType<audioMangerOpen>().Play("openSentence1");
         FindObjectOfType<audioMangerOpen>().isPlaying("openSentence1");
         storyPic.GetComponent<Image>().sprite = Resources.Load<Sprite>("openGame/opening1");
-        startTxt.text = "היי חברים מה שלומכם? ברוכים הבאים לרשת החברתית revloS, לפני שאספר לכם מה אתם עושים פה אני אציג את עצמי.";
+        startTxt.text = "היי חברים מה שלומכם? ברוכים הבאים לרשת החברתית revloS," + "\n" + "לפני שאספר לכם מה אתם עושים פה אני אציג את עצמי.";
     }
 
     public void ClickSoundBtn(string sound)
@@ -165,7 +165,7 @@ public class openGameUi : MonoBehaviour
             Checkmusicbtns(currentMusic);
             FindObjectOfType<audioMangerOpen>().Play("openSentence5");
             FindObjectOfType<audioMangerOpen>().isPlaying("openSentence5");
-            startTxt.text = "אבא שלי הוא מנטור מוכר שעוזר לבעלי עסקים לפתור את הבעיות שלהם, תמיד הערצתי אותו ורציתי להיות כמוהו.";
+            startTxt.text = "אבא שלי הוא מנטור מוכר שעוזר לבעלי עסקים לפתור את הבעיות שלהם," + "\n" + " תמיד הערצתי אותו ורציתי להיות כמוהו.";
             storyPic.GetComponent<Image>().sprite = Resources.Load<Sprite>("openGame/opening3");
         }
     }
@@ -190,7 +190,7 @@ public class openGameUi : MonoBehaviour
             Checkmusicbtns(currentMusic);
             FindObjectOfType<audioMangerOpen>().Play("openSentence7");
             FindObjectOfType<audioMangerOpen>().isPlaying("openSentence7");
-            startTxt.text = "כולנו נתקלים בבעיות מסוגים שונים בכל תחומי החיים אבל אנחנו לא תמיד יודעים איך לגשת אליהן.";
+            startTxt.text = "כולנו נתקלים בבעיות מסוגים שונים בכל תחומי החיים" + "\n" + "אבל אנחנו לא תמיד יודעים איך לגשת אליהן.";
             storyPic.GetComponent<Image>().sprite = Resources.Load<Sprite>("openGame/opening4");
         }
     }
@@ -202,7 +202,7 @@ public class openGameUi : MonoBehaviour
             Checkmusicbtns(currentMusic);
             FindObjectOfType<audioMangerOpen>().Play("openSentence8");
             FindObjectOfType<audioMangerOpen>().isPlaying("openSentence8");
-            startTxt.text = "היום, אנחנו נדרשים לפתור בעיות במהירות וביעילות כדי לעמוד בקצב של העולם החדש שדורש מיומנויות שלא השתמשנו בהן פעם.";
+            startTxt.text = "היום, אנחנו נדרשים לפתור בעיות במהירות וביעילות" + "\n" + "כדי לעמוד בקצב של העולם החדש שדורש מיומנויות שלא השתמשנו בהן פעם.";
         }
     }
 
@@ -241,7 +241,7 @@ public class openGameUi : MonoBehaviour
             Checkmusicbtns(currentMusic);
             FindObjectOfType<audioMangerOpen>().Play("openSentence11");
             FindObjectOfType<audioMangerOpen>().isPlaying("openSentence11");
-            startTxt.text = "התגובות והלייקים שהגיעו גרמו לי להבין שאנשים אוהבים את התוכן שלי וזקוקים לכלים להתמודדות עם בעיות בתחומים שונים.";
+            startTxt.text = "התגובות והלייקים שהגיעו גרמו לי להבין שאנשים אוהבים את התוכן שלי" + "\n" + "וזקוקים לכלים להתמודדות עם בעיות בתחומים שונים.";
         }
     }
 
@@ -270,7 +270,7 @@ public class openGameUi : MonoBehaviour
             Checkmusicbtns(currentMusic);
             FindObjectOfType<audioMangerOpen>().Play("openSentence13");
             FindObjectOfType<audioMangerOpen>().isPlaying("openSentence13");
-            startTxt.text = "לאחרונה, אני נורא עמוס בלימודים ואין לי זמן לנהל את הפרופיל ברשת ה-revloS. אני חייב את העזרה שלכם כדי לא לאבד את העוקבים שלי.";
+            startTxt.text = "לאחרונה, אני נורא עמוס בלימודים ואין לי זמן לנהל את הפרופיל ברשת ה-revloS." + "\n" + "אני חייב את העזרה שלכם כדי לא לאבד את העוקבים שלי.";
         }
     }
 
@@ -283,7 +283,7 @@ public class openGameUi : MonoBehaviour
             Checkmusicbtns(currentMusic);
             FindObjectOfType<audioMangerOpen>().Play("openSentence14");
             FindObjectOfType<audioMangerOpen>().isPlaying("openSentence14");
-            startTxt.text = "אז כדי לעזור לי, אתם תעברו 5 שלבים שכל אחד מהם מתאר שלב אחר בתהליך פתרון הבעיות - בדיוק כמו השיטה שאבא שלי מלמד.";
+            startTxt.text = "אז כדי לעזור לי, אתם תעברו 5 שלבים שכל אחד מהם מתאר שלב אחר" + "\n" + "בתהליך פתרון הבעיות - בדיוק כמו השיטה שאבא שלי מלמד.";
         }
     }
 
@@ -296,7 +296,7 @@ public class openGameUi : MonoBehaviour
             Checkmusicbtns(currentMusic);
             FindObjectOfType<audioMangerOpen>().Play("openSentence15");
             FindObjectOfType<audioMangerOpen>().isPlaying("openSentence15");
-            startTxt.text = "בסוף כל שלב, אתם תגלו איך הצלחתם לשמור על הפרופיל שלי ותלמדו איך התהליך הזה יכול לעזור לכם בפתרון בעיות.";
+            startTxt.text = "בסוף כל שלב, אתם תגלו איך הצלחתם לשמור על הפרופיל שלי " + "\n" + " ותלמדו איך התהליך הזה יכול לעזור לכם בפתרון בעיות.";
         }
     }
 
@@ -309,7 +309,7 @@ public class openGameUi : MonoBehaviour
             Checkmusicbtns(currentMusic);
             FindObjectOfType<audioMangerOpen>().Play("openSentence16");
             FindObjectOfType<audioMangerOpen>().isPlaying("openSentence16");
-            startTxt.text = "אני יודע שזה יכול להיות מאתגר, אבל חשוב שנזכור שפתרון בעיות זה משהו שאנחנו מתמודדים איתו כל הזמן.";
+            startTxt.text = "אני יודע שזה יכול להיות מאתגר, אבל חשוב שנזכור" + "\n" + "שפתרון בעיות זה משהו שאנחנו מתמודדים איתו כל הזמן.";
         }
     }
 

@@ -293,7 +293,7 @@ public class audioManger : MonoBehaviour
             {
                 sound orRecord6S = Array.Find(sounds, item => item.name == sound);
                 orRecord6S.source.volume = 0;
-                emaSound.notMusic();
+                orSound.notMusic();
             }
             else if (sound == "emaRecord1")
             {
@@ -543,7 +543,7 @@ public class audioManger : MonoBehaviour
         {
             sound orRecord6S = Array.Find(sounds, item => item.name == sound);
             orRecord6S.source.volume = 0;
-            emaSound.notMusic();
+            orSound.notMusic();
         }
         else if (sound == "emaRecord1")
         {

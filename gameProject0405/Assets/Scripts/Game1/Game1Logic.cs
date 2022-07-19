@@ -235,7 +235,6 @@ public class Game1Logic : MonoBehaviour
     {
         if (currentMusic == "stage1Sentence1")
         {
-            stopMusic();
             tamir.SetBool("isTalk", true);
             currentMusic = "stage1Sentence2";
             Checkmusicbtns(currentMusic);
@@ -291,7 +290,7 @@ public class Game1Logic : MonoBehaviour
         tamarAnimator.SetBool("isTalk", true);
         subtitleBK1.SetActive(true);
         Checkmusicbtns(currentMusic);
-        textVideo1.text = "היי תמיר, שאלת בזמן האחרון למה נעלמתי והחלטתי פשוט לצלם לך סרטון ולתאר מה עבר עלי.";
+        textVideo1.text = "היי תמיר, שאלת בזמן האחרון למה נעלמתי" + "\n" + "והחלטתי פשוט לצלם לך סרטון ולתאר מה עבר עלי.";
         FindObjectOfType<audioManger>().Play("tamarRecord1");
         FindObjectOfType<audioManger>().isPlaying("tamarRecord1");
     }
@@ -318,7 +317,7 @@ public class Game1Logic : MonoBehaviour
             tamarAnimator.SetBool("isTalk", true);
             subtitleBK1.SetActive(true);
             Checkmusicbtns(currentMusic);
-            textVideo1.text = "אני מנסה לשלב הכל חברים, עבודה, לימודים ותמיד אני מוצאת את עצמי מפספסת משהו. כולם תמיד נעלבים ממני.";
+            textVideo1.text = "אני מנסה לשלב הכל חברים, עבודה, לימודים" + "\n" + "ותמיד אני מוצאת את עצמי מפספסת משהו. כולם תמיד נעלבים ממני.";
             FindObjectOfType<audioManger>().Play("tamarRecord3");
             FindObjectOfType<audioManger>().isPlaying("tamarRecord3");
         }
@@ -346,7 +345,7 @@ public class Game1Logic : MonoBehaviour
             tamarAnimator.SetBool("isTalk", true);
             subtitleBK1.SetActive(true);
             Checkmusicbtns(currentMusic);
-            textVideo1.text = "בשבוע שעבר, הבוס שלי ביקש ממני לעבוד כל השבוע והיה מבחן ביום רביעי אז מצאתי את עצמי לומדת בזמן המשמרת ואז לא התרכזתי לא בעבודה ולא בלימודים.";
+            textVideo1.text = "בשבוע שעבר, הבוס שלי ביקש ממני לעבוד כל השבוע והיה מבחן ביום רביעי" + "\n" + "אז מצאתי את עצמי לומדת בזמן המשמרת ואז לא התרכזתי לא בעבודה ולא בלימודים.";
             FindObjectOfType<audioManger>().Play("tamarRecord5");
             FindObjectOfType<audioManger>().isPlaying("tamarRecord5");
         }
@@ -370,8 +369,8 @@ public class Game1Logic : MonoBehaviour
     {
         tamarAnimator.SetBool("isTalk", false);
         subtitleBK1.SetActive(false);
-        stopMusic();
         Resume();
+        stopMusic();
         video1.SetActive(false);
     }
 
@@ -433,7 +432,7 @@ public class Game1Logic : MonoBehaviour
         {
             currentMusic = "orRecord5";
             Checkmusicbtns(currentMusic);
-            textVideo2.text = "אני לא מבין מה הוא רוצה ממני! גם כשאני רב עם ההורים שלי אני כל קודם מדבר ורק אז חושב, אני מרגיש שאני לא מצליח לעצור ולרוב זה פוגע בי ובהם.";
+            textVideo2.text = "אני לא מבין מה הוא רוצה ממני! גם כשאני רב עם ההורים שלי אני כל קודם מדבר" + "\n" + "ורק אז חושב, אני מרגיש שאני לא מצליח לעצור ולרוב זה פוגע בי ובהם.";
             FindObjectOfType<audioManger>().Play("orRecord5");
             FindObjectOfType<audioManger>().isPlaying("orRecord5");
         }
@@ -455,9 +454,9 @@ public class Game1Logic : MonoBehaviour
     {
         orAnimator.SetBool("isTalk", false);
         subtitleBK2.SetActive(false);
+        Resume();
         stopMusic();
         textVideo2.text = "";
-        Resume();
         video2.SetActive(false);
     }
 
@@ -482,7 +481,7 @@ public class Game1Logic : MonoBehaviour
         {
             currentMusic = "emaRecord2";
             Checkmusicbtns(currentMusic);
-            textVideo3.text = "אתה זוכר שסיפרתי לך שאני הולכת למיונים ליחידה של 0028 של חיל המודיעין ואני בדוק עוברת?";
+            textVideo3.text = "אתה זוכר שסיפרתי לך שאני הולכת למיונים" + "\n" + "ליחידה של 0028 של חיל המודיעין ואני בדוק עוברת?";
             FindObjectOfType<audioManger>().Play("emaRecord2");
             FindObjectOfType<audioManger>().isPlaying("emaRecord2");
         }
@@ -495,7 +494,7 @@ public class Game1Logic : MonoBehaviour
         {
             currentMusic = "emaRecord3";
             Checkmusicbtns(currentMusic);
-            textVideo3.text = "מרוב שהייתי בטוחה בעצמי אפילו לא התכוננתי למבחנים וכבר סיפרתי לכולם שבטוח התקבלתי.";
+            textVideo3.text = "מרוב שהייתי בטוחה בעצמי אפילו לא התכוננתי למבחנים" + "\n" + "וכבר סיפרתי לכולם שבטוח התקבלתי.";
             FindObjectOfType<audioManger>().Play("emaRecord3");
             FindObjectOfType<audioManger>().isPlaying("emaRecord3");
         }
@@ -517,10 +516,10 @@ public class Game1Logic : MonoBehaviour
     public void finishemaRecord4()
     {
         emaAnimator.SetBool("isTalk", false);
+        Resume();
         stopMusic();
         textVideo3.text = "";
         subtitleBK3.SetActive(false);
-        Resume();
         video3.SetActive(false);
     }
 
@@ -531,9 +530,9 @@ public class Game1Logic : MonoBehaviour
     {
         video1.SetActive(false);
         video1.SetActive(true);
+        Resume();
         stopMusic();
         currentMusic = "tamarRecord1";
-        Resume();
         playVideo1();
     }
 
@@ -541,9 +540,9 @@ public class Game1Logic : MonoBehaviour
     {
         video2.SetActive(false);
         video2.SetActive(true);
+        Resume();
         stopMusic();
         currentMusic = "orRecord1";
-        Resume();
         playVideo2();
     }
 
@@ -551,9 +550,9 @@ public class Game1Logic : MonoBehaviour
     {
         video3.SetActive(false);
         video3.SetActive(true);
+        Resume();
         stopMusic();
         currentMusic = "emaRecord1";
-        Resume();
         playVideo3();
     }
 
