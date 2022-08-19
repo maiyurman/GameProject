@@ -35,7 +35,6 @@ public class Game2UiManager : MonoBehaviour
     public navigation storyOpenGame2;
 
     //------>אנימצית סיום   
-    public GameObject finishAnimation1;
     public GameObject finishAnimation2;
     public GameObject finishAnimation3;
     public GameObject finishAnimation4;
@@ -56,16 +55,12 @@ public class Game2UiManager : MonoBehaviour
         truefeedback.transform.gameObject.SetActive(false);
         cheakBtn.transform.gameObject.SetActive(false);
 
-        nextQuestionBtn1.transform.gameObject.SetActive(false);
         nextQuestionBtn2.transform.gameObject.SetActive(false);
         nextQuestionBtn3.transform.gameObject.SetActive(false);
         nextQuestionBtn4.transform.gameObject.SetActive(false);
-        finishgame.transform.gameObject.SetActive(false);
-        finishAnimation1.SetActive(false);
         finishAnimation2.SetActive(false);
         finishAnimation3.SetActive(false);
         finishAnimation4.SetActive(false);
-        finishAnimation5.SetActive(false);
 
 
         tamir.SetActive(true);
@@ -91,11 +86,9 @@ public class Game2UiManager : MonoBehaviour
     //בלחיצה על כפתור בדוק
     public void clickCheckBtn()
     {
-        finishAnimation1.SetActive(false);
         finishAnimation2.SetActive(false);
         finishAnimation3.SetActive(false);
         finishAnimation4.SetActive(false);
-        finishAnimation5.SetActive(false);
         feedbackTxt.transform.gameObject.SetActive(true);
         string Active = PlayerPrefs.GetString("Active");
         string Numbers = PlayerPrefs.GetString("Numbers");
@@ -113,17 +106,13 @@ public class Game2UiManager : MonoBehaviour
             feedbackTxt.text = "";
             feedbackTxt.transform.gameObject.SetActive(false);
             cheakBtn.transform.gameObject.SetActive(false);
-            nextQuestionBtn1.transform.gameObject.SetActive(true);
             nextQuestionBtn2.transform.gameObject.SetActive(true);
             nextQuestionBtn3.transform.gameObject.SetActive(true);
             nextQuestionBtn4.transform.gameObject.SetActive(true);
-            finishgame.transform.gameObject.SetActive(true);
 
-            finishAnimation1.SetActive(true);
             finishAnimation2.SetActive(true);
             finishAnimation3.SetActive(true);
             finishAnimation4.SetActive(true);
-            finishAnimation5.SetActive(true);
 
             truefeedback.text = "כל הכבוד! פיענחתם את החוקיות!"; 
         }

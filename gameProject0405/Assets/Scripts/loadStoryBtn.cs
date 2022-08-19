@@ -1,32 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class loadStoryBtn : MonoBehaviour
 {
     public navigation[] storyBtns;
+    public GameObject controleWindow;
+    private int storyPressNum;
 
+    public void pressYes()
+    {
+        ChangeScene(storyPressNum);
+    }
+
+    public void closeControleWindow()
+    {
+        controleWindow.SetActive(false);
+    }
     public void clickStory1()
     {
-        ChangeScene(1);
+        controleWindow.SetActive(true);
+        storyPressNum = 1;
     }
 
     public void clickStory2()
     {
-        ChangeScene(2);
+        controleWindow.SetActive(true);
+        storyPressNum = 2;
     }
     public void clickStory3()
     {
-        ChangeScene(3);
+        controleWindow.SetActive(true);
+        storyPressNum = 3;
     }
     public void clickStory4()
     {
-        ChangeScene(4);
+        controleWindow.SetActive(true);
+        storyPressNum = 4;
     }
     public void clickStory5()
     {
-        ChangeScene(5);
+        controleWindow.SetActive(true);
+        storyPressNum = 5;
     }
 
     public void ChangeScene(int numGame)

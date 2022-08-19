@@ -42,4 +42,16 @@ public class menuUI : MonoBehaviour
 
     }
 
+    public void linkKITteacher()
+    {
+        Application.OpenURL("https://docs.google.com/presentation/d/1m7LZcFgHE1dPWNlS63Ze_HFGdsmjYcjEMio8wadGWm8/edit?usp=sharing");
+
+    }
+
+    public void linkKITparent()
+    {
+        Application.OpenURL("https://docs.google.com/presentation/d/17D506MzWiza5pKALGHgh3isHqn1CAHMgtNTNJPk7iqw/edit?usp=sharing");
+
+    }
+
 }

@@ -13,6 +13,8 @@ public class UIMangerstory : MonoBehaviour
     //public navigation prevPageBtn;
     //public navigation nextPageBtn;
 
+    //משתנה לייצוג כותרת הטקסט
+    public TextMeshProUGUI storytitleText;
     //משתנה לייצוג הטקסט
     public TextMeshProUGUI storyText;
     //משתנה לייצוג הטקסט של כפתור השלב הבא
@@ -100,6 +102,7 @@ public class UIMangerstory : MonoBehaviour
     {
         int numbertext = storiesData.pageNumber - 1;
         storyText.text = storiesData.Storytext[numbertext];
+        storytitleText.text = storiesData.Storytitletext[numbertext];
         learningText.text = storiesData.learningText[numbertext];
         if (storiesData.pageNumber == 5)
         {

@@ -7,6 +7,8 @@ using TMPro;
 public class storiesData : MonoBehaviour
 {
     [TextArea(3, 10)]
+    public string[] Storytitletext;
+    [TextArea(3, 10)]
     public string[] Storytext;
     [TextArea(3, 10)]
     public string[] learningText;
