@@ -330,7 +330,6 @@ public void UpdateUi(int NumOfPage)
     public IEnumerator displayFinishGame(int secs, int numbersec)
     {   
         yield return new WaitForSeconds(secs);
-        feedbackWindow.SetActive(false);
 
         //קוד להעלאת מספרים
         int numbergro = 700;
@@ -348,6 +347,7 @@ public void UpdateUi(int NumOfPage)
         //הדלקת מסך סיום המשחק
         finishGameBk.SetActive(true);
         Game3Logic.stage3Sentence4();
+        feedbackWindow.SetActive(false);
     }
 
 
