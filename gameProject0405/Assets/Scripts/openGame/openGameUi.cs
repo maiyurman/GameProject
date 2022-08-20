@@ -18,6 +18,7 @@ public class openGameUi : MonoBehaviour
     public navgationFor2 soundBtn;
     public string currentMusic;
     public navgationFor2 pauseBtn;
+    public navigation startOverBtn;
 
     public static bool GameIsPaused;
 
@@ -37,6 +38,7 @@ public class openGameUi : MonoBehaviour
         tamirAnimator.SetBool("isTalk", true);
         tamir2.SetActive(false);
         Checkmusicbtns("openSentence1");
+        startOverBtn.gameObject.SetActive(false);
     }
 
     public void clickPauseBtn()
@@ -94,6 +96,7 @@ public class openGameUi : MonoBehaviour
 
     public void sentenceVideo1()
     {
+        startOverBtn.gameObject.SetActive(false);
         currentMusic = "openSentence1";
         FindObjectOfType<audioMangerOpen>().Play("openSentence1");
         FindObjectOfType<audioMangerOpen>().isPlaying("openSentence1");
@@ -114,10 +117,13 @@ public class openGameUi : MonoBehaviour
 
     public void startOverVideotamir()
     {
-        StopAllCoroutines();
-        FindObjectOfType<audioMangerOpen>().StopPlaying(currentMusic);
-        currentMusic = "openSentence1";
-        sentenceVideo1();
+        if (currentMusic != "openSentence1")
+        {
+            StopAllCoroutines();
+            FindObjectOfType<audioMangerOpen>().StopPlaying(currentMusic);
+            currentMusic = "openSentence1";
+            sentenceVideo1();
+        }
     }
 
     public void sentence2tamir()
@@ -125,6 +131,7 @@ public class openGameUi : MonoBehaviour
         if (currentMusic == "openSentence1")
         {
             currentMusic = "openSentence2";
+            startOverBtn.gameObject.SetActive(true);
             Checkmusicbtns(currentMusic);
             FindObjectOfType<audioMangerOpen>().Play("openSentence2");
             FindObjectOfType<audioMangerOpen>().isPlaying("openSentence2");
@@ -348,5 +355,6 @@ public class openGameUi : MonoBehaviour
             startGameBtn.gameObject.SetActive(true);
         }
     }
+
 
 }

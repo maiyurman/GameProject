@@ -14,6 +14,7 @@ public class Game5UIManager : MonoBehaviour
     private Dragable currentdragable;
     public GameObject feedbackwindow;
     public GameObject feedbackAnotherTry;
+    public GameObject notHere;
     public TextMeshProUGUI feedbackTxt;
     public TextMeshProUGUI feedbackBtnTxt;
     public int tryNum;
@@ -282,6 +283,8 @@ public class Game5UIManager : MonoBehaviour
             round2.SetActive(true);
             round3.SetActive(false);
             feedbackwindow.SetActive(false);
+            feedbackAnotherTry.SetActive(false);
+            notHere.SetActive(false);
             Game5DragLogic.isTrueAnswer = false;
             tryNum = 0;
             checkBtn.gameObject.transform.gameObject.SetActive(true);
@@ -292,7 +295,9 @@ public class Game5UIManager : MonoBehaviour
             round1.SetActive(false);
             round2.SetActive(false);
             round3.SetActive(true);
+            feedbackAnotherTry.SetActive(false);
             feedbackwindow.SetActive(false);
+            notHere.SetActive(false);
             Game5DragLogic.isTrueAnswer = false;
             tryNum = 0;
             checkBtn.gameObject.transform.gameObject.SetActive(true);
@@ -303,6 +308,9 @@ public class Game5UIManager : MonoBehaviour
             influenceFeedBack.SetActive(true);
             tamir.SetActive(true);
             feedbackwindow.SetActive(false);
+            feedbackAnotherTry.SetActive(false);
+            notHere.SetActive(false);
+
             level5Btn.enableBtn();
             if (PlayerPrefs.GetInt("GameMax") < 5)
             {

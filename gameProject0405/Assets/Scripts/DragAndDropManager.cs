@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public interface i_DragAndDropLogic{
     public void validateOnRelese(Dragable dragable, DropArea dropArea);
 }
@@ -16,6 +17,8 @@ public class DragAndDropManager : MonoBehaviour
     private Collider2D selectedColider;
     private bool isInDragNow;
     private Vector3 mousePosition;
+
+    public GameObject NOTher;
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +99,9 @@ public class DragAndDropManager : MonoBehaviour
             else
             {
                 dragableOfObject.returnToInitPosition();
+                //הודעה על גרירה למקום לא נכון
+                NOTher.SetActive(true);
+
             }
             selectedColider.enabled = true;
             initDragAndDropObjects();

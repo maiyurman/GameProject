@@ -18,6 +18,7 @@ public class Game1Logic : MonoBehaviour
     public GameObject finishgame1;
     public GameObject subtitleBK1;
     public GameObject lightBtn1;
+    public navigation startOver1;
 
     //משתנים משחק 2
     public Chat chatGame2;
@@ -30,7 +31,7 @@ public class Game1Logic : MonoBehaviour
     public GameObject finishgame2;
     public GameObject subtitleBK2;
     public GameObject lightBtn2;
-
+    public navigation startOver2;
 
     //משתנים משחק 3
     public Chat chatGame3;
@@ -43,6 +44,7 @@ public class Game1Logic : MonoBehaviour
     public GameObject finishgame3;
     public GameObject subtitleBK3;
     public GameObject lightBtn3;
+    public navigation startOver3;
 
     //סטורי
     private loadStoryBtn loadStoryBtn;
@@ -90,9 +92,10 @@ public class Game1Logic : MonoBehaviour
         questions1.SetActive(true);
         finishgame1.SetActive(false);
         subtitleBK1.SetActive(true);
+        startOver1.gameObject.SetActive(false);
 
-    //משחק 2
-    chatGame2.initChat();
+        //משחק 2
+        chatGame2.initChat();
         chatGame2.setChatTitle("אור בן ישי");
         chatGame2.setProfilePhoto("or");
         chatGame2.addVideo(Chat.Direction.RECEIVE, "orVideoPhotos", playVideo2);
@@ -104,6 +107,7 @@ public class Game1Logic : MonoBehaviour
         questions2.SetActive(true);
         finishgame2.SetActive(false);
         subtitleBK2.SetActive(true);
+        startOver2.gameObject.SetActive(false);
 
         //משחק 3
         chatGame3.initChat();
@@ -118,6 +122,7 @@ public class Game1Logic : MonoBehaviour
         questions3.SetActive(true);
         finishgame3.SetActive(false);
         subtitleBK3.SetActive(true);
+        startOver3.gameObject.SetActive(false);
 
         //כיבוי כל הסטורי
         loadStoryBtn.disableStoryBtnAll();
@@ -223,7 +228,7 @@ public class Game1Logic : MonoBehaviour
     //משפטים סאונד
 
     public void stage1Sentence1()
-    {
+    {        
             tamir.SetBool("isTalk", true);
             currentMusic = "stage1Sentence1";
             Checkmusicbtns(currentMusic);
@@ -285,6 +290,7 @@ public class Game1Logic : MonoBehaviour
 
     public void tamarRecord1()
     {
+        startOver1.gameObject.SetActive(false);
         currentVideo = 1;
         currentMusic = "tamarRecord1";
         tamarAnimator.SetBool("isTalk", true);
@@ -300,6 +306,7 @@ public class Game1Logic : MonoBehaviour
         if (currentMusic == "tamarRecord1")
         {
             currentMusic = "tamarRecord2";
+            startOver1.gameObject.SetActive(true);
             tamarAnimator.SetBool("isTalk", true);
             subtitleBK1.SetActive(true);
             Checkmusicbtns(currentMusic);
@@ -381,6 +388,7 @@ public class Game1Logic : MonoBehaviour
     {
         currentVideo = 2;
         currentMusic = "orRecord1";
+        startOver2.gameObject.SetActive(false);
         orAnimator.SetBool("isTalk", true);
         subtitleBK2.SetActive(true);
         Checkmusicbtns(currentMusic);
@@ -393,6 +401,7 @@ public class Game1Logic : MonoBehaviour
     {
         if (currentMusic == "orRecord1")
         {
+            startOver2.gameObject.SetActive(true);
             currentMusic = "orRecord2";
             Checkmusicbtns(currentMusic);
             textVideo2.text = "נהגתי כמעט שעה ואפילו עליתי על הכביש המהיר! אתה לא מבין איזה גז דפקתי! ";
@@ -467,6 +476,7 @@ public class Game1Logic : MonoBehaviour
     {
         currentVideo = 3;
         currentMusic = "emaRecord1";
+        startOver3.gameObject.SetActive(false);
         orAnimator.SetBool("isTalk", true);
         subtitleBK3.SetActive(true);
         Checkmusicbtns(currentMusic);
@@ -480,6 +490,7 @@ public class Game1Logic : MonoBehaviour
         if (currentMusic == "emaRecord1")
         {
             currentMusic = "emaRecord2";
+            startOver3.gameObject.SetActive(true);
             Checkmusicbtns(currentMusic);
             textVideo3.text = "אתה זוכר שסיפרתי לך שאני הולכת למיונים" + "\n" + "ליחידה של 0028 של חיל המודיעין ואני בדוק עוברת?";
             FindObjectOfType<audioManger>().Play("emaRecord2");
@@ -528,32 +539,41 @@ public class Game1Logic : MonoBehaviour
 
     public void startOverVideo1()
     {
-        video1.SetActive(false);
-        video1.SetActive(true);
-        Resume();
-        stopMusic();
-        currentMusic = "tamarRecord1";
-        playVideo1();
+        if (currentMusic != "tamarRecord1")
+        {
+            video1.SetActive(false);
+            video1.SetActive(true);
+            Resume();
+            stopMusic();
+            currentMusic = "tamarRecord1";
+            playVideo1();
+        }
     }
 
     public void startOverVideo2()
     {
-        video2.SetActive(false);
-        video2.SetActive(true);
-        Resume();
-        stopMusic();
-        currentMusic = "orRecord1";
-        playVideo2();
+        if (currentMusic != "orRecord1")
+        {
+            video2.SetActive(false);
+            video2.SetActive(true);
+            Resume();
+            stopMusic();
+            currentMusic = "orRecord1";
+            playVideo2();
+        }
     }
 
     public void startOverVideo3()
     {
-        video3.SetActive(false);
-        video3.SetActive(true);
-        Resume();
-        stopMusic();
-        currentMusic = "emaRecord1";
-        playVideo3();
+        if (currentMusic != "emaRecord1")
+        {
+            video3.SetActive(false);
+            video3.SetActive(true);
+            Resume();
+            stopMusic();
+            currentMusic = "emaRecord1";
+            playVideo3();
+        }
     }
 
     public void ClickSoundBtn()

@@ -33,23 +33,15 @@ public class Game5DragLogic : MonoBehaviour, i_DragAndDropLogic
             isTrueAnswer = true;
             Game5UIManager.movetoPlace(dragable, dropArea);
         }
-        else if(notcorrect1Name == mydropArea)
+        else if (notcorrect1Name == mydropArea)
         {
             Game5UIManager.movetoPlace(dragable, dropArea);
         }
         else if (notcorrect2Name == mydropArea)
         {
             Game5UIManager.movetoPlace(dragable, dropArea);
-        }
-        //else if(Game5UIManager.numRound == 3)
-        //{
-        //    GameObject notcorrect3 = GameObject.FindWithTag("notcorrect3");
-        //    string notcorrect3Name = notcorrect3.name;
-        //    if (notcorrect3Name == mydropArea)
-        //    {
-        //        Game5UIManager.movetoPlace(dragable, dropArea);
-        //    }
-        //}
+        }        
+
     }
 
 }

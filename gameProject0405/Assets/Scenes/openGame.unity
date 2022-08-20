@@ -189,6 +189,7 @@ MonoBehaviour:
   soundBtn: {fileID: 1061052109}
   currentMusic: 
   pauseBtn: {fileID: 79166972}
+  startOverBtn: {fileID: 436211927}
 --- !u!1 &79166969
 GameObject:
   m_ObjectHideFlags: 0

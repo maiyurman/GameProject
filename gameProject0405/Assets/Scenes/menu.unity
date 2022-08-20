@@ -2178,7 +2178,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 97.60349, y: -92.80012}
-  m_SizeDelta: {x: 160, y: 127}
+  m_SizeDelta: {x: 183.25, y: 96.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &513103869
 BoxCollider:
@@ -2191,7 +2191,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 160, y: 127, z: 0.9993179}
+  m_Size: {x: 184, y: 100, z: 0.9993179}
   m_Center: {x: -0.2723552, y: 0.6960189, z: 0.00034105353}
 --- !u!114 &513103870
 MonoBehaviour:

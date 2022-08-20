@@ -179,11 +179,16 @@ public class Game4Logic : MonoBehaviour
         game4Animation2.SetActive(false);
         finishgame2.SetActive(false);
         MessageinputGame2 = "";
-        chatGame2.setChatTitle("efiLretteB");
-        chatGame2.setProfilePhoto("BetterLife");
+        chatGame2.setChatTitle("petSysaE");
+        chatGame2.setProfilePhoto("EasyStep");
         chatGame2.initChat();
-        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "שלום, מדברת ענת מחברת efiLretteB, חברת מוצרי טכנולוגיה לשיפור אורח חיים בריא. כדי לקדם את המוצרים שלנו אנחנו משתפים פעולה עם משפיענים שונים.", 8);
+    }
+
+   public void sendMessageTochat()
+    {
+        chatGame2.addTextMessage(Chat.Direction.RECEIVE, "שלום, מדברת ענת מחברת petSysaE, חברת מוצרי טכנולוגיה לשיפור אורח חיים בריא. כדי לקדם את המוצרים שלנו אנחנו משתפים פעולה עם משפיענים שונים.", 8);
         StartCoroutine(sendMessageChat2());
+        sendBtnGame2.disableBtn();
     }
 
     IEnumerator sendMessageChat2()
