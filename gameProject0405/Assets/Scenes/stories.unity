@@ -232,6 +232,9 @@ MonoBehaviour:
   storyText: {fileID: 1078848222}
   NextLevelTXTbtn: {fileID: 339602121}
   learningText: {fileID: 2056611688}
+  userBtn: {fileID: 1291239351}
+  placeBtn: {fileID: 2102695781}
+  chatBtn: {fileID: 1089337997}
 --- !u!4 &56529851
 Transform:
   m_ObjectHideFlags: 0

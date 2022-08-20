@@ -24,6 +24,9 @@ public class UIMangerstory : MonoBehaviour
 
     int MaxNumber;
 
+    public navigation userBtn;
+    public navigation placeBtn;
+    public navigation chatBtn;
 
     void Start()
     {
@@ -31,6 +34,9 @@ public class UIMangerstory : MonoBehaviour
         MaxNumber = PlayerPrefs.GetInt("GameMax");
         Debug.Log("UIM MaxNumber - " + MaxNumber);
         Debug.Log("UIM gameNumIn - " + PlayerPrefs.GetInt("gameNumIn"));
+        userBtn.disableBtn();
+        placeBtn.disableBtn();
+        chatBtn.disableBtn();
     }
 
     //איפוס חיצים

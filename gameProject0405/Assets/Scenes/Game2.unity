@@ -417,6 +417,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1508277867}
+        m_TargetAssemblyTypeName: navigation, Assembly-CSharp
+        m_MethodName: enableBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &32104320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,7 +903,6 @@ MonoBehaviour:
   feedbackTxt: {fileID: 1976813422}
   cheakBtn: {fileID: 1229722511}
   truefeedback: {fileID: 700704650}
-  nextQuestionBtn1: {fileID: 0}
   nextQuestionBtn2: {fileID: 1420118166}
   nextQuestionBtn3: {fileID: 290961735}
   nextQuestionBtn4: {fileID: 32104318}
@@ -900,7 +911,6 @@ MonoBehaviour:
   finishAnimation2: {fileID: 844647838}
   finishAnimation3: {fileID: 1644369251}
   finishAnimation4: {fileID: 1115271022}
-  finishAnimation5: {fileID: 0}
   tamirAnimator: {fileID: 1418145343}
 --- !u!4 &56529851
 Transform:

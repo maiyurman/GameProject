@@ -25,7 +25,6 @@ public class Game2UiManager : MonoBehaviour
     public TextMeshProUGUI feedbackTxt;
     public navigation cheakBtn;
     public TextMeshProUGUI truefeedback;
-    public navigation nextQuestionBtn1;
     public navigation nextQuestionBtn2;
     public navigation nextQuestionBtn3;
     public navigation nextQuestionBtn4;
@@ -38,7 +37,6 @@ public class Game2UiManager : MonoBehaviour
     public GameObject finishAnimation2;
     public GameObject finishAnimation3;
     public GameObject finishAnimation4;
-    public GameObject finishAnimation5;
 
     //------>אנימציה תמיר
     public Animator tamirAnimator;
