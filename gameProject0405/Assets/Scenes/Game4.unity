@@ -1667,7 +1667,7 @@ MonoBehaviour:
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game4Logic, Assembly-CSharp
         m_MethodName: stopMusic
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4479,6 +4479,10 @@ PrefabInstance:
     - target: {fileID: 3209948119205954361, guid: 2982d70a402c6274f995952a7c4f2a28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209948119264423620, guid: 2982d70a402c6274f995952a7c4f2a28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3209948119264423640, guid: 2982d70a402c6274f995952a7c4f2a28, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8629,7 +8633,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game4Logic, Assembly-CSharp
-        m_MethodName: finishAllGamestory
+        m_MethodName: stage4Sentence4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8653,7 +8657,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 56529850}
         m_TargetAssemblyTypeName: Game4Logic, Assembly-CSharp
-        m_MethodName: stage4Sentence4
+        m_MethodName: finishAllGamestory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

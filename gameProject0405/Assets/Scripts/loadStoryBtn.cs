@@ -57,7 +57,7 @@ public class loadStoryBtn : MonoBehaviour
     {
         for (int i = 1; i <= numOfLevel; i++)
         {
-                enableStoryBtn(i);
+            enableStoryBtn(i);
         }
     }
 
